@@ -1,0 +1,49 @@
+﻿"Pais";"Item_code";"Servicio";"cambio_final_pp";"cambio_balanceado_pp";"misma_direccion"
+"Argentina";"SA";"Manufactura sobre insumos de terceros";"0,00";"0,26";FALSE
+"Argentina";"SB";"Mantenimiento y reparación";"0,53";"0,70";TRUE
+"Argentina";"SC";"Transporte";"-7,36";"-5,80";TRUE
+"Argentina";"SD";"Viajes";"-13,30";"-9,21";TRUE
+"Argentina";"SE";"Construcción";"-0,63";"-0,64";TRUE
+"Argentina";"SF";"Seguros y pensiones";"0,31";"-0,49";FALSE
+"Argentina";"SG";"Financieros";"1,02";"1,70";TRUE
+"Argentina";"SH";"Propiedad intelectual";"0,85";"0,73";TRUE
+"Argentina";"SI";"Telecom., informática e información";"10,10";"5,16";TRUE
+"Argentina";"SJ";"Otros servicios empresariales";"9,81";"7,67";TRUE
+"Argentina";"SK";"Personales, culturales y recreativos";"-0,98";"0,31";FALSE
+"Argentina";"SL";"Bienes y servicios del gobierno";"-0,36";"-0,38";TRUE
+"Brasil";"SA";"Manufactura sobre insumos de terceros";"0,02";"-0,67";FALSE
+"Brasil";"SB";"Mantenimiento y reparación";"3,82";"0,21";TRUE
+"Brasil";"SC";"Transporte";"-2,07";"-2,36";TRUE
+"Brasil";"SD";"Viajes";"-11,01";"-8,44";TRUE
+"Brasil";"SE";"Construcción";"-0,01";"-0,57";TRUE
+"Brasil";"SF";"Seguros y pensiones";"1,39";"1,15";TRUE
+"Brasil";"SG";"Financieros";"0,04";"1,03";TRUE
+"Brasil";"SH";"Propiedad intelectual";"1,57";"1,25";TRUE
+"Brasil";"SI";"Telecom., informática e información";"10,57";"5,38";TRUE
+"Brasil";"SJ";"Otros servicios empresariales";"0,58";"3,96";TRUE
+"Brasil";"SK";"Personales, culturales y recreativos";"1,60";"1,18";TRUE
+"Brasil";"SL";"Bienes y servicios del gobierno";"-6,49";"-2,12";TRUE
+"Chile";"SA";"Manufactura sobre insumos de terceros";"0,00";"-0,19";FALSE
+"Chile";"SB";"Mantenimiento y reparación";"0,00";"0,50";FALSE
+"Chile";"SC";"Transporte";"-31,07";"-15,81";TRUE
+"Chile";"SD";"Viajes";"10,76";"5,59";TRUE
+"Chile";"SE";"Construcción";"0,00";"-0,08";FALSE
+"Chile";"SF";"Seguros y pensiones";"1,38";"1,05";TRUE
+"Chile";"SG";"Financieros";"2,42";"0,93";TRUE
+"Chile";"SH";"Propiedad intelectual";"0,13";"0,32";TRUE
+"Chile";"SI";"Telecom., informática e información";"2,32";"1,28";TRUE
+"Chile";"SJ";"Otros servicios empresariales";"13,57";"6,86";TRUE
+"Chile";"SK";"Personales, culturales y recreativos";"0,49";"0,34";TRUE
+"Chile";"SL";"Bienes y servicios del gobierno";"0,00";"-0,82";FALSE
+"Uruguay";"SA";"Manufactura sobre insumos de terceros";"0,00";"-0,06";FALSE
+"Uruguay";"SB";"Mantenimiento y reparación";"0,37";"0,32";TRUE
+"Uruguay";"SC";"Transporte";"-24,45";"-12,02";TRUE
+"Uruguay";"SD";"Viajes";"-13,82";"-7,85";TRUE
+"Uruguay";"SE";"Construcción";"0,00";"-0,10";FALSE
+"Uruguay";"SF";"Seguros y pensiones";"0,45";"1,28";TRUE
+"Uruguay";"SG";"Financieros";"-0,02";"0,62";FALSE
+"Uruguay";"SH";"Propiedad intelectual";"1,64";"-0,17";FALSE
+"Uruguay";"SI";"Telecom., informática e información";"11,83";"7,63";TRUE
+"Uruguay";"SJ";"Otros servicios empresariales";"23,74";"10,54";TRUE
+"Uruguay";"SK";"Personales, culturales y recreativos";"1,39";"1,00";TRUE
+"Uruguay";"SL";"Bienes y servicios del gobierno";"-1,14";"-1,20";TRUE

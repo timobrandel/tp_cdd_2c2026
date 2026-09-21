@@ -1,0 +1,15 @@
+# R / RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# Espacio de trabajo con Claude: no forma parte de la entrega (D-002)
+CLAUDE.md
+.claude/
+gestion/
+
+# Datos crudos pesados: superan el limite de 100 MB por archivo de GitHub (D-010).
+# Se regeneran corriendo script/00_descarga_datos.R
+raw/OECD-WTO_BATIS_data_BPM6-1.zip
+raw/*.csv

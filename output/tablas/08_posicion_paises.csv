@@ -1,0 +1,49 @@
+﻿"Reporter";"Pais";"sector";"Servicio";"valor_medio_musd_corrientes";"puesto";"percentil";"anios_informados";"interpretable"
+"AR";"Argentina";"SA";"Manufactura sobre insumos de terceros";"1,08";"104";"48,24";"10";TRUE
+"AR";"Argentina";"SB";"Mantenimiento y reparación";"89,22";"51";"74,87";"10";TRUE
+"AR";"Argentina";"SC";"Transporte";"1942,56";"65";"67,84";"10";TRUE
+"AR";"Argentina";"SD";"Viajes";"4210,77";"54";"73,37";"10";TRUE
+"AR";"Argentina";"SE";"Construcción";"4,83";"123";"38,69";"10";TRUE
+"AR";"Argentina";"SF";"Seguros y pensiones";"40,99";"81";"59,80";"10";TRUE
+"AR";"Argentina";"SG";"Financieros";"157,96";"69";"65,83";"10";TRUE
+"AR";"Argentina";"SH";"Propiedad intelectual";"253,41";"38";"81,41";"10";TRUE
+"AR";"Argentina";"SI";"Telecom., informática e información";"2199,24";"42";"79,40";"10";TRUE
+"AR";"Argentina";"SJ";"Otros servicios empresariales";"4425,94";"42";"79,40";"10";TRUE
+"AR";"Argentina";"SK";"Personales, culturales y recreativos";"375,01";"33";"83,92";"10";TRUE
+"AR";"Argentina";"SL";"Bienes y servicios del gobierno";"200,61";"53";"73,87";"10";TRUE
+"BR";"Brasil";"SA";"Manufactura sobre insumos de terceros";"7,14";"83";"58,79";"10";TRUE
+"BR";"Brasil";"SB";"Mantenimiento y reparación";"1004,76";"18";"91,46";"10";TRUE
+"BR";"Brasil";"SC";"Transporte";"5134,82";"40";"80,40";"10";TRUE
+"BR";"Brasil";"SD";"Viajes";"5478,42";"48";"76,38";"10";TRUE
+"BR";"Brasil";"SE";"Construcción";"24,31";"88";"56,28";"10";TRUE
+"BR";"Brasil";"SF";"Seguros y pensiones";"890,50";"25";"87,94";"10";TRUE
+"BR";"Brasil";"SG";"Financieros";"958,42";"36";"82,41";"10";TRUE
+"BR";"Brasil";"SH";"Propiedad intelectual";"743,91";"30";"85,43";"10";TRUE
+"BR";"Brasil";"SI";"Telecom., informática e información";"3323,60";"35";"82,91";"10";TRUE
+"BR";"Brasil";"SJ";"Otros servicios empresariales";"17123,77";"23";"88,94";"10";TRUE
+"BR";"Brasil";"SK";"Personales, culturales y recreativos";"579,88";"27";"86,93";"10";TRUE
+"BR";"Brasil";"SL";"Bienes y servicios del gobierno";"750,47";"20";"90,45";"10";TRUE
+"CL";"Chile";"SA";"Manufactura sobre insumos de terceros";"0,00";"123";"0,00";"0";FALSE
+"CL";"Chile";"SB";"Mantenimiento y reparación";"0,00";"149";"0,00";"0";FALSE
+"CL";"Chile";"SC";"Transporte";"3546,69";"52";"74,37";"8";TRUE
+"CL";"Chile";"SD";"Viajes";"2122,50";"75";"62,81";"8";TRUE
+"CL";"Chile";"SE";"Construcción";"0,00";"154";"0,00";"0";FALSE
+"CL";"Chile";"SF";"Seguros y pensiones";"367,78";"38";"81,41";"8";TRUE
+"CL";"Chile";"SG";"Financieros";"262,71";"60";"70,35";"8";TRUE
+"CL";"Chile";"SH";"Propiedad intelectual";"56,10";"57";"71,86";"8";TRUE
+"CL";"Chile";"SI";"Telecom., informática e información";"460,89";"73";"63,82";"8";TRUE
+"CL";"Chile";"SJ";"Otros servicios empresariales";"1728,39";"59";"70,85";"8";TRUE
+"CL";"Chile";"SK";"Personales, culturales y recreativos";"52,54";"70";"65,33";"8";TRUE
+"CL";"Chile";"SL";"Bienes y servicios del gobierno";"0,00";"189";"0,00";"0";FALSE
+"UY";"Uruguay";"SA";"Manufactura sobre insumos de terceros";"0,00";"123";"0,00";"10";TRUE
+"UY";"Uruguay";"SB";"Mantenimiento y reparación";"34,72";"67";"66,83";"10";TRUE
+"UY";"Uruguay";"SC";"Transporte";"587,40";"91";"54,77";"10";TRUE
+"UY";"Uruguay";"SD";"Viajes";"2002,03";"77";"61,81";"10";TRUE
+"UY";"Uruguay";"SE";"Construcción";"4,14";"125";"37,69";"10";TRUE
+"UY";"Uruguay";"SF";"Seguros y pensiones";"29,14";"87";"56,78";"10";TRUE
+"UY";"Uruguay";"SG";"Financieros";"308,25";"54";"73,37";"10";TRUE
+"UY";"Uruguay";"SH";"Propiedad intelectual";"57,91";"56";"72,36";"10";TRUE
+"UY";"Uruguay";"SI";"Telecom., informática e información";"958,37";"63";"68,84";"10";TRUE
+"UY";"Uruguay";"SJ";"Otros servicios empresariales";"1341,80";"66";"67,34";"10";TRUE
+"UY";"Uruguay";"SK";"Personales, culturales y recreativos";"66,37";"66";"67,34";"10";TRUE
+"UY";"Uruguay";"SL";"Bienes y servicios del gobierno";"61,71";"94";"53,27";"10";TRUE

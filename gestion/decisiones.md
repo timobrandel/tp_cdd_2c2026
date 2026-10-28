@@ -271,3 +271,9 @@ Registro de decisiones técnicas y de proyecto. Formato: contexto, decisión, al
 - **Excepción:** `gestion/insumos/transcripciones/` no se publica, porque son notas de las clases (material de la cátedra). La hoja de ruta lo aclara donde las menciona. También quedan fuera `.claude/settings*.json` (configuración local) y `__pycache__/`.
 - **Alternativa descartada:** publicar sin los archivos de la presentación (SES-001, HO-005, QA-005 y QA-005b). Dejaba referencias rotas.
 - **Sigue vigente de D-002:** el commit solo después de que Timothy valide el hito.
+
+## D-032 · 28/10/2026 · Los gráficos se alinean con los de la cátedra en la Instancia 3
+- **Contexto:** `gestion/insumos/graficos_catedra.md` compara los gráficos del TP con los de las clases 10, 12, 21 y 22. Propone el tema de la casa en `utils/tema_tp.R`, una paleta fija por país, etiquetas directas y pares exploración → comunicación.
+- **Decisión (Timothy):** se aplica en la Fase 4 (Instancia 3, 13/11). Los gráficos del PDF de la Instancia 2 quedan como se validaron.
+- **Por qué:** el guion de la Instancia 2 ya estaba validado y la entrega vencía al día siguiente. Cambiar las figuras obligaba a otra vuelta de QA y a reemplazar imágenes a último momento. La Instancia 3 es justamente la de visualizaciones.
+- **Alternativa descartada:** aplicar ahora solo el tema y la paleta.

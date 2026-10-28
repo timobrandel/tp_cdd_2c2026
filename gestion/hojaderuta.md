@@ -88,7 +88,7 @@ Solo se entrega el PDF.
 **A confirmar:** la clase 18 menciona que la entrega final pasa al 30/11, con una clase de consultas el 27/11.
 
 ## Fase 4 · Instancia 3: visualizaciones (13/11)
-**Insumo (28/10):** `gestion/insumos/graficos_catedra.md` mapea cada gráfico del TP con su modelo de la cátedra (clases 10, 12, 21 y 22): tema de la casa en `utils/tema_tp.R`, paleta fija por país, pares exploración → comunicación. Falta que Timothy decida si se aplica ahora o en esta fase (recomendación: en esta fase).
+**Insumo (28/10):** `gestion/insumos/graficos_catedra.md` mapea cada gráfico del TP con su modelo de la cátedra (clases 10, 12, 21 y 22): tema de la casa en `utils/tema_tp.R`, paleta fija por país, pares exploración → comunicación. Se aplica en esta fase (D-032).
 **Requisitos (consigna del TP):**
 - Al menos dos visualizaciones con los elementos de storytelling de la Unidad 4.
 - Para cada una:

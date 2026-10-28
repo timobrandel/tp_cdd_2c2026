@@ -1,0 +1,3 @@
+﻿"base";"unidad";"filas";"columnas";"combinaciones_unicas";"paises_informantes";"socios";"sectores";"anios"
+"batis_bilateral";"País informante x socio x sector x año";"207480";"11";"207480";"4";"203";"13";"20"
+"batis_mundo_sectores";"País informante x sector x año (socio = mundo)";"51870";"10";"51870";"202";"1";"13";"20"

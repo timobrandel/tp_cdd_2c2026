@@ -18,7 +18,7 @@ Fase 3: Instancia 2 (métodos). Vence el **jueves 29/10 a las 23:59**. Se entreg
 
 ## Próximo paso inmediato
 - **Grupo:** armar el PDF con el guion y enviarlo antes del 29/10 a las 23:59. Antes, cotejar la diapositiva 2 con el texto de la devolución del docente, que no está en el repo.
-- **Timothy decide:** aplicar la guía de gráficos de la cátedra (`gestion/insumos/graficos_catedra.md`, commit `5388423`) ahora o en la Instancia 3 (recomendación: Instancia 3). Último handover: `gestion/handovers/2026-10-28-0859-paso-3.6.md`.
+- **Fase 4 (Instancia 3, 13/11):** arrancar por la guía de gráficos de la cátedra (`gestion/insumos/graficos_catedra.md`; D-032, commit `be5dba2`). Último handover: `gestion/handovers/2026-10-28-0859-paso-3.6.md`.
 
 ## Pendientes de Timothy / grupo
 - Confirmar si la entrega final se pasó al 30/11 (lo menciona la clase 18).

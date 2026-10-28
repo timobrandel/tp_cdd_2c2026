@@ -1,5 +1,5 @@
 # Estado del proyecto
-Última actualización: 28/10/2026, hora argentina
+Última actualización: 29/10/2026, hora argentina
 
 ## Fase actual
 Fase 3: Instancia 2 (métodos). Vence el **jueves 29/10 a las 23:59**. Se entrega un PDF de 10 a 15 diapositivas, sin código. El material de Claude está completo: falta que el grupo arme y envíe el PDF.
@@ -17,7 +17,7 @@ Fase 3: Instancia 2 (métodos). Vence el **jueves 29/10 a las 23:59**. Se entreg
 - El valor difiere según el sector: se cumple con todos los métodos (ANOVA F = 38,9, eta² = 0,17).
 
 ## Próximo paso inmediato
-- **Grupo:** armar el PDF con el guion y enviarlo antes del 29/10 a las 23:59. Antes, cotejar la diapositiva 2 con el texto de la devolución del docente, que no está en el repo.
+- **Paso 3.7 (hoy, vence 23:59):** armado del PDF de la Instancia 2 sobre el guion, con las correcciones de redacción de Diego y la propuesta de Brenda. Handover: `gestion/handovers/2026-10-29-armado-pdf-instancia2.md`. Primer punto de control: quién arma las diapositivas (D-007).
 - **Fase 4 (Instancia 3, 13/11):** arrancar por la guía de gráficos de la cátedra (`gestion/insumos/graficos_catedra.md`; D-032, commit `be5dba2`). Último handover: `gestion/handovers/2026-10-28-0859-paso-3.6.md`.
 
 ## Pendientes de Timothy / grupo

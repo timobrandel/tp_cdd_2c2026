@@ -1,0 +1,205 @@
+== dims
+[1] 207480     11
+[1] 51870    10
+== nulos
+               Reporter                 Partner               Item_code                    Year          Reported_value             Final_value Final_value_methodology          Balanced_value 
+                      0                       0                       0                       0                  197472                       0                       0                       0 
+           nombre_socio          es_resto_mundo                  origen 
+                      0                       0                       0 
+               Reporter                 Partner               Item_code                    Year          Reported_value             Final_value Final_value_methodology          Balanced_value 
+                      0                       0                       0                       0                    9567                       0                       0                       0 
+            nombre_pais                  origen 
+                      0                       0 
+== unicidad
+[1] 0
+[1] 0
+pct NA reported: 95.176403 18.444187 
+== ceros
+19869 53707 10119 0 
+min bal mundo: 2e-06 
+n socios: 203  partners != ROW: 202 
+== NA reported mundo por S vs sectores
+# A tibble: 2 × 3
+  es_S      n    na
+  <lgl> <int> <int>
+1 FALSE 47880  9263
+2 TRUE   3990   304
+== sin valor informado (origen) sectores
+# A tibble: 3 × 3
+  origen                       na_rep     n
+  <chr>                        <lgl>  <int>
+1 Derivado de datos informados TRUE     334
+2 Estimado por OCDE-OMC        TRUE    8929
+3 Informado por fuente oficial FALSE  38617
+== pct estimado total S por pais-año, ponderaciones
+# A tibble: 4 × 13
+  Reporter bal_conROW_min bal_conROW_max bal_conROW_mean bal_sinROW_min bal_sinROW_max bal_sinROW_mean fin_conROW_min fin_conROW_max fin_conROW_mean fin_sinROW_min fin_sinROW_max fin_sinROW_mean
+  <chr>             <dbl>          <dbl>           <dbl>          <dbl>          <dbl>           <dbl>          <dbl>          <dbl>           <dbl>          <dbl>          <dbl>           <dbl>
+1 AR               0.0270          0.352           0.118         0.0271          0.353           0.118         0.0232         0.0526          0.0304         0.0232         0.0527          0.0306
+2 BR              30.0            37.6            32.4          29.7            37.3            32.1          39.4           51.5            44.0           39.1           51.2            43.7   
+3 CL             100             100             100           100             100             100           100            100             100            100            100             100     
+4 UY             100             100             100           100             100             100           100            100             100            100            100             100     
+== total S exacto
+          medida Reporter Item_code anios       cr1       cr4        hhi        seq
+1 Balanced_value       AR         S    10 25.709900 42.266154  878.20931 11.3868071
+2 Balanced_value       BR         S    10 22.272952 35.617739  649.21816 15.4031426
+3 Balanced_value       CL         S    10 22.838557 50.134909  897.20019 11.1457846
+4 Balanced_value       UY         S    10 15.899762 47.033176  674.24132 14.8314851
+5    Final_value       AR         S    10 30.001227 51.938679 1195.99466  8.3612414
+6    Final_value       BR         S    10 26.078434 35.746323  787.29357 12.7017422
+7    Final_value       CL         S    10 26.119656 45.444727  912.95117 10.9534884
+8    Final_value       UY         S    10 20.415047 42.267606  675.51652 14.8034871
+== HHI anual S balanceado AR vs CL
+   Year         AR        CL cl_mayor
+1  2015  859.48243 786.62775    FALSE
+2  2016  878.60528 850.76413    FALSE
+3  2017  986.06596 888.27979    FALSE
+4  2018  899.83769 862.53336    FALSE
+5  2019  838.89133 895.37552     TRUE
+6  2020 1005.59872 797.37012    FALSE
+7  2021  950.64856 964.91534     TRUE
+8  2022  797.31330 964.28717     TRUE
+9  2023  751.56639 990.16600     TRUE
+10 2024  814.08341 971.68268     TRUE
+== AR balanceado sectores exactos
+           medida Reporter Item_code anios       cr1       cr4        hhi        seq
+1  Balanced_value       AR        SK    10 67.132288 83.677000 4913.05857  2.0353920
+2  Balanced_value       AR        SA    10 40.461467 74.386618 2506.89612  3.9889966
+3  Balanced_value       AR        SG    10 43.653288 60.746867 2253.01015  4.4385064
+4  Balanced_value       AR        SH    10 41.852376 64.531409 2218.38653  4.5077807
+5  Balanced_value       AR        SI    10 30.710295 50.803294 1241.14830  8.0570549
+6  Balanced_value       AR        SJ    10 29.244052 46.125121 1093.60901  9.1440358
+7  Balanced_value       AR        SE    10 23.367880 49.455165 1012.92179  9.8724305
+8  Balanced_value       AR         S    10 25.709900 42.266154  878.20931 11.3868071
+9  Balanced_value       AR        SF    10 17.613999 41.324752  744.50874 13.4316758
+10 Balanced_value       AR        SL    10 16.032742 47.143340  707.40864 14.1361011
+11 Balanced_value       AR        SD    10 13.782036 40.666091  626.25871 15.9678417
+12 Balanced_value       AR        SB    10 12.592755 36.889446  528.39667 18.9251760
+13 Balanced_value       AR        SC    10 12.855202 36.236868  528.06354 18.9371149
+== CV HHI entre sectores (sin S)
+          medida Reporter  n         cv    minseq    maxseq     ratio
+1 Balanced_value       AR 12 0.83672886 2.0353920 18.937115 9.3039155
+2 Balanced_value       BR 12 0.71400111 3.1643797 20.138211 6.3640310
+3 Balanced_value       CL 12 0.64943611 2.4879283 16.827398 6.7636188
+4 Balanced_value       UY 12 0.36011476 5.7848362 20.899659 3.6128350
+5    Final_value       AR 12 0.54817660 2.4285183 16.397994 6.7522631
+6    Final_value       BR 12 0.59447688 4.4420656 34.960392 7.8703008
+7    Final_value       CL  8 0.31007099 5.4699412 17.208212 3.1459593
+8    Final_value       UY 11 0.41944502 6.3407435 33.227109 5.2402543
+== CV HHI final sin sectores con < 10 anios
+          medida Reporter  n         cv    minseq    maxseq     ratio
+1 Balanced_value       AR 12 0.83672886 2.0353920 18.937115 9.3039155
+2 Balanced_value       BR 12 0.71400111 3.1643797 20.138211 6.3640310
+3 Balanced_value       CL 12 0.64943611 2.4879283 16.827398 6.7636188
+4 Balanced_value       UY 12 0.36011476 5.7848362 20.899659 3.6128350
+5    Final_value       AR 10 0.55057358 2.4285183 16.397994 6.7522631
+6    Final_value       BR 12 0.59447688 4.4420656 34.960392 7.8703008
+7    Final_value       CL  8 0.31007099 5.4699412 17.208212 3.1459593
+8    Final_value       UY 10 0.35621246 6.3407435 18.779185 2.9616692
+== UY final SE anios con valor
+# A tibble: 10 × 3
+    Year   fin   bal
+   <int> <dbl> <dbl>
+ 1  2015   0    39.9
+ 2  2016   0    30.8
+ 3  2017   0    35.3
+ 4  2018   0    55.7
+ 5  2019  41.3  53.4
+ 6  2020   0    17.6
+ 7  2021   0    27.2
+ 8  2022   0    42.7
+ 9  2023   0    31.9
+10  2024   0    44.6
+== UY top 5 socios balanceado promedio participaciones 2015-2024
+# A tibble: 6 × 2
+  Partner     s
+  <chr>   <dbl>
+1 AR      15.6 
+2 US      12.9 
+3 CN      10.0 
+4 BR       8.44
+5 ES       4.31
+6 DE       2.53
+== AR top 5 balanceado
+# A tibble: 6 × 2
+  Partner     s
+  <chr>   <dbl>
+1 US      25.7 
+2 BR       6.74
+3 CL       5.29
+4 UY       4.16
+5 ES       3.67
+6 DE       3.42
+== ROW peso max
+# A tibble: 1 × 2
+   maxb  maxf
+  <dbl> <dbl>
+1 0.667 0.606
+== base anova: 2400 200 positivas 2082 
+   Item_code          gm     sdlog
+1         SD 919.5540869 2.3032412
+2         SC 451.0158894 2.7632525
+3         SJ 319.4013762 3.0205227
+4         SI 184.0047464 2.8096655
+5         SL  57.9626977 2.2765765
+6         SG  51.0209581 3.3585888
+7         SE  45.2272107 2.8458927
+8         SA  35.0273749 4.0753602
+9         SF  27.1832497 3.0990500
+10        SK  17.4803950 3.3999316
+11        SB  11.9316560 3.7780873
+12        SH   9.8193102 4.3202054
+cociente sd: 1.8976764 
+              Df   Sum Sq Mean Sq F value     Pr(>F)    
+Item_code     11  4296.72 390.611 38.8652 < 2.22e-16 ***
+Residuals   2070 20804.33  10.050                       
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+eta2: 0.17117693 
+              Df   Sum Sq Mean Sq  F value     Pr(>F)    
+Reporter     198 14395.89  72.706  24.2433 < 2.22e-16 ***
+Item_code     11  5090.96 462.815 154.3210 < 2.22e-16 ***
+Residuals   1872  5614.20   2.999                        
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+pais/SCT: 0.5735173  sector/SCT: 0.2028187 
+
+	One-way analysis of means (not assuming equal variances)
+
+data:  log(v) and Item_code
+F = 43.8249, num df = 11.000, denom df = 790.555, p-value < 2.22e-16
+
+
+	Kruskal-Wallis rank sum test
+
+data:  v by factor(Item_code)
+Kruskal-Wallis chi-squared = 513.843, df = 11, p-value < 2.22e-16
+
+  sig
+1  42
+   Item_code        seq          gm     sdlog           v
+1         SK  2.0353920  17.4803950 3.3999316  375.010042
+2         SA  3.9889966  35.0273749 4.0753602    1.075320
+3         SG  4.4385064  51.0209581 3.3585888  157.960571
+4         SH  4.5077807   9.8193102 4.3202054  253.405691
+5         SI  8.0570549 184.0047464 2.8096655 2199.238299
+6         SJ  9.1440358 319.4013762 3.0205227 4425.940760
+7         SE  9.8724305  45.2272107 2.8458927    4.826410
+8         SF 13.4316758  27.1832497 3.0990500   40.990110
+9         SL 14.1361011  57.9626977 2.2765765  200.613291
+10        SD 15.9678417 919.5540869 2.3032412 4210.769705
+11        SB 18.9251760  11.9316560 3.7780873   89.222961
+12        SC 18.9371149 451.0158894 2.7632525 1942.559840
+spearman seq AR vs media geom mundial: 0.39160839 
+spearman seq AR vs valor AR: 0.15384615 
+cor.test:
+
+	Spearman's rank correlation rho
+
+data:  rel$seq and rel$gm
+S = 174, p-value = 0.20956
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+0.39160839 
+

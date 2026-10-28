@@ -1,0 +1,112 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+Attaching package: 'scales'
+
+The following object is masked from 'package:purrr':
+
+    discard
+
+The following object is masked from 'package:readr':
+
+    col_factor
+
+# A tibble: 12 × 8
+   Reporter  Year socio_principal   cr1   cr4    hhi socios_equivalentes
+   <chr>    <dbl> <chr>           <dbl> <dbl>  <dbl>               <dbl>
+ 1 AR        2015 US              0.247 0.447 0.0859               11.6 
+ 2 AR        2020 US              0.287 0.430 0.101                 9.94
+ 3 AR        2024 US              0.243 0.415 0.0814               12.3 
+ 4 BR        2015 US              0.242 0.393 0.0747               13.4 
+ 5 BR        2020 US              0.244 0.369 0.0734               13.6 
+ 6 BR        2024 US              0.200 0.328 0.0548               18.3 
+ 7 CL        2015 US              0.200 0.478 0.0787               12.7 
+ 8 CL        2020 US              0.200 0.482 0.0797               12.5 
+ 9 CL        2024 US              0.253 0.514 0.0972               10.3 
+10 UY        2015 US              0.142 0.500 0.0708               14.1 
+11 UY        2020 AR              0.150 0.459 0.0649               15.4 
+12 UY        2024 AR              0.137 0.441 0.0586               17.1 
+# ℹ 1 more variable: pct_estimado <dbl>
+# A tibble: 8 × 10
+  Reporter Pais      periodo   anios   cr1   cr4    hhi socios_equivalentes
+  <chr>    <chr>     <chr>     <int> <dbl> <dbl>  <dbl>               <dbl>
+1 AR       Argentina 2005-2014    10 0.209 0.389 0.0692                14.5
+2 AR       Argentina 2015-2024    10 0.257 0.423 0.0878                11.5
+3 BR       Brasil    2005-2014    10 0.253 0.390 0.0795                12.7
+4 BR       Brasil    2015-2024    10 0.223 0.356 0.0649                15.6
+5 CL       Chile     2005-2014    10 0.201 0.439 0.0712                14.1
+6 CL       Chile     2015-2024    10 0.228 0.501 0.0897                11.2
+7 UY       Uruguay   2005-2014    10 0.176 0.509 0.0805                12.5
+8 UY       Uruguay   2015-2024    10 0.159 0.470 0.0674                15.0
+# ℹ 2 more variables: socios_con_ventas <dbl>, pct_estimado <dbl>
+# A tibble: 4 × 6
+  Pais         hhi   cr1   cr4 socios_equivalentes pct_estimado
+  <chr>      <dbl> <dbl> <dbl>               <dbl>        <dbl>
+1 Chile     0.0897 0.228 0.501                11.2      100    
+2 Argentina 0.0878 0.257 0.423                11.5        0.118
+3 Uruguay   0.0674 0.159 0.470                15.0      100    
+4 Brasil    0.0649 0.223 0.356                15.6       32.1  
+# A tibble: 20 × 4
+   Pais      puesto nombre_socio             participacion_pct
+   <chr>      <int> <chr>                                <dbl>
+ 1 Argentina      1 United States of America             25.5 
+ 2 Argentina      2 Brazil                                6.80
+ 3 Argentina      3 Chile                                 5.31
+ 4 Argentina      4 Uruguay                               4.22
+ 5 Argentina      5 Spain                                 3.73
+ 6 Brasil         1 United States of America             22.1 
+ 7 Brasil         2 China                                 4.81
+ 8 Brasil         3 Netherlands                           3.78
+ 9 Brasil         4 Germany                               3.65
+10 Brasil         5 Argentina                             3.49
+11 Chile          1 United States of America             23.1 
+12 Chile          2 China                                10.6 
+13 Chile          3 Argentina                             8.08
+14 Chile          4 Brazil                                6.21
+15 Chile          5 Japan                                 5.94
+16 Uruguay        1 Argentina                            15.7 
+17 Uruguay        2 United States of America             12.8 
+18 Uruguay        3 China                                 9.96
+19 Uruguay        4 Brazil                                8.56
+20 Uruguay        5 Spain                                 4.38
+# A tibble: 13 × 5
+   Item_code    AR    BR    CL    UY
+   <chr>     <dbl> <dbl> <dbl> <dbl>
+ 1 S         11.5  15.6  11.2  15.0 
+ 2 SA         5.49  6.01  8.91  5.98
+ 3 SB        19.6  15.2   7.63 17.0 
+ 4 SC        19.0  20.7   8.31 21.0 
+ 5 SD        16.1  19.5   9.61  9.42
+ 6 SE        11.5  14.2  10.9  13.5 
+ 7 SF        16.0  20.5  10.6  12.0 
+ 8 SG         5.24  3.42  6.72 12.0 
+ 9 SH         5.62 10.5   7.52  9.88
+10 SI         8.44  9.49 10.8  14.9 
+11 SJ         9.27 12.1  17.2  15.0 
+12 SK         2.60  5.87  3.88  8.31
+13 SL        14.4  12.3  10.6  10.4 
+# A tibble: 4 × 6
+  Reporter hhi_min hhi_max sector_mas_concentrado sector_menos_concentr…¹ cv_hhi
+  <chr>      <dbl>   <dbl> <chr>                  <chr>                    <dbl>
+1 AR        0.0528   0.491 SK                     SC                       0.837
+2 BR        0.0497   0.316 SG                     SC                       0.714
+3 CL        0.0594   0.402 SK                     SJ                       0.649
+4 UY        0.0478   0.173 SA                     SC                       0.360
+# ℹ abbreviated name: ¹​sector_menos_concentrado
+Economías en la base de RCA: 199 
+Mediana mundial de sectores con ventaja: 3 
+# A tibble: 4 × 6
+  pais  Pais      nombre_pais sectores_con_ventaja percentil sectores          
+  <chr> <chr>     <chr>                      <int>     <dbl> <chr>             
+1 AR    Argentina Argentina                      5      82.8 SD, SI, SJ, SK, SL
+2 BR    Brasil    Brazil                         4      58.1 SB, SJ, SK, SL    
+3 CL    Chile     Chile                          3      27.8 SC, SD, SF        
+4 UY    Uruguay   Uruguay                        3      27.8 SD, SI, SJ        

@@ -1,0 +1,481 @@
+
+===== 05_origen_bilateral 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+   Reporter Year valor_total pct_valor_informado pct_valor_derivado pct_valor_estimado socios_con_dato_oficial
+1        AR 2005     5870.21                0.00               0.00             100.00                       0
+2        AR 2006     7068.18                0.00               0.00             100.00                       0
+3        AR 2007     8720.63                0.00               0.00             100.00                       0
+4        AR 2008    10274.21                0.00               0.00             100.00                       0
+5        AR 2009     9365.89                0.00               0.00             100.00                       0
+6        AR 2010    10442.20                0.00               0.00             100.00                       0
+7        AR 2011    11836.91                0.00               0.00             100.00                       0
+8        AR 2012    12050.55                0.00               0.00             100.00                       0
+9        AR 2013    11729.55                0.00               0.00             100.00                       0
+10       AR 2014    11363.85                0.00               0.00             100.00                       0
+11       AR 2015    11703.03               42.81              57.11               0.08                     160
+12       AR 2016    11970.17               33.04              66.93               0.03                     148
+13       AR 2017    13379.43               52.58              47.39               0.03                     167
+14       AR 2018    13337.10               46.46              53.50               0.04                     167
+15       AR 2019    13117.14               33.80              66.12               0.07                     154
+16       AR 2020     8942.91               78.55              21.16               0.29                     152
+17       AR 2021     9322.95               67.07              32.58               0.35                     141
+18       AR 2022    13111.66               38.91              60.91               0.18                     146
+19       AR 2023    14653.64               66.49              33.46               0.06                     158
+20       AR 2024    15314.45               67.87              32.08               0.05                     164
+21       BR 2005    14428.68                0.00               0.00             100.00                       0
+22       BR 2006    17988.78                0.00               0.00             100.00                       0
+23       BR 2007    21680.69                0.00               0.00             100.00                       0
+24       BR 2008    28060.43                0.00               0.00             100.00                       0
+25       BR 2009    25651.73                0.00               0.00             100.00                       0
+26       BR 2010    28934.23               76.77               0.00              23.23                      37
+27       BR 2011    34711.17               65.09               0.00              34.91                      37
+28       BR 2012    35974.82               65.60               0.00              34.40                      37
+29       BR 2013    35841.16               65.51               0.00              34.49                      37
+30       BR 2014    38693.74               65.36               0.00              34.64                      36
+31       BR 2015    35517.64               70.00               0.00              30.00                      37
+32       BR 2016    34446.03               69.07               0.00              30.93                      37
+33       BR 2017    34891.67               69.61               0.00              30.39                      37
+34       BR 2018    35403.90               68.44               0.00              31.56                      37
+35       BR 2019    34261.57               68.22               0.00              31.78                      37
+36       BR 2020    26552.43               68.81               0.00              31.19                      37
+37       BR 2021    30563.20               68.57               0.00              31.43                      37
+38       BR 2022    39186.00               66.70               0.00              33.30                      37
+39       BR 2023    43204.80               64.10               0.00              35.90                      37
+40       BR 2024    45797.89               62.36               0.00              37.64                      37
+41       CL 2005     6280.02                0.00               0.00             100.00                       0
+42       CL 2006     7293.84                0.00               0.00             100.00                       0
+43       CL 2007     8602.34                0.00               0.00             100.00                       0
+44       CL 2008    10155.32                0.00               0.00             100.00                       0
+45       CL 2009     8739.39                0.00               0.00             100.00                       0
+46       CL 2010    10262.26                0.00               0.00             100.00                       0
+47       CL 2011    11718.98                0.00               0.00             100.00                       0
+48       CL 2012    11793.34                0.00               0.00             100.00                       0
+49       CL 2013    11647.68                0.00               0.00             100.00                       0
+50       CL 2014    11579.46                0.00               0.00             100.00                       0
+51       CL 2015    11019.70                0.00               0.00             100.00                       0
+52       CL 2016    11349.21                0.00               0.00             100.00                       0
+53       CL 2017    12633.60                0.00               0.00             100.00                       0
+54       CL 2018    12726.26                0.00               0.00             100.00                       0
+55       CL 2019    12453.44                0.00               0.00             100.00                       0
+56       CL 2020     8183.90                0.00               0.00             100.00                       0
+57       CL 2021     9396.73                0.00               0.00             100.00                       0
+58       CL 2022    12761.29                0.00               0.00             100.00                       0
+59       CL 2023    15627.35                0.00               0.00             100.00                       0
+60       CL 2024    17587.36                0.00               0.00             100.00                       0
+61       UY 2005     1722.20                0.00               0.00             100.00                       0
+62       UY 2006     2002.94                0.00               0.00             100.00                       0
+63       UY 2007     2473.55                0.00               0.00             100.00                       0
+64       UY 2008     3030.90                0.00               0.00             100.00                       0
+65       UY 2009     2952.66                0.00               0.00             100.00                       0
+66       UY 2010     3445.69                0.00               0.00             100.00                       0
+67       UY 2011     4223.79                0.00               0.00             100.00                       0
+68       UY 2012     4910.63                0.00               0.00             100.00                       0
+69       UY 2013     4812.87                0.00               0.00             100.00                       0
+70       UY 2014     4796.75                0.00               0.00             100.00                       0
+71       UY 2015     4828.35                0.00               0.00             100.00                       0
+72       UY 2016     4569.13                0.00               0.00             100.00                       0
+73       UY 2017     5014.92                0.00               0.00             100.00                       0
+74       UY 2018     5032.67                0.00               0.00             100.00                       0
+75       UY 2019     4689.73                0.00               0.00             100.00                       0
+76       UY 2020     3672.80                0.00               0.00             100.00                       0
+77       UY 2021     3739.56                0.00               0.00             100.00                       0
+78       UY 2022     5660.86                0.00               0.00             100.00                       0
+79       UY 2023     6424.31                0.00               0.00             100.00                       0
+80       UY 2024     6557.33                0.00               0.00             100.00                       0
+
+===== 06_diagnostico_resumen 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+                                                         tema
+1      Faltantes en el valor balanceado y en el final (nulos)
+2  Faltantes reales en la base al mundo (sin valor informado)
+3                 Distribución por socio estimada (Argentina)
+4                    Distribución por socio estimada (Brasil)
+5                     Distribución por socio estimada (Chile)
+6                   Distribución por socio estimada (Uruguay)
+7                                       Resto del mundo (ROW)
+8                                  Ceros en la base bilateral
+9                                   Ceros en la base al mundo
+10        Atípicos en la base al mundo (1,5 RIC sobre el log)
+11 Atípicos en la base bilateral (1,5 RIC sobre el log, 2024)
+                                                                                                                                                                                                    magnitud
+1                                                                                                                                           0 nulos en las dos medidas; grilla completa (05_cobertura_bases)
+2                                                                                              9.263 de 47.880 filas país-sector-año sin valor informado (2005-2024); 17,8% de los años de la base del ANOVA
+3                                 Total: 100% hasta 2014 y como máximo 0,4% en 2015-2024. Por sector (2015-2024): SA 99%, SB 56%, SC 1%, SD 7%, SE 99%, SF 38%, SG 29%, SH 18%, SI 3%, SJ 1%, SK 3%, SL 100%
+4                          Total: 100% hasta 2009 y entre 29,7% y 37,3% en 2015-2024. Por sector: SA 100%, SB 100%, SC 100%, SD 100%, SE 100%, SF 100%, SG 100%, SH 100%, SI 100%, SJ 100%, SK 100%, SL 100%
+5                                                Total: 100% todos los años. Por sector (2015-2024): SA 100%, SB 100%, SC 15%, SD 48%, SE 100%, SF 100%, SG 100%, SH 100%, SI 100%, SJ 64%, SK 100%, SL 100%
+6                                                                                                                                                   100% en el total y en todos los sectores, todos los años
+7                                                                                                                                                                                 Como máximo 0,7% del valor
+8                                7.978 flujos país-socio-sector-año en cero en 2015-2024: 144 declarados por el país, 1.043 estimados despreciables (E0) y el resto, ceros de otras estimaciones de OCDE-OMC
+9  318 de 2.400 celdas país-sector con promedio cero: 73 informadas los diez años, 101 mixtas, 17 nunca informadas y estimadas despreciables (E0) y 127 nunca informadas y completadas con cero por OCDE-OMC
+10                                                                                                      16 bajos y 1 alto(s), sobre 2.082 celdas; 14 de los 16 bajos tienen años en cero dentro del promedio
+11                                                                                                                                              9 socios atípicos altos en 7 de 48 combinaciones país-sector
+                                                                                                                            decision
+1                                                                                                                   Nada que imputar
+2                                                               Se usa el valor final, que los completa con estimaciones de OCDE-OMC
+3                                           El análisis principal usa 2015-2024; 2005-2014 no se usa como comparación para Argentina
+4                                                             Se compara el total, con la salvedad; por sector, solo como referencia
+5                      Se compara, con la salvedad; transporte, viajes y otros empresariales son los únicos sectores con dato propio
+6                                                                                Se compara, con la salvedad en cada tabla y gráfico
+7                                                                                                     Se excluye de la concentración
+8                                                                                                                       Se conservan
+9  Quedan fuera del ANOVA sobre log(valor); entran en el Kruskal-Wallis, el RCA y los percentiles como "no exportó", con la salvedad
+10                                                                                                                      Se conservan
+11                                                                                                                      Se conservan
+                                                                                                                                                                                                                                                                                                                                                                    justificacion
+1                                                                                                                                                                                                                        Las combinaciones ausentes son economías que no existían ese año (Yugoslavia, Serbia, Montenegro, Antillas Neerlandesas, Curazao, Sint Maarten, Kosovo).
+2                                                                                                                                                                                                      No hay nulos porque OCDE-OMC completa lo que el país no informa (06_faltantes_valor_final). Imputar de nuevo no agregaría información; se informa cuánto pesa lo estimado.
+3                                                                                                                                                   Desde 2015 Argentina declara a quién le vende. Antes, OCDE-OMC retroproyecta esa misma estructura hacia atrás (código E8.2): no es información propia de esos años. Los sectores con más de 50% estimado se leen con cautela.
+4                                                                                                                                                                                                                                                   Declara por socio el total de servicios de sus 37 socios principales, pero no la apertura por sector: esa la estima OCDE-OMC.
+5                                                                                                                                                                      No declara el total por socio, pero sí parte de tres sectores. En el resto, la parte del exportador sale del modelo de gravedad de OCDE-OMC; el balanceado la combina con lo que declaran sus compradores.
+6                                                                                                                                                                                           No declara su comercio de servicios por socio. En el valor final, su distribución es el modelo de gravedad de OCDE-OMC; el balanceado la combina con lo que declaran sus compradores.
+7                                                                                                                                                                                                                           Es un residuo de socios no identificados: contarlo como un socio más inventaría un comprador que no existe. Pesa poco, así que no cambia los índices.
+8                                                                                                                                                                 Son ventas no registradas ni estimadas; en su mayoría, ceros del modelo de OCDE-OMC, no un "no exportó" declarado. En el HHI pesan cero y no cambian ningún índice; sí cuentan en la columna socios_con_ventas.
+9                                   El logaritmo de cero no existe. Solo los ceros informados son un "no exportó" declarado; los nunca informados son faltantes completados con cero (Chile en manufactura, mantenimiento, construcción y gobierno). Por eso, el RCA y el percentil de Chile en esos sectores no se interpretan, y el Kruskal-Wallis se presenta con y sin ceros.
+10 No son errores de carga. Los bajos son, sobre todo, series intermitentes: países con varios años en cero, cuyo promedio queda muy bajo (06_atipicos_mundo_detalle). El alto es EE.UU. en gobierno. El logaritmo reduce su influencia y el Kruskal-Wallis no depende de ellos. Efecto de la regla: una celda con nueve años en cero entra al ANOVA y una con diez queda afuera.
+11                                                                                                                                   Un socio que compra mucho más que el resto es la concentración que se quiere medir. Que el criterio marque tan pocos muestra que, en log, los flujos por socio varían mucho; por eso la concentración se mide con CR y HHI, no con atípicos.
+
+===== 06_faltantes_valor_final 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+     periodo Item_code                              Servicio filas sin_valor_informado pct_sin_informar completados_con_cero
+1  2005-2014        SA Manufactura sobre insumos de terceros  1990                 837            42.06                  793
+2  2005-2014        SB            Mantenimiento y reparación  1990                 889            44.67                  821
+3  2005-2014        SC                            Transporte  1990                 161             8.09                   25
+4  2005-2014        SD                                Viajes  1990                 150             7.54                   21
+5  2005-2014        SE                          Construcción  1990                 512            25.73                  396
+6  2005-2014        SF                   Seguros y pensiones  1990                 259            13.02                  126
+7  2005-2014        SG                           Financieros  1990                 441            22.16                  316
+8  2005-2014        SH                 Propiedad intelectual  1990                 501            25.18                  374
+9  2005-2014        SI   Telecom., informática e información  1990                 233            11.71                   91
+10 2005-2014        SJ         Otros servicios empresariales  1990                 225            11.31                   83
+11 2005-2014        SK  Personales, culturales y recreativos  1990                 518            26.03                  397
+12 2005-2014        SL       Bienes y servicios del gobierno  1990                 267            13.42                  136
+13 2015-2024        SA Manufactura sobre insumos de terceros  2000                 625            31.25                  559
+14 2015-2024        SB            Mantenimiento y reparación  2000                 566            28.30                  448
+15 2015-2024        SC                            Transporte  2000                 224            11.20                   16
+16 2015-2024        SD                                Viajes  2000                 188             9.40                   16
+17 2015-2024        SE                          Construcción  2000                 430            21.50                  290
+18 2015-2024        SF                   Seguros y pensiones  2000                 257            12.85                  108
+19 2015-2024        SG                           Financieros  2000                 310            15.50                  135
+20 2015-2024        SH                 Propiedad intelectual  2000                 447            22.35                  284
+21 2015-2024        SI   Telecom., informática e información  2000                 265            13.25                   69
+22 2015-2024        SJ         Otros servicios empresariales  2000                 281            14.05                   84
+23 2015-2024        SK  Personales, culturales y recreativos  2000                 401            20.05                  232
+24 2015-2024        SL       Bienes y servicios del gobierno  2000                 276            13.80                   91
+
+===== 07_comparacion_medidas 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+      medida Reporter      Pais anios socios_con_ventas pct_estimado socios_equivalentes puesto_hhi puesto_cr4 cr1_pct cr4_pct hhi_x10000
+1 balanceado       CL     Chile    10             198.6       100.00               11.15          1          1   22.84   50.13     897.20
+2 balanceado       AR Argentina    10             198.8         0.12               11.39          2          3   25.71   42.27     878.21
+3 balanceado       UY   Uruguay    10             199.0       100.00               14.83          3          2   15.90   47.03     674.24
+4 balanceado       BR    Brasil    10             199.0        32.07               15.40          4          4   22.27   35.62     649.22
+5      final       AR Argentina    10             144.3         0.03                8.36          1          1   30.00   51.94    1195.99
+6      final       CL     Chile    10             198.6       100.00               10.95          2          2   26.12   45.44     912.95
+7      final       BR    Brasil    10             199.0        43.68               12.70          3          4   26.08   35.75     787.29
+8      final       UY   Uruguay    10             199.0       100.00               14.80          4          3   20.42   42.27     675.52
+
+===== 07_contraste_hipotesis 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+       medida indice vecino ar_mas_concentrada  Vecino argentina vecino_promedio anios_ar_mayor anios
+1  balanceado    cr4     BR               TRUE  Brasil     42.27           35.62             10    10
+2  balanceado    hhi     BR               TRUE  Brasil    878.21          649.22             10    10
+3       final    cr4     BR               TRUE  Brasil     51.94           35.75             10    10
+4       final    hhi     BR               TRUE  Brasil   1195.99          787.29             10    10
+5  balanceado    cr4     CL              FALSE   Chile     42.27           50.13              0    10
+6  balanceado    hhi     CL              FALSE   Chile    878.21          897.20              5    10
+7       final    cr4     CL               TRUE   Chile     51.94           45.44             10    10
+8       final    hhi     CL               TRUE   Chile   1195.99          912.95             10    10
+9  balanceado    cr4     UY              FALSE Uruguay     42.27           47.03              1    10
+10 balanceado    hhi     UY               TRUE Uruguay    878.21          674.24             10    10
+11      final    cr4     UY               TRUE Uruguay     51.94           42.27             10    10
+12      final    hhi     UY               TRUE Uruguay   1195.99          675.52             10    10
+
+===== 07_concentracion_sectores 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+       medida Reporter Item_code      Pais                              Servicio dato_propio anios socios_con_ventas pct_estimado socios_equivalentes socio_principal cr1_pct cr4_pct hhi_x10000
+1  balanceado       AR         S Argentina                    Total de servicios        TRUE    10            198.80         0.12               11.39              US   25.71   42.27     878.21
+2  balanceado       AR        SA Argentina Manufactura sobre insumos de terceros       FALSE    10             89.30        98.38                3.99              PY   40.46   74.39    2506.90
+3  balanceado       AR        SB Argentina            Mantenimiento y reparación       FALSE    10            160.70        55.25               18.93              SA   12.59   36.89     528.40
+4  balanceado       AR        SC Argentina                            Transporte        TRUE    10            198.20         1.01               18.94              CL   12.86   36.24     528.06
+5  balanceado       AR        SD Argentina                                Viajes        TRUE    10            197.00         6.62               15.97              BR   13.78   40.67     626.26
+6  balanceado       AR        SE Argentina                          Construcción       FALSE    10            181.30        98.70                9.87              DK   23.37   49.46    1012.92
+7  balanceado       AR        SF Argentina                   Seguros y pensiones        TRUE    10            195.80        38.69               13.43              US   17.61   41.32     744.51
+8  balanceado       AR        SG Argentina                           Financieros        TRUE    10            182.70        29.06                4.44              US   43.65   60.75    2253.01
+9  balanceado       AR        SH Argentina                 Propiedad intelectual        TRUE    10            168.60        18.27                4.51              US   41.85   64.53    2218.39
+10 balanceado       AR        SI Argentina   Telecom., informática e información        TRUE    10            195.90         2.98                8.06              US   30.71   50.80    1241.15
+11 balanceado       AR        SJ Argentina         Otros servicios empresariales        TRUE    10            195.60         0.80                9.14              US   29.24   46.13    1093.61
+12 balanceado       AR        SK Argentina  Personales, culturales y recreativos        TRUE    10            171.00         3.34                2.04              US   67.13   83.68    4913.06
+13 balanceado       AR        SL Argentina       Bienes y servicios del gobierno       FALSE    10            189.50       100.00               14.14              AE   16.03   47.14     707.41
+14 balanceado       BR         S    Brasil                    Total de servicios        TRUE    10            199.00        32.07               15.40              US   22.27   35.62     649.22
+15 balanceado       BR        SA    Brasil Manufactura sobre insumos de terceros       FALSE    10            139.50       100.00                5.71              FR   36.00   64.57    1751.29
+16 balanceado       BR        SB    Brasil            Mantenimiento y reparación       FALSE    10            199.00       100.00               11.03              US   23.00   43.05     906.66
+17 balanceado       BR        SC    Brasil                            Transporte       FALSE    10            199.00       100.00               20.14              US   13.95   36.36     496.57
+18 balanceado       BR        SD    Brasil                                Viajes       FALSE    10            199.00       100.00               19.41              US   16.58   35.54     515.31
+19 balanceado       BR        SE    Brasil                          Construcción       FALSE    10            197.50       100.00               13.67              NL   17.56   44.93     731.27
+20 balanceado       BR        SF    Brasil                   Seguros y pensiones       FALSE    10            199.00       100.00               19.98              US   15.23   36.03     500.45
+21 balanceado       BR        SG    Brasil                           Financieros       FALSE    10            199.00       100.00                3.16              US   54.66   69.62    3160.18
+22 balanceado       BR        SH    Brasil                 Propiedad intelectual       FALSE    10            197.80       100.00               10.06              US   23.85   50.32     993.57
+23 balanceado       BR        SI    Brasil   Telecom., informática e información       FALSE    10            199.00       100.00                9.16              US   30.52   44.78    1091.84
+24 balanceado       BR        SJ    Brasil         Otros servicios empresariales       FALSE    10            199.00       100.00               11.82              US   25.34   42.49     846.15
+25 balanceado       BR        SK    Brasil  Personales, culturales y recreativos       FALSE    10            198.70       100.00                3.94              US   46.87   59.10    2538.41
+26 balanceado       BR        SL    Brasil       Bienes y servicios del gobierno       FALSE    10            199.00       100.00               12.20              US   19.32   51.08     819.41
+27 balanceado       CL         S     Chile                    Total de servicios       FALSE    10            198.60       100.00               11.15              US   22.84   50.13     897.20
+28 balanceado       CL        SA     Chile Manufactura sobre insumos de terceros       FALSE    10             75.10       100.00                8.53              FR   22.00   56.24    1172.38
+29 balanceado       CL        SB     Chile            Mantenimiento y reparación       FALSE    10            132.80       100.00                7.17              AR   27.18   63.08    1393.76
+30 balanceado       CL        SC     Chile                            Transporte        TRUE    10            198.60        14.68                8.05              US   30.41   54.98    1241.61
+31 balanceado       CL        SD     Chile                                Viajes       FALSE    10            198.60        50.98                9.29              CN   24.27   56.02    1076.65
+32 balanceado       CL        SE     Chile                          Construcción       FALSE    10            155.50       100.00               10.47              JP   21.32   51.21     954.83
+33 balanceado       CL        SF     Chile                   Seguros y pensiones       FALSE    10            198.20       100.00               10.44              US   22.35   53.80     957.74
+34 balanceado       CL        SG     Chile                           Financieros       FALSE    10            196.60       100.00                6.43              US   36.43   54.64    1556.30
+35 balanceado       CL        SH     Chile                 Propiedad intelectual       FALSE    10            182.10       100.00                7.24              CH   28.69   62.56    1381.91
+36 balanceado       CL        SI     Chile   Telecom., informática e información       FALSE    10            198.60       100.00               10.67              US   25.51   46.93     937.43
+37 balanceado       CL        SJ     Chile         Otros servicios empresariales       FALSE    10            198.60        63.84               16.83              US   15.21   40.62     594.27
+38 balanceado       CL        SK     Chile  Personales, culturales y recreativos       FALSE    10            197.40       100.00                2.49              US   57.14   78.30    4019.41
+39 balanceado       CL        SL     Chile       Bienes y servicios del gobierno       FALSE    10            177.40       100.00               10.48              SA   20.97   53.97     953.91
+40 balanceado       UY         S   Uruguay                    Total de servicios       FALSE    10            199.00       100.00               14.83              AR   15.90   47.03     674.24
+41 balanceado       UY        SA   Uruguay Manufactura sobre insumos de terceros       FALSE    10             72.10       100.00                5.78              PY   33.07   68.92    1728.66
+42 balanceado       UY        SB   Uruguay            Mantenimiento y reparación       FALSE    10            193.70       100.00               16.39              SG   17.51   39.77     610.16
+43 balanceado       UY        SC   Uruguay                            Transporte       FALSE    10            199.00       100.00               20.90              AR   11.99   36.62     478.48
+44 balanceado       UY        SD   Uruguay                                Viajes       FALSE    10            199.00       100.00                9.33              AR   23.63   59.89    1072.05
+45 balanceado       UY        SE   Uruguay                          Construcción       FALSE    10            158.70       100.00               12.23              CN   18.80   46.22     817.38
+46 balanceado       UY        SF   Uruguay                   Seguros y pensiones       FALSE    10            197.40       100.00               11.21              US   21.74   48.61     891.68
+47 balanceado       UY        SG   Uruguay                           Financieros       FALSE    10            197.10       100.00               11.35              US   24.91   44.02     881.19
+48 balanceado       UY        SH   Uruguay                 Propiedad intelectual       FALSE    10            188.10       100.00                9.40              CH   22.97   55.00    1064.12
+49 balanceado       UY        SI   Uruguay   Telecom., informática e información       FALSE    10            199.00       100.00               14.51              US   17.10   44.64     688.94
+50 balanceado       UY        SJ   Uruguay         Otros servicios empresariales       FALSE    10            199.00       100.00               14.85              US   17.50   43.62     673.25
+51 balanceado       UY        SK   Uruguay  Personales, culturales y recreativos       FALSE    10            197.10       100.00                7.97              US   30.70   54.44    1254.32
+52 balanceado       UY        SL   Uruguay       Bienes y servicios del gobierno       FALSE    10            193.40       100.00               10.11              US   24.55   53.34     989.02
+53      final       AR         S Argentina                    Total de servicios        TRUE    10            144.30         0.03                8.36              US   30.00   51.94    1195.99
+54      final       AR        SA Argentina Manufactura sobre insumos de terceros       FALSE     4             91.00        92.16                9.76              US   25.47   51.39    1024.95
+55      final       AR        SB Argentina            Mantenimiento y reparación        TRUE    10            103.20        20.76                9.77              US   24.02   53.08    1023.44
+56      final       AR        SC Argentina                            Transporte        TRUE    10             95.10         0.09               16.40              BR   12.51   40.35     609.83
+57      final       AR        SD Argentina                                Viajes        TRUE    10            128.80         3.85               11.47              BR   19.06   49.64     871.86
+58      final       AR        SE Argentina                          Construcción       FALSE     9            119.33        91.60                2.95              PA   50.49   83.24    3394.24
+59      final       AR        SF Argentina                   Seguros y pensiones        TRUE    10            122.30        16.75                6.05              US   31.11   67.10    1653.62
+60      final       AR        SG Argentina                           Financieros        TRUE    10            102.30        27.84                3.61              US   49.64   70.03    2769.09
+61      final       AR        SH Argentina                 Propiedad intelectual        TRUE    10             99.50         5.26                2.64              US   58.40   81.96    3790.48
+62      final       AR        SI Argentina   Telecom., informática e información        TRUE    10            111.00         0.44                3.87              US   48.19   67.25    2583.36
+63      final       AR        SJ Argentina         Otros servicios empresariales        TRUE    10            111.10         0.07                5.14              US   41.73   58.35    1945.98
+64      final       AR        SK Argentina  Personales, culturales y recreativos        TRUE    10             90.50         0.87                2.43              US   62.18   84.29    4117.74
+65      final       AR        SL Argentina       Bienes y servicios del gobierno       FALSE    10            136.50       100.00                4.52              US   45.68   59.86    2210.54
+66      final       BR         S    Brasil                    Total de servicios        TRUE    10            199.00        43.68               12.70              US   26.08   35.75     787.29
+67      final       BR        SA    Brasil Manufactura sobre insumos de terceros       FALSE    10            120.60       100.00                4.44              US   46.36   58.03    2251.20
+68      final       BR        SB    Brasil            Mantenimiento y reparación       FALSE    10            199.00       100.00               23.68              US   14.83   31.82     422.35
+69      final       BR        SC    Brasil                            Transporte       FALSE    10            199.00       100.00               17.12              US   21.64   31.83     584.16
+70      final       BR        SD    Brasil                                Viajes       FALSE    10            199.00       100.00               34.96              US   11.55   24.18     286.04
+71      final       BR        SE    Brasil                          Construcción       FALSE    10            178.40       100.00               31.09              BD    9.11   25.76     321.66
+72      final       BR        SF    Brasil                   Seguros y pensiones       FALSE    10            198.70       100.00                9.32              US   31.18   40.80    1072.79
+73      final       BR        SG    Brasil                           Financieros       FALSE    10            198.10       100.00               10.37              US   26.10   49.48     964.31
+74      final       BR        SH    Brasil                 Propiedad intelectual       FALSE    10            196.40       100.00                6.49              US   37.46   51.08    1541.31
+75      final       BR        SI    Brasil   Telecom., informática e información       FALSE    10            199.00       100.00                9.90              US   29.77   42.26    1009.99
+76      final       BR        SJ    Brasil         Otros servicios empresariales       FALSE    10            199.00       100.00                9.20              US   31.05   42.93    1086.65
+77      final       BR        SK    Brasil  Personales, culturales y recreativos       FALSE    10            198.10       100.00               15.85              US   22.34   33.45     631.10
+78      final       BR        SL    Brasil       Bienes y servicios del gobierno       FALSE    10            198.40       100.00                7.65              US   31.00   56.23    1307.72
+79      final       CL         S     Chile                    Total de servicios       FALSE    10            198.60       100.00               10.95              US   26.12   45.44     912.95
+80      final       CL        SC     Chile                            Transporte        TRUE    10            198.30        17.13                7.45              US   33.94   51.09    1341.43
+81      final       CL        SD     Chile                                Viajes       FALSE    10            198.60        51.07               11.53              CN   20.23   48.22     867.64
+82      final       CL        SF     Chile                   Seguros y pensiones       FALSE    10            195.70       100.00                5.47              US   39.84   62.05    1828.17
+83      final       CL        SG     Chile                           Financieros       FALSE    10            189.90       100.00                6.75              US   33.90   57.28    1481.80
+84      final       CL        SH     Chile                 Propiedad intelectual       FALSE    10            169.30       100.00                6.07              US   35.01   61.54    1648.42
+85      final       CL        SI     Chile   Telecom., informática e información       FALSE    10            198.60       100.00                7.09              US   34.60   54.09    1409.62
+86      final       CL        SJ     Chile         Otros servicios empresariales       FALSE    10            198.60        70.05               17.21              US   14.37   41.47     581.12
+87      final       CL        SK     Chile  Personales, culturales y recreativos       FALSE    10            190.80       100.00                7.68              US   31.46   55.52    1301.29
+88      final       UY         S   Uruguay                    Total de servicios       FALSE    10            199.00       100.00               14.80              US   20.42   42.27     675.52
+89      final       UY        SB   Uruguay            Mantenimiento y reparación       FALSE    10            187.80       100.00               18.78              SG   15.51   37.45     532.50
+90      final       UY        SC   Uruguay                            Transporte       FALSE    10            199.00       100.00               17.76              US   16.72   39.41     563.20
+91      final       UY        SD   Uruguay                                Viajes       FALSE    10            199.00       100.00               15.15              CN   14.75   47.64     660.22
+92      final       UY        SE   Uruguay                          Construcción       FALSE     1            176.00       100.00               33.23              CG    7.46   24.86     300.96
+93      final       UY        SF   Uruguay                   Seguros y pensiones       FALSE    10            192.00       100.00               11.06              US   26.92   40.13     903.78
+94      final       UY        SG   Uruguay                           Financieros       FALSE    10            192.60       100.00                9.95              US   28.09   45.66    1005.20
+95      final       UY        SH   Uruguay                 Propiedad intelectual       FALSE    10            179.60       100.00                8.31              US   29.78   54.07    1203.99
+96      final       UY        SI   Uruguay   Telecom., informática e información       FALSE    10            199.00       100.00               11.74              US   25.63   41.73     851.53
+97      final       UY        SJ   Uruguay         Otros servicios empresariales       FALSE    10            199.00       100.00                8.83              US   30.81   47.01    1132.12
+98      final       UY        SK   Uruguay  Personales, culturales y recreativos       FALSE    10            194.20       100.00               13.94              US   21.58   41.90     717.18
+99      final       UY        SL   Uruguay       Bienes y servicios del gobierno       FALSE    10            188.70       100.00                6.34              US   37.28   56.03    1577.10
+
+===== 07_diversidad 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+  pais      Pais nombre_pais sectores_con_ventaja pct_economias_con_menos           sectores
+1   AR Argentina   Argentina                    5                   82.83 SD, SI, SJ, SK, SL
+2   BR    Brasil      Brazil                    4                   58.08     SB, SJ, SK, SL
+3   CL     Chile       Chile                    3                   27.78         SC, SD, SF
+4   UY   Uruguay     Uruguay                    3                   27.78         SD, SI, SJ
+
+===== 07_sensibilidad_periodo 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+       medida Reporter      Pais   periodo anios socios_con_ventas pct_estimado socios_equivalentes cr1_pct cr4_pct hhi_x10000
+1  balanceado       AR Argentina 2005-2009     5             195.2       100.00               15.05   19.86   38.32     664.62
+2  balanceado       AR Argentina 2010-2014     5             197.8       100.00               13.89   22.01   39.53     719.92
+3  balanceado       AR Argentina 2015-2024    10             198.8         0.12               11.39   25.71   42.27     878.21
+4  balanceado       BR    Brasil 2005-2009     5             197.2       100.00               12.36   25.07   40.65     809.24
+5  balanceado       BR    Brasil 2010-2014     5             198.8        31.98               12.81   25.46   37.27     780.83
+6  balanceado       BR    Brasil 2015-2024    10             199.0        32.07               15.40   22.27   35.62     649.22
+7  balanceado       CL     Chile 2005-2009     5             197.2       100.00               14.43   20.23   42.03     693.12
+8  balanceado       CL     Chile 2010-2014     5             198.4       100.00               13.70   19.90   45.72     730.00
+9  balanceado       CL     Chile 2015-2024    10             198.6       100.00               11.15   22.84   50.13     897.20
+10 balanceado       UY   Uruguay 2005-2009     5             197.2       100.00               12.30   17.39   50.54     813.11
+11 balanceado       UY   Uruguay 2010-2014     5             198.2       100.00               12.55   17.76   51.21     796.89
+12 balanceado       UY   Uruguay 2015-2024    10             199.0       100.00               14.83   15.90   47.03     674.24
+13      final       AR Argentina 2005-2009     5             162.2       100.00                8.85   28.45   52.70    1129.43
+14      final       AR Argentina 2010-2014     5             163.0       100.00                8.87   28.47   52.45    1127.06
+15      final       AR Argentina 2015-2024    10             144.3         0.03                8.36   30.00   51.94    1195.99
+16      final       BR    Brasil 2005-2009     5             197.2       100.00                6.85   36.73   49.41    1459.72
+17      final       BR    Brasil 2010-2014     5             198.8        41.30               11.33   27.46   38.86     882.24
+18      final       BR    Brasil 2015-2024    10             199.0        43.68               12.70   26.08   35.75     787.29
+19      final       CL     Chile 2005-2009     5             197.2       100.00               13.77   22.65   39.33     726.28
+20      final       CL     Chile 2010-2014     5             198.4       100.00               13.49   22.82   41.21     741.21
+21      final       CL     Chile 2015-2024    10             198.6       100.00               10.95   26.12   45.44     912.95
+22      final       UY   Uruguay 2005-2009     5             197.2       100.00               14.22   21.10   39.75     703.15
+23      final       UY   Uruguay 2010-2014     5             198.0       100.00               18.49   16.18   37.48     540.83
+24      final       UY   Uruguay 2015-2024    10             199.0       100.00               14.80   20.42   42.27     675.52
+
+===== 08_tests 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+                                               test                                                que_contrasta estadistico         gl p_valor efecto                                                                  medida_efecto
+1                                ANOVA de un factor              Medias de log(valor) iguales en los 12 sectores       38.87  11 y 2070 < 0,001   0,17                                                                   eta cuadrado
+2                           Shapiro-Wilk (residuos)                                            Residuos normales        0.99       <NA> < 0,001  -0,31                                                                      asimetría
+3                                  Levene (mediana)                             Varianzas iguales entre sectores       13.89  11 y 2070 < 0,001   1,90                                                             desvío máx. / mín.
+4                                    ANOVA de Welch                 Medias iguales sin suponer varianzas iguales       43.82 11 y 790,6 < 0,001     NA                                    no tiene (se usa el eta cuadrado del ANOVA)
+5                          Kruskal-Wallis con ceros                     Ningún sector tiende a valores más altos      513.84         11 < 0,001   0,21                                                               epsilon cuadrado
+6                          Kruskal-Wallis sin ceros                                  Ídem, solo celdas con valor      348.48         11 < 0,001   0,17                                                               epsilon cuadrado
+7                     ANOVA con el país como bloque                Sectores iguales después de descontar el país      154.32  11 y 1872 < 0,001   0,20 eta cuadrado sobre la SC total (comparable con el de un factor); parcial: 0,48
+8     Shapiro-Wilk (residuos del modelo con bloque)                                            Residuos normales        0.96       <NA> < 0,001  -0,84                                                                      asimetría
+9           Levene (residuos del modelo con bloque)                             Varianzas iguales entre sectores       17.58  11 y 2070 < 0,001   3,01                                                             desvío máx. / mín.
+10 Friedman (rangos dentro de cada país, con ceros) Ningún sector tiende a quedar más arriba dentro de cada país     1220.84         11 < 0,001   0,55                                                                   W de Kendall
+
+===== 08_descriptivos_sectores 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+   sector                              Servicio paises_con_valor paises_con_cero media_geom_musd_corrientes ic_inferior_musd_corrientes ic_superior_musd_corrientes mediana_musd_corrientes sd_log
+1      SD                                Viajes              198               2                     919.55                      665.87                     1269.89                 1013.37   2.30
+2      SC                            Transporte              199               1                     451.02                      306.50                      663.67                  475.55   2.76
+3      SJ         Otros servicios empresariales              189              11                     319.40                      207.07                      492.68                  272.38   3.02
+4      SI   Telecom., informática e información              193               7                     184.00                      123.48                      274.20                  142.37   2.81
+5      SL       Bienes y servicios del gobierno              188              12                      57.96                       41.77                       80.43                   60.84   2.28
+6      SG                           Financieros              185              15                      51.02                       31.35                       83.05                   62.99   3.36
+7      SE                          Construcción              153              47                      45.23                       28.71                       71.25                   44.18   2.85
+8      SA Manufactura sobre insumos de terceros              122              78                      35.03                       16.87                       72.72                   61.96   4.08
+9      SF                   Seguros y pensiones              177              23                      27.18                       17.17                       43.05                   27.43   3.10
+10     SK  Personales, culturales y recreativos              167              33                      17.48                       10.40                       29.39                   18.89   3.40
+11     SB            Mantenimiento y reparación              148              52                      11.93                        6.46                       22.04                   14.69   3.78
+12     SH                 Propiedad intelectual              163              37                       9.82                        5.03                       19.16                    9.00   4.32
+
+===== 08_posicion_paises 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+   Reporter      Pais sector                              Servicio valor_medio_musd_corrientes puesto percentil anios_informados interpretable
+1        AR Argentina     SA Manufactura sobre insumos de terceros                        1.08    104     48.24               10          TRUE
+2        AR Argentina     SB            Mantenimiento y reparación                       89.22     51     74.87               10          TRUE
+3        AR Argentina     SC                            Transporte                     1942.56     65     67.84               10          TRUE
+4        AR Argentina     SD                                Viajes                     4210.77     54     73.37               10          TRUE
+5        AR Argentina     SE                          Construcción                        4.83    123     38.69               10          TRUE
+6        AR Argentina     SF                   Seguros y pensiones                       40.99     81     59.80               10          TRUE
+7        AR Argentina     SG                           Financieros                      157.96     69     65.83               10          TRUE
+8        AR Argentina     SH                 Propiedad intelectual                      253.41     38     81.41               10          TRUE
+9        AR Argentina     SI   Telecom., informática e información                     2199.24     42     79.40               10          TRUE
+10       AR Argentina     SJ         Otros servicios empresariales                     4425.94     42     79.40               10          TRUE
+11       AR Argentina     SK  Personales, culturales y recreativos                      375.01     33     83.92               10          TRUE
+12       AR Argentina     SL       Bienes y servicios del gobierno                      200.61     53     73.87               10          TRUE
+13       BR    Brasil     SA Manufactura sobre insumos de terceros                        7.14     83     58.79               10          TRUE
+14       BR    Brasil     SB            Mantenimiento y reparación                     1004.76     18     91.46               10          TRUE
+15       BR    Brasil     SC                            Transporte                     5134.82     40     80.40               10          TRUE
+16       BR    Brasil     SD                                Viajes                     5478.42     48     76.38               10          TRUE
+17       BR    Brasil     SE                          Construcción                       24.31     88     56.28               10          TRUE
+18       BR    Brasil     SF                   Seguros y pensiones                      890.50     25     87.94               10          TRUE
+19       BR    Brasil     SG                           Financieros                      958.42     36     82.41               10          TRUE
+20       BR    Brasil     SH                 Propiedad intelectual                      743.91     30     85.43               10          TRUE
+21       BR    Brasil     SI   Telecom., informática e información                     3323.60     35     82.91               10          TRUE
+22       BR    Brasil     SJ         Otros servicios empresariales                    17123.77     23     88.94               10          TRUE
+23       BR    Brasil     SK  Personales, culturales y recreativos                      579.88     27     86.93               10          TRUE
+24       BR    Brasil     SL       Bienes y servicios del gobierno                      750.47     20     90.45               10          TRUE
+25       CL     Chile     SA Manufactura sobre insumos de terceros                        0.00    123      0.00                0         FALSE
+26       CL     Chile     SB            Mantenimiento y reparación                        0.00    149      0.00                0         FALSE
+27       CL     Chile     SC                            Transporte                     3546.69     52     74.37                8          TRUE
+28       CL     Chile     SD                                Viajes                     2122.50     75     62.81                8          TRUE
+29       CL     Chile     SE                          Construcción                        0.00    154      0.00                0         FALSE
+30       CL     Chile     SF                   Seguros y pensiones                      367.78     38     81.41                8          TRUE
+31       CL     Chile     SG                           Financieros                      262.71     60     70.35                8          TRUE
+32       CL     Chile     SH                 Propiedad intelectual                       56.10     57     71.86                8          TRUE
+33       CL     Chile     SI   Telecom., informática e información                      460.89     73     63.82                8          TRUE
+34       CL     Chile     SJ         Otros servicios empresariales                     1728.39     59     70.85                8          TRUE
+35       CL     Chile     SK  Personales, culturales y recreativos                       52.54     70     65.33                8          TRUE
+36       CL     Chile     SL       Bienes y servicios del gobierno                        0.00    189      0.00                0         FALSE
+37       UY   Uruguay     SA Manufactura sobre insumos de terceros                        0.00    123      0.00               10          TRUE
+38       UY   Uruguay     SB            Mantenimiento y reparación                       34.72     67     66.83               10          TRUE
+39       UY   Uruguay     SC                            Transporte                      587.40     91     54.77               10          TRUE
+40       UY   Uruguay     SD                                Viajes                     2002.03     77     61.81               10          TRUE
+41       UY   Uruguay     SE                          Construcción                        4.14    125     37.69               10          TRUE
+42       UY   Uruguay     SF                   Seguros y pensiones                       29.14     87     56.78               10          TRUE
+43       UY   Uruguay     SG                           Financieros                      308.25     54     73.37               10          TRUE
+44       UY   Uruguay     SH                 Propiedad intelectual                       57.91     56     72.36               10          TRUE
+45       UY   Uruguay     SI   Telecom., informática e información                      958.37     63     68.84               10          TRUE
+46       UY   Uruguay     SJ         Otros servicios empresariales                     1341.80     66     67.34               10          TRUE
+47       UY   Uruguay     SK  Personales, culturales y recreativos                       66.37     66     67.34               10          TRUE
+48       UY   Uruguay     SL       Bienes y servicios del gobierno                       61.71     94     53.27               10          TRUE
+
+===== 09_unidad_observacion 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+                  base                                         unidad  filas columnas combinaciones_unicas paises_informantes socios sectores anios
+1      batis_bilateral         País informante x socio x sector x año 207480       11               207480                  4    203       13    20
+2 batis_mundo_sectores País informante x sector x año (socio = mundo)  51870       10                51870                202      1       13    20
+
+===== 09_tabla_variables 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+                   base                variable                                                                                       descripcion                tipo clase_en_R valores_distintos  nulos pct_nulos ceros
+1       batis_bilateral                Reporter                                      País que informa el flujo (código de 2 letras; Kosovo = 888)          Categórica  character                 4      0      0.00    NA
+2       batis_bilateral                 Partner                  Economía de destino (WL = mundo; ROW = resto del mundo, socios no identificados)          Categórica  character               203      0      0.00    NA
+3       batis_bilateral               Item_code                                  Sector de servicio EBOPS 2010 (S = total; SA a SL = 12 sectores)          Categórica  character                13      0      0.00    NA
+4       batis_bilateral                    Year                                                                                 Año de referencia Temporal (numérica)    integer                20      0      0.00    NA
+5       batis_bilateral          Reported_value                Valor informado por la autoridad estadística del país (millones de USD corrientes)   Numérica continua    numeric              2080 197472     95.18  2387
+6       batis_bilateral             Final_value Valor informado, completado con estimaciones de OCDE-OMC donde falta (millones de USD corrientes)   Numérica continua    numeric            118067      0      0.00 53707
+7       batis_bilateral Final_value_methodology             Código del método con que se obtuvo el valor final (R_ = informado; E y M = estimado)          Categórica  character                19      0      0.00    NA
+8       batis_bilateral          Balanced_value       Valor conciliado entre lo que declaran exportador e importador (millones de USD corrientes)   Numérica continua    numeric            138596      0      0.00 19869
+9       batis_bilateral            nombre_socio                                            Nombre del socio, de la hoja economies del diccionario          Categórica  character               203      0      0.00    NA
+10      batis_bilateral          es_resto_mundo                                                         TRUE si el socio es ROW (resto del mundo)              Lógica    logical                 2      0      0.00    NA
+11      batis_bilateral                  origen           Origen del valor final: informado, derivado o estimado (agrupa Final_value_methodology)          Categórica  character                 3      0      0.00    NA
+12 batis_mundo_sectores                Reporter                                      País que informa el flujo (código de 2 letras; Kosovo = 888)          Categórica  character               202      0      0.00    NA
+13 batis_mundo_sectores                 Partner                  Economía de destino (WL = mundo; ROW = resto del mundo, socios no identificados)          Categórica  character                 1      0      0.00    NA
+14 batis_mundo_sectores               Item_code                                  Sector de servicio EBOPS 2010 (S = total; SA a SL = 12 sectores)          Categórica  character                13      0      0.00    NA
+15 batis_mundo_sectores                    Year                                                                                 Año de referencia Temporal (numérica)    integer                20      0      0.00    NA
+16 batis_mundo_sectores          Reported_value                Valor informado por la autoridad estadística del país (millones de USD corrientes)   Numérica continua    numeric             35916   9567     18.44  4179
+17 batis_mundo_sectores             Final_value Valor informado, completado con estimaciones de OCDE-OMC donde falta (millones de USD corrientes)   Numérica continua    numeric             39322      0      0.00 10119
+18 batis_mundo_sectores Final_value_methodology             Código del método con que se obtuvo el valor final (R_ = informado; E y M = estimado)          Categórica  character                13      0      0.00    NA
+19 batis_mundo_sectores          Balanced_value       Valor conciliado entre lo que declaran exportador e importador (millones de USD corrientes)   Numérica continua    numeric             51168      0      0.00     0
+20 batis_mundo_sectores             nombre_pais                                  Nombre del país informante, de la hoja economies del diccionario          Categórica  character               202      0      0.00    NA
+21 batis_mundo_sectores                  origen           Origen del valor final: informado, derivado o estimado (agrupa Final_value_methodology)          Categórica  character                 3      0      0.00    NA
+                                                                             valores                                                            uso_en_el_analisis
+1                                                                     AR, BR, CL, UY                                                          Agrupa: los 4 países
+2                                        203 valores (primeros: 888, AE, AF, AG, AI)                       Unidad de la concentración: participación de cada socio
+3                                  S, SA, SB, SC, SD, SE, SF, SG, SH, SI, SJ, SK, SL                                                      Agrupa: total y sectores
+4                                                              mín. 2005 / máx. 2024                              Índices año por año; período principal 2015-2024
+5                                                            mín. 0 / máx. 12.023,64                       Calidad del dato: vacío si el país no declaró ese flujo
+6                                                            mín. 0 / máx. 12.023,64                                      Sensibilidad de la concentración (D-029)
+7                                      19 valores (primeros: E0, E1, E6, E8.0, E8.1)                                            Calidad del dato: origen por socio
+8                                                             mín. 0 / máx. 9.683,63                           Medida principal de la concentración (D-023, D-029)
+9            203 valores (primeros: Afghanistan, Albania, Algeria, Angola, Anguilla)                                                            Etiqueta de tablas
+10                                                                       FALSE, TRUE                            Filtro: ROW se excluye de la concentración (D-026)
+11 Derivado de datos informados, Estimado por OCDE-OMC, Informado por fuente oficial                  Calidad del dato: % del valor estimado (05_origen_bilateral)
+12                                       202 valores (primeros: 888, AE, AF, AG, AI)                           Unidad del ANOVA: una observación por país y sector
+13                                                                                WL                                                            No: constante (WL)
+14                                 S, SA, SB, SC, SD, SE, SF, SG, SH, SI, SJ, SK, SL                           Factor del ANOVA: 12 sectores (el total S no entra)
+15                                                             mín. 2005 / máx. 2024                                                         Se promedia 2015-2024
+16                                                           mín. 0 / máx. 1.152.747 Calidad del dato: faltantes reales del valor final (06_faltantes_valor_final)
+17                                                           mín. 0 / máx. 1.152.747                           Variable del ANOVA y del RCA, en log (D-026, D-028)
+18    E0, E1, E2, E3, E4, E5, E6, R_EU_EBOP, R_EU_ITS, R_IMF, R_NAT, R_NAT.1, R_OECD                              Calidad del dato: ceros informados o completados
+19                                                           mín. 0 / máx. 1.296.726                     No: se aparta mucho del final en economías chicas (D-026)
+20           202 valores (primeros: Afghanistan, Albania, Algeria, Angola, Anguilla)                                                            Etiqueta de tablas
+21 Derivado de datos informados, Estimado por OCDE-OMC, Informado por fuente oficial                                    Calidad del dato: años sin valor informado
+
+===== 06_atipicos_mundo_sectores 
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+   Item_code                              Servicio paises_con_valor atipicos_bajos atipicos_altos limite_inferior_miles_usd_corrientes limite_superior_miles_usd_corrientes
+1         SA Manufactura sobre insumos de terceros              122              2              0                                 1.04                           1753699817
+2         SB            Mantenimiento y reparación              148              0              0                                 0.04                           3460440060
+3         SC                            Transporte              199              0              0                               234.50                           1199688532
+4         SD                                Viajes              198              1              0                              2063.21                            538348453
+5         SE                          Construcción              153              1              0                                18.41                            176927282
+6         SF                   Seguros y pensiones              177              2              0                                 8.19                             81966267
+7         SG                           Financieros              185              2              0                                 6.96                            422816076
+8         SH                 Propiedad intelectual              163              2              0                                 0.09                           1021855450
+9         SI   Telecom., informática e información              193              0              0                                21.84                           1335747579
+10        SJ         Otros servicios empresariales              189              0              0                               127.21                            911015313
+11        SK  Personales, culturales y recreativos              167              1              0                                 0.89                            482497192
+12        SL       Bienes y servicios del gobierno              188              5              1                               454.14                             10520341

@@ -1,0 +1,107 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+Attaching package: 'scales'
+
+The following object is masked from 'package:purrr':
+
+    discard
+
+The following object is masked from 'package:readr':
+
+    col_factor
+
+# A tibble: 8 × 9
+  medida     Pais      hhi   cr1   cr4 socios_equivalentes puesto_hhi puesto_cr4
+  <chr>      <chr>   <dbl> <dbl> <dbl>               <dbl>      <int>      <int>
+1 balanceado Chile  0.0897 0.228 0.501               11.1           1          1
+2 balanceado Argen… 0.0878 0.257 0.423               11.4           2          3
+3 balanceado Urugu… 0.0674 0.159 0.470               14.8           3          2
+4 balanceado Brasil 0.0649 0.223 0.356               15.4           4          4
+5 final      Argen… 0.120  0.300 0.519                8.36          1          1
+6 final      Chile  0.0913 0.261 0.454               11.0           2          2
+7 final      Brasil 0.0787 0.261 0.357               12.7           3          4
+8 final      Urugu… 0.0676 0.204 0.423               14.8           4          3
+# ℹ 1 more variable: pct_estimado <dbl>
+# A tibble: 12 × 9
+   medida     indice vecino ar_mas_concentrada Vecino  argentina vecino_promedio
+   <chr>      <chr>  <chr>  <lgl>              <chr>       <dbl>           <dbl>
+ 1 balanceado cr4    BR     TRUE               Brasil       42.3            35.6
+ 2 balanceado hhi    BR     TRUE               Brasil      878.            649. 
+ 3 final      cr4    BR     TRUE               Brasil       51.9            35.7
+ 4 final      hhi    BR     TRUE               Brasil     1196.            787. 
+ 5 balanceado cr4    CL     FALSE              Chile        42.3            50.1
+ 6 balanceado hhi    CL     FALSE              Chile       878.            897. 
+ 7 final      cr4    CL     TRUE               Chile        51.9            45.4
+ 8 final      hhi    CL     TRUE               Chile      1196.            913. 
+ 9 balanceado cr4    UY     FALSE              Uruguay      42.3            47.0
+10 balanceado hhi    UY     TRUE               Uruguay     878.            674. 
+11 final      cr4    UY     TRUE               Uruguay      51.9            42.3
+12 final      hhi    UY     TRUE               Uruguay    1196.            676. 
+   anios_ar_mayor anios
+            <int> <int>
+ 1             10    10
+ 2             10    10
+ 3             10    10
+ 4             10    10
+ 5              0    10
+ 6              5    10
+ 7             10    10
+ 8             10    10
+ 9              1    10
+10             10    10
+11             10    10
+12             10    10
+# A tibble: 20 × 4
+   Pais      puesto nombre_socio             participacion_pct
+   <chr>      <int> <chr>                                <dbl>
+ 1 Argentina      1 United States of America             25.5 
+ 2 Argentina      2 Brazil                                6.80
+ 3 Argentina      3 Chile                                 5.31
+ 4 Argentina      4 Uruguay                               4.22
+ 5 Argentina      5 Spain                                 3.73
+ 6 Brasil         1 United States of America             22.1 
+ 7 Brasil         2 China                                 4.81
+ 8 Brasil         3 Netherlands                           3.78
+ 9 Brasil         4 Germany                               3.65
+10 Brasil         5 Argentina                             3.49
+11 Chile          1 United States of America             23.1 
+12 Chile          2 China                                10.6 
+13 Chile          3 Argentina                             8.08
+14 Chile          4 Brazil                                6.21
+15 Chile          5 Japan                                 5.94
+16 Uruguay        1 Argentina                            15.7 
+17 Uruguay        2 United States of America             12.8 
+18 Uruguay        3 China                                 9.96
+19 Uruguay        4 Brazil                                8.56
+20 Uruguay        5 Spain                                 4.38
+# A tibble: 8 × 7
+  medida     Reporter socios_eq_min socios_eq_max sector_mas_concentrado
+  <chr>      <chr>            <dbl>         <dbl> <chr>                 
+1 balanceado AR                2.04          18.9 SK                    
+2 balanceado BR                3.16          20.1 SG                    
+3 balanceado CL                2.49          16.8 SK                    
+4 balanceado UY                5.78          20.9 SA                    
+5 final      AR                2.43          16.4 SK                    
+6 final      BR                4.44          35.0 SA                    
+7 final      CL                5.47          17.2 SF                    
+8 final      UY                6.34          33.2 SL                    
+# ℹ 2 more variables: sector_menos_concentrado <chr>, cv_hhi <dbl>
+Economías en la base de RCA: 199 
+Mediana mundial de sectores con ventaja: 3 
+# A tibble: 4 × 6
+  pais  Pais    nombre_pais sectores_con_ventaja pct_economias_con_me…¹ sectores
+  <chr> <chr>   <chr>                      <int>                  <dbl> <chr>   
+1 AR    Argent… Argentina                      5                   82.8 SD, SI,…
+2 BR    Brasil  Brazil                         4                   58.1 SB, SJ,…
+3 CL    Chile   Chile                          3                   27.8 SC, SD,…
+4 UY    Uruguay Uruguay                        3                   27.8 SD, SI,…
+# ℹ abbreviated name: ¹​pct_economias_con_menos

@@ -1,0 +1,193 @@
+=== Dimensiones
+[1] 207480     11
+[1] 51870    10
+=== NA por variable bilateral
+               Reporter                 Partner               Item_code 
+                      0                       0                       0 
+                   Year          Reported_value             Final_value 
+                      0                  197472                       0 
+Final_value_methodology          Balanced_value            nombre_socio 
+                      0                       0                       0 
+         es_resto_mundo                  origen 
+                      0                       0 
+=== NA por variable mundo
+               Reporter                 Partner               Item_code 
+                      0                       0                       0 
+                   Year          Reported_value             Final_value 
+                      0                    9567                       0 
+Final_value_methodology          Balanced_value             nombre_pais 
+                      0                       0                       0 
+                 origen 
+                      0 
+dup bil: 0  dup mun: 0 
+Namibia como socio: 1040  como informante: 260 
+=== Total S 2015-2024: HHI, CR1, CR4, 1/mean(HHI)
+# A tibble: 8 × 6
+  medida     Reporter   hhi   cr1   cr4   seq
+  <chr>      <chr>    <dbl> <dbl> <dbl> <dbl>
+1 balanceado AR        878.  25.7  42.3 11.4 
+2 balanceado BR        649.  22.3  35.6 15.4 
+3 balanceado CL        897.  22.8  50.1 11.1 
+4 balanceado UY        674.  15.9  47.0 14.8 
+5 final      AR       1196.  30.0  51.9  8.36
+6 final      BR        787.  26.1  35.7 12.7 
+7 final      CL        913.  26.1  45.4 11.0 
+8 final      UY        676.  20.4  42.3 14.8 
+=== Anios 2015-2024 en que AR > vecino (HHI y CR4)
+# A tibble: 6 × 4
+  medida     Reporter hhi_ar_mayor cr4_ar_mayor
+  <chr>      <chr>           <int>        <int>
+1 balanceado BR                 10           10
+2 balanceado CL                  5            0
+3 balanceado UY                 10            1
+4 final      BR                 10           10
+5 final      CL                 10           10
+6 final      UY                 10           10
+=== HHI anual S x10000, balanceado y final, 2005-2024
+# A tibble: 40 × 8
+   medida      Year    AR    BR    CL    UY CL_gt_AR BR_gt_AR
+   <chr>      <dbl> <dbl> <dbl> <dbl> <dbl> <lgl>    <lgl>   
+ 1 balanceado  2005   664   662   718   836 TRUE     FALSE   
+ 2 balanceado  2006   670   817   724   842 TRUE     TRUE    
+ 3 balanceado  2007   652   813   671   845 TRUE     TRUE    
+ 4 balanceado  2008   648   821   671   772 TRUE     TRUE    
+ 5 balanceado  2009   689   934   682   770 FALSE    TRUE    
+ 6 balanceado  2010   712   890   701   962 FALSE    TRUE    
+ 7 balanceado  2011   725   701   736   877 TRUE     FALSE   
+ 8 balanceado  2012   738   801   772   685 TRUE     TRUE    
+ 9 balanceado  2013   710   731   727   745 TRUE     TRUE    
+10 balanceado  2014   714   780   714   715 FALSE    TRUE    
+11 balanceado  2015   859   747   787   708 FALSE    FALSE   
+12 balanceado  2016   879   702   851   752 FALSE    FALSE   
+13 balanceado  2017   986   692   888   796 FALSE    FALSE   
+14 balanceado  2018   900   612   863   743 FALSE    FALSE   
+15 balanceado  2019   839   634   895   659 TRUE     FALSE   
+16 balanceado  2020  1006   734   797   649 FALSE    FALSE   
+17 balanceado  2021   951   687   965   533 TRUE     FALSE   
+18 balanceado  2022   797   583   964   649 TRUE     FALSE   
+19 balanceado  2023   752   553   990   670 TRUE     FALSE   
+20 balanceado  2024   814   548   972   586 TRUE     FALSE   
+21 final       2005  1128  1485   726   989 FALSE    TRUE    
+22 final       2006  1130  1481   727   787 FALSE    TRUE    
+23 final       2007  1130  1419   719   711 FALSE    TRUE    
+24 final       2008  1128  1400   730   504 FALSE    TRUE    
+25 final       2009  1131  1513   730   524 FALSE    TRUE    
+26 final       2010  1127  1270   699   509 FALSE    TRUE    
+27 final       2011  1126   723   714   512 FALSE    FALSE   
+28 final       2012  1141   904   758   537 FALSE    FALSE   
+29 final       2013  1115   717   774   562 FALSE    FALSE   
+30 final       2014  1125   797   762   585 FALSE    FALSE   
+31 final       2015  1203   745   807   671 FALSE    FALSE   
+32 final       2016  1057   692   851   653 FALSE    FALSE   
+33 final       2017  1162   752   869   655 FALSE    FALSE   
+34 final       2018  1083   718   880   650 FALSE    FALSE   
+35 final       2019  1048   741   890   673 FALSE    FALSE   
+36 final       2020  1433   973   926   718 FALSE    FALSE   
+37 final       2021  1453   942   999   671 FALSE    FALSE   
+38 final       2022  1219   862   965   690 FALSE    FALSE   
+39 final       2023  1126   719   964   690 FALSE    FALSE   
+40 final       2024  1176   730   977   683 FALSE    FALSE   
+=== CR4 anual S, balanceado 2015-2024
+# A tibble: 10 × 5
+    Year    AR    BR    CL    UY
+   <dbl> <dbl> <dbl> <dbl> <dbl>
+ 1  2015  44.7  39.3  47.8  50  
+ 2  2016  41.5  37.1  50.7  50.1
+ 3  2017  43.2  37.1  52.5  50.9
+ 4  2018  42.7  36.1  49.1  48  
+ 5  2019  41.7  35.9  49.1  46.8
+ 6  2020  43    36.9  48.2  45.9
+ 7  2021  42.8  35.7  52.3  41.8
+ 8  2022  40.8  33.5  48.9  46.9
+ 9  2023  40.9  31.8  51.3  45.8
+10  2024  41.5  32.8  51.4  44.1
+=== Sensibilidad por periodo (S)
+# A tibble: 8 × 4
+  medida     Reporter `05-14` `15-24`
+  <chr>      <chr>      <dbl>   <dbl>
+1 balanceado AR           692     878
+2 balanceado BR           795     649
+3 balanceado CL           712     897
+4 balanceado UY           805     674
+5 final      AR          1128    1196
+6 final      BR          1171     787
+7 final      CL           734     913
+8 final      UY           622     676
+=== Sectores 2015-2024: socios equivalentes = 1/mean(HHI)
+# A tibble: 12 × 8
+   medida     Reporter Item_code   hhi   cr1     n top     seq
+   <chr>      <chr>    <chr>     <dbl> <dbl> <int> <chr> <dbl>
+ 1 balanceado AR       SK        4913.  67.1    10 US     2.04
+ 2 balanceado AR       SA        2507.  40.5    10 PY     3.99
+ 3 balanceado AR       SG        2253.  43.7    10 US     4.44
+ 4 balanceado AR       SH        2218.  41.9    10 US     4.51
+ 5 balanceado AR       SI        1241.  30.7    10 US     8.06
+ 6 balanceado AR       SJ        1094.  29.2    10 US     9.14
+ 7 balanceado AR       SE        1013.  23.4    10 DK     9.87
+ 8 balanceado AR       SF         745.  17.6    10 US    13.4 
+ 9 balanceado AR       SL         707.  16      10 AE    14.1 
+10 balanceado AR       SD         626.  13.8    10 BR    16.0 
+11 balanceado AR       SB         528.  12.6    10 SA    18.9 
+12 balanceado AR       SC         528.  12.9    10 CL    18.9 
+=== CV del HHI entre sectores y extremos
+# A tibble: 8 × 8
+  medida     Reporter    cv min_seq max_seq s_min s_max     n
+  <chr>      <chr>    <dbl>   <dbl>   <dbl> <chr> <chr> <int>
+1 balanceado AR       0.837    2.04    18.9 SK    SC       10
+2 balanceado BR       0.714    3.16    20.1 SG    SC       10
+3 balanceado CL       0.649    2.49    16.8 SK    SJ       10
+4 balanceado UY       0.36     5.78    20.9 SA    SC       10
+5 final      AR       0.548    2.43    16.4 SK    SC        4
+6 final      BR       0.594    4.44    35.0 SA    SD       10
+7 final      CL       0.31     5.47    17.2 SF    SJ       10
+8 final      UY       0.419    6.34    33.2 SL    SE        1
+=== Brasil: codigos de metodologia del total por socio 2005-2014 (peso en balanceado)
+# A tibble: 35 × 4
+# Groups:   Year [10]
+    Year Final_value_methodology      v   pct
+   <dbl> <chr>                    <dbl> <dbl>
+ 1  2005 E8.2                    11317.  78.8
+ 2  2005 M1.1                     2237.  15.6
+ 3  2005 M1.3                      667.   4.6
+ 4  2006 E8.2                    14226.  79.5
+ 5  2006 M1.1                     2637.  14.7
+ 6  2006 M1.3                      887.   5  
+ 7  2007 E8.2                    16934.  78.5
+ 8  2007 M1.1                     3299.  15.3
+ 9  2007 M1.3                     1149.   5.3
+10  2008 E8.2                    22006.  78.8
+11  2008 M1.1                     4166.  14.9
+12  2008 M1.3                     1492.   5.3
+13  2009 E8.2                    20300.  79.5
+14  2009 M1.1                     3663.  14.4
+15  2009 M1.3                     1339.   5.2
+16  2010 R_NAT                   22212.  77.2
+17  2010 M1.1                     4670.  16.2
+18  2010 M1.3                     1623.   5.6
+19  2011 R_NAT                   22593.  65.4
+20  2011 M1.1                     8407.  24.3
+21  2011 M1.3                     2927.   8.5
+22  2011 M1.5                      597.   1.7
+23  2012 R_NAT                   23601.  66  
+24  2012 M1.1                     8687.  24.3
+25  2012 M1.3                     2936.   8.2
+26  2012 M1.5                      557.   1.6
+27  2013 R_NAT                   23480.  65.9
+28  2013 M1.1                     8544.  24  
+29  2013 M1.3                     3057.   8.6
+30  2013 M1.5                      571.   1.6
+31  2014 R_NAT                   25289.  65.7
+32  2014 M1.1                     7805.  20.3
+33  2014 M1.3                     3069.   8  
+34  2014 E6                       1809.   4.7
+35  2014 M1.5                      522.   1.4
+=== Argentina: codigos 2005-2014
+# A tibble: 6 × 3
+  Final_value_methodology          v   pct
+  <chr>                        <dbl> <dbl>
+1 E8.0                      139.       0.1
+2 E8.1                        2.21     0  
+3 E8.2                    98334.      99.8
+4 M1.2                        0.392    0  
+5 M1.5                       16.6      0  
+6 M8.2                        0.0317   0  

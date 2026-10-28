@@ -1,0 +1,21 @@
+Friedman propio con empates: 1220.841  W: 0.5549279  p: 5.216178e-255 
+=== Ceros bilaterales 2015-2024, sectores, sin ROW: codigo del valor final
+total: 7978 
+# A tibble: 4 × 4
+  Reporter    E0 `R_ (declarado)` `otra estimacion`
+  <chr>    <int>            <int>             <int>
+1 AR        1011              144              1469
+2 BR           0                0               625
+3 CL          32                0              2753
+4 UY           0                0              1944
+=== Sectores AR con final: anios con total > 0
+# A tibble: 4 × 3
+  Reporter Item_code anios_pos
+  <chr>    <chr>         <int>
+1 AR       SA                4
+2 AR       SE                9
+3 UY       SA                0
+4 UY       SE                1
+=== BR sensibilidad 2010-2014 vs 2015-2024 balanceado y final
+Balanced_value  05-09: 809.2395  10-14: 780.8334  15-24: 649.2182 
+Final_value  05-09: 1459.724  10-14: 882.2447  15-24: 787.2936 

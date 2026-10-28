@@ -1,0 +1,55 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+# A tibble: 7 × 2
+  Reporter anios_presentes
+  <chr>              <int>
+1 888                   17
+2 AN                     6
+3 CW                    14
+4 ME                    19
+5 RS                    19
+6 SX                    14
+7 YU                     1
+# A tibble: 2 × 9
+  base        filas filas_esperadas combinaciones_faltan…¹ filas_fuera_de_grilla
+  <chr>       <int>           <int>                  <int>                 <dbl>
+1 bilateral  207480          207480                      0                     0
+2 mundo_sec…  51870           51870                      0                     0
+# ℹ abbreviated name: ¹​combinaciones_faltantes
+# ℹ 4 more variables: informantes <int>, socios <dbl>, nulos_balanceado <int>,
+#   ceros_balanceado <int>
+Máxima diferencia absoluta entre suma de socios y total al mundo: 1.4e-05 millones de USD
+Máxima diferencia entre suma de sectores y total (S): 0.166303 millones de USD
+# A tibble: 20 × 7
+   Reporter  Year valor_total pct_valor_informado pct_valor_derivado
+   <chr>    <int>       <dbl>               <dbl>              <dbl>
+ 1 AR        2005       5870.                 0                  0  
+ 2 AR        2010      10442.                 0                  0  
+ 3 AR        2015      11703.                42.8               57.1
+ 4 AR        2020       8943.                78.5               21.2
+ 5 AR        2024      15314.                67.9               32.1
+ 6 BR        2005      14429.                 0                  0  
+ 7 BR        2010      28934.                76.8                0  
+ 8 BR        2015      35518.                70.0                0  
+ 9 BR        2020      26552.                68.8                0  
+10 BR        2024      45798.                62.4                0  
+11 CL        2005       6280.                 0                  0  
+12 CL        2010      10262.                 0                  0  
+13 CL        2015      11020.                 0                  0  
+14 CL        2020       8184.                 0                  0  
+15 CL        2024      17587.                 0                  0  
+16 UY        2005       1722.                 0                  0  
+17 UY        2010       3446.                 0                  0  
+18 UY        2015       4828.                 0                  0  
+19 UY        2020       3673.                 0                  0  
+20 UY        2024       6557.                 0                  0  
+# ℹ 2 more variables: pct_valor_estimado <dbl>, socios_con_dato_oficial <int>
+Peso máximo de ROW en el total de un país-año: 0.67 %

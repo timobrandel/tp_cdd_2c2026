@@ -1,0 +1,68 @@
+[1] "Reporter"                    "Pais"                        "sector"                      "Servicio"                    "valor_medio_musd_corrientes" "puesto"                      "percentil"                  
+[8] "anios_informados"            "interpretable"              
+   Reporter      Pais sector                              Servicio valor_medio_musd_corrientes puesto percentil anios_informados interpretable
+1        AR Argentina     SA Manufactura sobre insumos de terceros                        1.08    104     48.24               10          TRUE
+2        AR Argentina     SB            Mantenimiento y reparación                       89.22     51     74.87               10          TRUE
+3        AR Argentina     SC                            Transporte                     1942.56     65     67.84               10          TRUE
+4        AR Argentina     SD                                Viajes                     4210.77     54     73.37               10          TRUE
+5        AR Argentina     SE                          Construcción                        4.83    123     38.69               10          TRUE
+6        AR Argentina     SF                   Seguros y pensiones                       40.99     81     59.80               10          TRUE
+7        AR Argentina     SG                           Financieros                      157.96     69     65.83               10          TRUE
+8        AR Argentina     SH                 Propiedad intelectual                      253.41     38     81.41               10          TRUE
+9        AR Argentina     SI   Telecom., informática e información                     2199.24     42     79.40               10          TRUE
+10       AR Argentina     SJ         Otros servicios empresariales                     4425.94     42     79.40               10          TRUE
+11       AR Argentina     SK  Personales, culturales y recreativos                      375.01     33     83.92               10          TRUE
+12       AR Argentina     SL       Bienes y servicios del gobierno                      200.61     53     73.87               10          TRUE
+13       BR    Brasil     SA Manufactura sobre insumos de terceros                        7.14     83     58.79               10          TRUE
+14       BR    Brasil     SB            Mantenimiento y reparación                     1004.76     18     91.46               10          TRUE
+15       BR    Brasil     SC                            Transporte                     5134.82     40     80.40               10          TRUE
+16       BR    Brasil     SD                                Viajes                     5478.42     48     76.38               10          TRUE
+17       BR    Brasil     SE                          Construcción                       24.31     88     56.28               10          TRUE
+18       BR    Brasil     SF                   Seguros y pensiones                      890.50     25     87.94               10          TRUE
+19       BR    Brasil     SG                           Financieros                      958.42     36     82.41               10          TRUE
+20       BR    Brasil     SH                 Propiedad intelectual                      743.91     30     85.43               10          TRUE
+21       BR    Brasil     SI   Telecom., informática e información                     3323.60     35     82.91               10          TRUE
+22       BR    Brasil     SJ         Otros servicios empresariales                    17123.77     23     88.94               10          TRUE
+23       BR    Brasil     SK  Personales, culturales y recreativos                      579.88     27     86.93               10          TRUE
+24       BR    Brasil     SL       Bienes y servicios del gobierno                      750.47     20     90.45               10          TRUE
+       Pais crecimiento_acumulado_2005_2024_pct_final crecimiento_acumulado_2005_2024_pct_balanceado tasa_anual_compuesta_2005_2024_pct_final tasa_anual_compuesta_2005_2024_pct_balanceado
+1 Argentina                                    165.13                                         160.88                                     5.27                                          5.18
+2    Brasil                                    228.37                                         217.41                                     6.46                                          6.27
+3     Chile                                     76.37                                         180.05                                     3.03                                          5.57
+4   Uruguay                                    429.89                                         280.75                                     9.17                                          7.29
+  tasa_anual_compuesta_2005_2022_pct_final tasa_anual_compuesta_2005_2022_pct_balanceado puesto_2005_2024_final puesto_2005_2024_balanceado puesto_2005_2022_final puesto_2005_2022_balanceado
+1                                     4.84                                          4.84                      3                           4                      3                           3
+2                                     6.08                                          6.05                      2                           2                      2                           2
+3                                     1.47                                          4.26                      4                           3                      4                           4
+4                                     9.26                                          7.25                      1                           1                      1                           1
+       Pais Year conocimiento_final conocimiento_balanceado viajes_final viajes_balanceado
+1 Argentina 2005              31.06                   23.64        42.26             42.80
+2 Argentina 2024              50.97                   36.48        28.96             33.59
+3    Brasil 2005              42.61                   29.40        26.16             25.73
+4    Brasil 2024              53.76                   38.74        15.14             17.29
+5     Chile 2005              13.69                   13.37        15.64             21.59
+6     Chile 2024              29.58                   21.52        26.40             27.18
+7   Uruguay 2005              11.59                   12.20        45.33             49.38
+8   Uruguay 2024              47.16                   30.38        31.51             41.53
+       Pais valor_2005 valor_2022 valor_2024 crecimiento_acumulado_2005_2024_pct tasa_anual_compuesta_2005_2024_pct tasa_anual_compuesta_2005_2022_pct
+1   Uruguay    1311.28    5909.13    6948.32                              429.89                               9.17                               9.26
+2    Brasil   14762.69   40291.25   48476.77                              228.37                               6.46                               6.08
+3 Argentina    6458.06   14413.68   17122.41                              165.13                               5.27                               4.84
+4     Chile    6658.50    8529.40   11743.83                               76.37                               3.03                               1.47
+       Pais anio_2019 anio_2020 anio_2024 caida_2020_vs_2019_pct nivel_2024_vs_2019_pct rebote_2024_vs_2020_pct
+1 Argentina  14802.42   9491.74  17122.41                 -35.88                  15.67                   80.39
+2    Brasil  33033.12  27513.93  48476.77                 -16.71                  46.75                   76.19
+3     Chile   8462.40   5554.50  11743.83                 -34.36                  38.78                  111.43
+4   Uruguay   5523.82   3914.92   6948.32                 -29.13                  25.79                   77.48
+  Item_code socio_principal cr1_pct
+1        SA              PY   40.46
+2        SG              US   43.65
+3        SH              US   41.85
+4        SK              US   67.13
+# A tibble: 4 × 5
+  Reporter     mn     mx  smin  smax
+  <chr>     <dbl>  <dbl> <dbl> <dbl>
+1 AR         0.03   0.35   141   167
+2 BR        30     37.6     37    37
+3 CL       100    100        0     0
+4 UY       100    100        0     0

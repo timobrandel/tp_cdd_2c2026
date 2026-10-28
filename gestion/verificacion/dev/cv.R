@@ -1,0 +1,6 @@
+suppressMessages(library(tidyverse))
+s <- read_csv2("output/tablas/07_concentracion_sectores.csv", show_col_types = FALSE)
+print(s |> filter(Item_code != "S") |> group_by(medida, Reporter) |> summarise(cv = sd(hhi_x10000)/mean(hhi_x10000), .groups="drop"))
+p <- read_csv2("output/tablas/07_sensibilidad_periodo.csv", show_col_types = FALSE)
+print(p |> select(medida, Reporter, periodo, hhi_x10000) |> pivot_wider(names_from = periodo, values_from = hhi_x10000))
+print(s |> filter(Reporter == "AR", Item_code == "SK") |> select(medida, cr1_pct, hhi_x10000, socios_equivalentes, socio_principal))

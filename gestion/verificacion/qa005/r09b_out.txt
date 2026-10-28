@@ -1,0 +1,135 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+# A tibble: 2 × 9
+  base                 unidad                                          filas
+  <chr>                <chr>                                           <int>
+1 batis_bilateral      País informante x socio x sector x año         207480
+2 batis_mundo_sectores País informante x sector x año (socio = mundo)  51870
+  columnas combinaciones_unicas paises_informantes socios sectores anios
+     <int>                <int>              <int>  <int>    <int> <int>
+1       11               207480                  4    203       13    20
+2       10                51870                202      1       13    20
+# A tibble: 21 × 11
+   base                 variable               
+   <chr>                <chr>                  
+ 1 batis_bilateral      Reporter               
+ 2 batis_bilateral      Partner                
+ 3 batis_bilateral      Item_code              
+ 4 batis_bilateral      Year                   
+ 5 batis_bilateral      Reported_value         
+ 6 batis_bilateral      Final_value            
+ 7 batis_bilateral      Final_value_methodology
+ 8 batis_bilateral      Balanced_value         
+ 9 batis_bilateral      nombre_socio           
+10 batis_bilateral      es_resto_mundo         
+11 batis_bilateral      origen                 
+12 batis_mundo_sectores Reporter               
+13 batis_mundo_sectores Partner                
+14 batis_mundo_sectores Item_code              
+15 batis_mundo_sectores Year                   
+16 batis_mundo_sectores Reported_value         
+17 batis_mundo_sectores Final_value            
+18 batis_mundo_sectores Final_value_methodology
+19 batis_mundo_sectores Balanced_value         
+20 batis_mundo_sectores nombre_pais            
+21 batis_mundo_sectores origen                 
+   descripcion                                                                  
+   <chr>                                                                        
+ 1 País que informa el flujo (código de 2 letras; Kosovo = 888)                 
+ 2 Economía de destino (WL = mundo; ROW = resto del mundo, socios no identifica…
+ 3 Sector de servicio EBOPS 2010 (S = total; SA a SL = 12 sectores)             
+ 4 Año de referencia                                                            
+ 5 Valor informado por la autoridad estadística del país (millones de USD corri…
+ 6 Valor informado, completado con estimaciones de OCDE-OMC donde falta (millon…
+ 7 Código del método con que se obtuvo el valor final (R_ = informado; E y M = …
+ 8 Valor conciliado entre lo que declaran exportador e importador (millones de …
+ 9 Nombre del socio, de la hoja economies del diccionario                       
+10 TRUE si el socio es ROW (resto del mundo)                                    
+11 Origen del valor final: informado, derivado o estimado (agrupa Final_value_m…
+12 País que informa el flujo (código de 2 letras; Kosovo = 888)                 
+13 Economía de destino (WL = mundo; ROW = resto del mundo, socios no identifica…
+14 Sector de servicio EBOPS 2010 (S = total; SA a SL = 12 sectores)             
+15 Año de referencia                                                            
+16 Valor informado por la autoridad estadística del país (millones de USD corri…
+17 Valor informado, completado con estimaciones de OCDE-OMC donde falta (millon…
+18 Código del método con que se obtuvo el valor final (R_ = informado; E y M = …
+19 Valor conciliado entre lo que declaran exportador e importador (millones de …
+20 Nombre del país informante, de la hoja economies del diccionario             
+21 Origen del valor final: informado, derivado o estimado (agrupa Final_value_m…
+   tipo                clase_en_R valores_distintos  nulos pct_nulos ceros
+   <chr>               <chr>                  <int>  <int>     <dbl> <int>
+ 1 Categórica          character                  4      0       0      NA
+ 2 Categórica          character                203      0       0      NA
+ 3 Categórica          character                 13      0       0      NA
+ 4 Temporal (numérica) integer                   20      0       0      NA
+ 5 Numérica continua   numeric                 2080 197472      95.2  2387
+ 6 Numérica continua   numeric               118067      0       0   53707
+ 7 Categórica          character                 19      0       0      NA
+ 8 Numérica continua   numeric               138596      0       0   19869
+ 9 Categórica          character                203      0       0      NA
+10 Lógica              logical                    2      0       0      NA
+11 Categórica          character                  3      0       0      NA
+12 Categórica          character                202      0       0      NA
+13 Categórica          character                  1      0       0      NA
+14 Categórica          character                 13      0       0      NA
+15 Temporal (numérica) integer                   20      0       0      NA
+16 Numérica continua   numeric                35916   9567      18.4  4179
+17 Numérica continua   numeric                39322      0       0   10119
+18 Categórica          character                 13      0       0      NA
+19 Numérica continua   numeric                51168      0       0       0
+20 Categórica          character                202      0       0      NA
+21 Categórica          character                  3      0       0      NA
+   valores                                                                      
+   <chr>                                                                        
+ 1 AR, BR, CL, UY                                                               
+ 2 203 valores (primeros: 888, AE, AF, AG, AI)                                  
+ 3 S, SA, SB, SC, SD, SE, SF, SG, SH, SI, SJ, SK, SL                            
+ 4 mín. 2005 / máx. 2024                                                        
+ 5 mín. 0 / máx. 12.023,64                                                      
+ 6 mín. 0 / máx. 12.023,64                                                      
+ 7 19 valores (primeros: E0, E1, E6, E8.0, E8.1)                                
+ 8 mín. 0 / máx. 9.683,63                                                       
+ 9 203 valores (primeros: Afghanistan, Albania, Algeria, Angola, Anguilla)      
+10 FALSE, TRUE                                                                  
+11 Derivado de datos informados, Estimado por OCDE-OMC, Informado por fuente of…
+12 202 valores (primeros: 888, AE, AF, AG, AI)                                  
+13 WL                                                                           
+14 S, SA, SB, SC, SD, SE, SF, SG, SH, SI, SJ, SK, SL                            
+15 mín. 2005 / máx. 2024                                                        
+16 mín. 0 / máx. 1.152.747                                                      
+17 mín. 0 / máx. 1.152.747                                                      
+18 E0, E1, E2, E3, E4, E5, E6, R_EU_EBOP, R_EU_ITS, R_IMF, R_NAT, R_NAT.1, R_OE…
+19 mín. 0 / máx. 1.296.726                                                      
+20 202 valores (primeros: Afghanistan, Albania, Algeria, Angola, Anguilla)      
+21 Derivado de datos informados, Estimado por OCDE-OMC, Informado por fuente of…
+   uso_en_el_analisis                                                           
+   <chr>                                                                        
+ 1 Agrupa: los 4 países                                                         
+ 2 Unidad de la concentración: participación de cada socio                      
+ 3 Agrupa: total y sectores                                                     
+ 4 Índices año por año; período principal 2015-2024                             
+ 5 Calidad del dato: vacío si el país no declaró ese flujo                      
+ 6 Sensibilidad de la concentración (D-029)                                     
+ 7 Calidad del dato: origen por socio                                           
+ 8 Medida principal de la concentración (D-023, D-029)                          
+ 9 Etiqueta de tablas                                                           
+10 Filtro: ROW se excluye de la concentración (D-026)                           
+11 Calidad del dato: % del valor estimado (05_origen_bilateral)                 
+12 Unidad del ANOVA: una observación por país y sector                          
+13 No: constante (WL)                                                           
+14 Factor del ANOVA: 12 sectores (el total S no entra)                          
+15 Se promedia 2015-2024                                                        
+16 Calidad del dato: faltantes reales del valor final (06_faltantes_valor_final)
+17 Variable del ANOVA y del RCA, en log (D-026, D-028)                          
+18 Calidad del dato: ceros informados o completados                             
+19 No: se aparta mucho del final en economías chicas (D-026)                    
+20 Etiqueta de tablas                                                           
+21 Calidad del dato: años sin valor informado                                   

@@ -1,0 +1,17 @@
+suppressPackageStartupMessages(library(tidyverse))
+options(width=220, pillar.width=220)
+rt <- function(f) read_csv2(file.path("output/tablas", f), show_col_types=FALSE)
+cs <- rt("07_concentracion_sectores.csv"); print(names(cs))
+x <- cs |> filter(Item_code!="S")
+cat("== rangos y cocientes, todas las filas vs anios==10\n")
+print(x |> group_by(medida, Reporter) |> summarise(n=n(), n10=sum(anios==10), mn=min(socios_equivalentes), mx=max(socios_equivalentes), ratio=mx/mn,
+   mn10=min(socios_equivalentes[anios==10]), mx10=max(socios_equivalentes[anios==10]), ratio10=mx10/mn10,
+   cv=sd(hhi_x10000)/mean(hhi_x10000), cv10=sd(hhi_x10000[anios==10])/mean(hhi_x10000[anios==10]), .groups="drop") |> as.data.frame())
+cat("== filas con anios<10\n"); print(x |> filter(anios<10) |> select(medida,Reporter,Item_code,anios,socios_equivalentes) |> as.data.frame())
+cat("== AR bal SA, SK, SG, SH, SB, SC, SI, SJ\n"); print(x |> filter(Reporter=="AR") |> select(any_of(c("medida","Item_code","anios","socios_equivalentes","cr1","socio_principal","pct_estimado"))) |> as.data.frame())
+cm <- rt("07_comparacion_medidas.csv"); print(as.data.frame(cm))
+dr <- rt("06_diagnostico_resumen.csv"); print(as.data.frame(dr))
+ob <- rt("05_origen_bilateral.csv"); print(names(ob))
+pp <- rt("08_posicion_paises.csv"); print(pp |> filter(Reporter %in% c("AR","BR")) |> group_by(Reporter) |> summarise(mn=min(percentil), mx=max(percentil), imin=Item_code[which.min(percentil)], imax=Item_code[which.max(percentil)]))
+c4 <- rt("04_crecimiento.csv"); print(as.data.frame(c4))
+rc <- rt("03_robustez_composicion.csv"); print(as.data.frame(rc))

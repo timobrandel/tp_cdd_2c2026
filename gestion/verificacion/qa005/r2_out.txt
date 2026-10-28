@@ -1,0 +1,119 @@
+
+===== 03_crecimiento 
+       Pais valor_2005 valor_2022 valor_2024 crecimiento_acumulado_2005_2024_pct tasa_anual_compuesta_2005_2024_pct tasa_anual_compuesta_2005_2022_pct
+1   Uruguay    1311.28    5909.13    6948.32                              429.89                               9.17                               9.26
+2    Brasil   14762.69   40291.25   48476.77                              228.37                               6.46                               6.08
+3 Argentina    6458.06   14413.68   17122.41                              165.13                               5.27                               4.84
+4     Chile    6658.50    8529.40   11743.83                               76.37                               3.03                               1.47
+
+===== 03_pandemia 
+       Pais anio_2019 anio_2020 anio_2024 caida_2020_vs_2019_pct nivel_2024_vs_2019_pct rebote_2024_vs_2020_pct
+1 Argentina  14802.42   9491.74  17122.41                 -35.88                  15.67                   80.39
+2    Brasil  33033.12  27513.93  48476.77                 -16.71                  46.75                   76.19
+3     Chile   8462.40   5554.50  11743.83                 -34.36                  38.78                  111.43
+4   Uruguay   5523.82   3914.92   6948.32                 -29.13                  25.79                   77.48
+
+===== 03_robustez_composicion 
+       Pais Year conocimiento_final conocimiento_balanceado viajes_final viajes_balanceado
+1 Argentina 2005              31.06                   23.64        42.26             42.80
+2 Argentina 2024              50.97                   36.48        28.96             33.59
+3    Brasil 2005              42.61                   29.40        26.16             25.73
+4    Brasil 2024              53.76                   38.74        15.14             17.29
+5     Chile 2005              13.69                   13.37        15.64             21.59
+6     Chile 2024              29.58                   21.52        26.40             27.18
+7   Uruguay 2005              11.59                   12.20        45.33             49.38
+8   Uruguay 2024              47.16                   30.38        31.51             41.53
+
+===== 02_unidad_observacion 
+  filas columnas combinaciones_unicas filas_duplicadas paises anios categorias
+1  1040       12                 1040                0      4    20         13
+
+===== 06_atipicos_mundo_detalle 
+   Item_code                              Servicio Reporter                            nombre_pais tipo_atipico valor_medio_miles_usd_corrientes pct_estimado anios_en_cero anios_informados
+1         SA Manufactura sobre insumos de terceros       CG                                  Congo         bajo                             0.34           40             9                4
+2         SA Manufactura sobre insumos de terceros       AW Aruba, the Netherlands with respect to         bajo                             0.23           10             9                9
+3         SD                                Viajes       PG                       Papua New Guinea         bajo                          1702.09           10             0                9
+4         SE                          Construcción       KN                  Saint Kitts and Nevis         bajo                             2.28            0             8               10
+5         SF                   Seguros y pensiones       AW Aruba, the Netherlands with respect to         bajo                             2.43           10             3                9
+6         SF                   Seguros y pensiones       ST                  Sao Tomé and Principe         bajo                             2.05           20             5                8
+7         SG                           Financieros       MS                             Montserrat         bajo                             2.53            0             3               10
+8         SG                           Financieros       AO                                 Angola         bajo                             1.60            0             9               10
+9         SH                 Propiedad intelectual       DM                               Dominica         bajo                             0.05            0             5               10
+10        SH                 Propiedad intelectual       SD                                  Sudan         bajo                             0.05           30             9                7
+11        SK  Personales, culturales y recreativos       CF               Central African Republic         bajo                             0.35           20             8                8
+12        SL       Bienes y servicios del gobierno       US               United States of America         alto                      24133205.34            0             0               10
+13        SL       Bienes y servicios del gobierno       AO                                 Angola         bajo                           231.70            0             9               10
+14        SL       Bienes y servicios del gobierno       FO                         Faeroe Islands         bajo                           130.55           20             4                8
+15        SL       Bienes y servicios del gobierno       TV                                 Tuvalu         bajo                           119.66           10             0                9
+16        SL       Bienes y servicios del gobierno       AI                               Anguilla         bajo                            21.33           10             7                9
+17        SL       Bienes y servicios del gobierno       MS                             Montserrat         bajo                             0.31            0             9               10
+
+===== pares
+ [1] "sector_mayor"    "Servicio_mayor"  "sector_menor"    "Servicio_menor"  "diferencia_pct"  "ic_inferior_pct" "ic_superior_pct" "p_ajustado"      "significativo"   "metodo"         
+   sector_mayor                        Servicio_mayor sector_menor                        Servicio_menor diferencia_pct ic_inferior_pct ic_superior_pct p_ajustado significativo       metodo
+1            SD                                Viajes           SH                 Propiedad intelectual        9264.75         2607.54        32290.48    < 0,001          TRUE Games-Howell
+2            SD                                Viajes           SB            Mantenimiento y reparación        7606.84         2317.50        24468.92    < 0,001          TRUE Games-Howell
+3            SD                                Viajes           SK  Personales, culturales y recreativos        5160.49         1794.67        14505.53    < 0,001          TRUE Games-Howell
+4            SC                            Transporte           SH                 Propiedad intelectual        4493.15         1165.18        16575.07    < 0,001          TRUE Games-Howell
+5            SC                            Transporte           SB            Mantenimiento y reparación        3679.99         1025.92        12590.33    < 0,001          TRUE Games-Howell
+6            SD                                Viajes           SF                   Seguros y pensiones        3282.80         1224.97         8536.64    < 0,001          TRUE Games-Howell
+7            SJ         Otros servicios empresariales           SH                 Propiedad intelectual        3152.79          760.60        12194.43    < 0,001          TRUE Games-Howell
+8            SJ         Otros servicios empresariales           SB            Mantenimiento y reparación        2576.92          663.90         9280.67    < 0,001          TRUE Games-Howell
+9            SD                                Viajes           SA Manufactura sobre insumos de terceros        2525.24          588.90         9904.23    < 0,001          TRUE Games-Howell
+10           SC                            Transporte           SK  Personales, culturales y recreativos        2480.12          776.21         7497.53    < 0,001          TRUE Games-Howell
+11           SD                                Viajes           SE                          Construcción        1933.19          701.85         5055.42    < 0,001          TRUE Games-Howell
+12           SI   Telecom., informática e información           SH                 Propiedad intelectual        1773.91          410.82         6774.35    < 0,001          TRUE Games-Howell
+13           SJ         Otros servicios empresariales           SK  Personales, culturales y recreativos        1727.20          491.31         5546.20    < 0,001          TRUE Games-Howell
+14           SD                                Viajes           SG                           Financieros        1702.31          579.58         4679.86    < 0,001          TRUE Games-Howell
+15           SC                            Transporte           SF                   Seguros y pensiones        1559.17          509.56         4416.12    < 0,001          TRUE Games-Howell
+16           SD                                Viajes           SL       Bienes y servicios del gobierno        1486.46          636.97         3315.12    < 0,001          TRUE Games-Howell
+17           SI   Telecom., informática e información           SB            Mantenimiento y reparación        1442.16          354.28         5135.21    < 0,001          TRUE Games-Howell
+18           SC                            Transporte           SA Manufactura sobre insumos de terceros        1187.61          223.14         5030.74    < 0,001          TRUE Games-Howell
+19           SJ         Otros servicios empresariales           SF                   Seguros y pensiones        1074.99          309.78         3269.12    < 0,001          TRUE Games-Howell
+20           SI   Telecom., informática e información           SK  Personales, culturales y recreativos         952.63          253.02         3038.75    < 0,001          TRUE Games-Howell
+21           SC                            Transporte           SE                          Construcción         897.22          268.76         2596.75    < 0,001          TRUE Games-Howell
+22           SJ         Otros servicios empresariales           SA Manufactura sobre insumos de terceros         811.86          120.46         3671.64    < 0,001          TRUE Games-Howell
+23           SC                            Transporte           SG                           Financieros         783.98          213.40         2393.36    < 0,001          TRUE Games-Howell
+24           SC                            Transporte           SL       Bienes y servicios del gobierno         678.11          234.42         1710.51    < 0,001          TRUE Games-Howell
+25           SJ         Otros servicios empresariales           SE                          Construcción         606.22          147.83         1912.39    < 0,001          TRUE Games-Howell
+26           SI   Telecom., informática e información           SF                   Seguros y pensiones         576.90          145.33         1767.68    < 0,001          TRUE Games-Howell
+27           SJ         Otros servicios empresariales           SG                           Financieros         526.02          111.06         1756.80    < 0,001          TRUE Games-Howell
+28           SL       Bienes y servicios del gobierno           SH                 Propiedad intelectual         490.29           70.10         1948.49    < 0,001          TRUE Games-Howell
+29           SJ         Otros servicios empresariales           SL       Bienes y servicios del gobierno         451.05          122.66         1263.72    < 0,001          TRUE Games-Howell
+30           SI   Telecom., informática e información           SA Manufactura sobre insumos de terceros         425.32           30.57         2013.50      0,006          TRUE Games-Howell
+31           SG                           Financieros           SH                 Propiedad intelectual         419.60           30.75         1964.83      0,006          TRUE Games-Howell
+32           SD                                Viajes           SI   Telecom., informática e información         399.74          112.37         1076.00    < 0,001          TRUE Games-Howell
+33           SL       Bienes y servicios del gobierno           SB            Mantenimiento y reparación         385.79           51.84         1454.20    < 0,001          TRUE Games-Howell
+34           SE                          Construcción           SH                 Propiedad intelectual         360.59           19.57         1674.25      0,012          TRUE Games-Howell
+35           SG                           Financieros           SB            Mantenimiento y reparación         327.61           15.71         1480.19      0,015          TRUE Games-Howell
+36           SI   Telecom., informática e información           SE                          Construcción         306.85           48.41         1015.35    < 0,001          TRUE Games-Howell
+37           SE                          Construcción           SB            Mantenimiento y reparación         279.05            6.01         1255.39      0,031          TRUE Games-Howell
+38           SI   Telecom., informática e información           SG                           Financieros         260.65           26.20          930.65      0,004          TRUE Games-Howell
+39           SA Manufactura sobre insumos de terceros           SH                 Propiedad intelectual         256.72          -31.54         1758.76      0,320         FALSE Games-Howell
+40           SL       Bienes y servicios del gobierno           SK  Personales, culturales y recreativos         231.59           18.94          824.41      0,008          TRUE Games-Howell
+41           SI   Telecom., informática e información           SL       Bienes y servicios del gobierno         217.45           34.24          650.74    < 0,001          TRUE Games-Howell
+42           SA Manufactura sobre insumos de terceros           SB            Mantenimiento y reparación         193.57          -40.20         1341.28      0,527         FALSE Games-Howell
+43           SG                           Financieros           SK  Personales, culturales y recreativos         191.88          -10.97          856.88      0,123         FALSE Games-Howell
+44           SD                                Viajes           SJ         Otros servicios empresariales         187.90           16.88          609.16      0,007          TRUE Games-Howell
+45           SF                   Seguros y pensiones           SH                 Propiedad intelectual         176.83          -28.49          971.68      0,358         FALSE Games-Howell
+46           SE                          Construcción           SK  Personales, culturales y recreativos         158.73          -18.15          717.83      0,221         FALSE Games-Howell
+47           SC                            Transporte           SI   Telecom., informática e información         145.11           -2.88          518.62      0,068         FALSE Games-Howell
+48           SF                   Seguros y pensiones           SB            Mantenimiento y reparación         127.82          -36.62          718.90      0,608         FALSE Games-Howell
+49           SL       Bienes y servicios del gobierno           SF                   Seguros y pensiones         113.23          -16.86          446.84      0,258         FALSE Games-Howell
+50           SD                                Viajes           SC                            Transporte         103.89          -11.93          372.01      0,188         FALSE Games-Howell
+51           SA Manufactura sobre insumos de terceros           SK  Personales, culturales y recreativos         100.38          -55.12          794.70      0,930         FALSE Games-Howell
+52           SG                           Financieros           SF                   Seguros y pensiones          87.69          -38.56          473.39      0,786         FALSE Games-Howell
+53           SK  Personales, culturales y recreativos           SH                 Propiedad intelectual          78.02          -56.61          630.39      0,972         FALSE Games-Howell
+54           SJ         Otros servicios empresariales           SI   Telecom., informática e información          73.58          -34.99          363.48      0,791         FALSE Games-Howell
+55           SE                          Construcción           SF                   Seguros y pensiones          66.38          -43.38          388.87      0,924         FALSE Games-Howell
+56           SL       Bienes y servicios del gobierno           SA Manufactura sobre insumos de terceros          65.48          -56.71          532.53      0,984         FALSE Games-Howell
+57           SF                   Seguros y pensiones           SK  Personales, culturales y recreativos          55.51          -51.08          394.37      0,984         FALSE Games-Howell
+58           SK  Personales, culturales y recreativos           SB            Mantenimiento y reparación          46.50          -61.67          459.98      0,999         FALSE Games-Howell
+59           SG                           Financieros           SA Manufactura sobre insumos de terceros          45.66          -66.39          531.26      0,999         FALSE Games-Howell
+60           SC                            Transporte           SJ         Otros servicios empresariales          41.21          -46.37          271.76      0,991         FALSE Games-Howell
+61           SE                          Construcción           SA Manufactura sobre insumos de terceros          29.12          -69.33          443.55      1,000         FALSE Games-Howell
+62           SA Manufactura sobre insumos de terceros           SF                   Seguros y pensiones          28.86          -69.53          444.96      1,000         FALSE Games-Howell
+63           SL       Bienes y servicios del gobierno           SE                          Construcción          28.16          -49.68          226.43      0,999         FALSE Games-Howell
+64           SB            Mantenimiento y reparación           SH                 Propiedad intelectual          21.51          -73.23          451.50      1,000         FALSE Games-Howell
+65           SL       Bienes y servicios del gobierno           SG                           Financieros          13.61          -57.35          202.59      1,000         FALSE Games-Howell
+66           SG                           Financieros           SE                          Construcción          12.81          -62.85          242.59      1,000         FALSE Games-Howell

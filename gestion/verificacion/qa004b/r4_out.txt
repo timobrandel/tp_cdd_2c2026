@@ -1,0 +1,19 @@
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+check socios_eq = 10000/hhi, max dif: 0.005052109 
+# A tibble: 8 × 5
+  medida     Reporter    cv cv_10anios   n10
+  <chr>      <chr>    <dbl>      <dbl> <int>
+1 balanceado AR       0.837      0.837    12
+2 balanceado BR       0.714      0.714    12
+3 balanceado CL       0.649      0.649    12
+4 balanceado UY       0.360      0.360    12
+5 final      AR       0.548      0.551    10
+6 final      BR       0.594      0.594    12
+7 final      CL       0.310      0.310     8
+8 final      UY       0.419      0.356    10
+# A tibble: 3 × 5
+  medida Reporter Item_code anios socios_equivalentes
+  <chr>  <chr>    <chr>     <dbl>               <dbl>
+1 final  AR       SA            4                9.76
+2 final  AR       SE            9                2.95
+3 final  UY       SE            1               33.2 

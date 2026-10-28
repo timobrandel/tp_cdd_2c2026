@@ -1,0 +1,1891 @@
+                                                                                                                             1
+
+     THE OECD-WTO BALANCED TRADE IN SERVICES
+                       DATABASE (BaTIS)
+
+January 2025
+
+In 2021, WTO and OECD jointly developed a new methodology for producing the BaTIS dataset
+in accordance with BPM6. The updated BaTIS (2025) includes expanded sectoral coverage and
+was produced by Frédéric Parrot (OECD), Fabio Della Coletta (WTO), Shradha Bhatia (WTO),
+and Tinotenda Mataire (WTO) under the supervision of Antonella Liberatore
+(Antonella.Liberatore@oecd.org) and Barbara D'Andrea (Barbara.Dandrea@wto.org) 1.
+
+  Complete, consistent and balanced bilateral trade in services statistics are vital for the empirical
+  analysis of international trade as well as for policy-making and trade negotiations. Unfortunately, such
+  data are not readily available. This paper presents the work of OECD and WTO to build the Balanced
+  Trade in Services (BaTIS) dataset, a complete and consistent trade in services matrix to serve as input
+  for the compilation of the TiVA Inter-Country Input-Output Tables and as a tool for the analysis of trade
+  patterns in general. This edition of BaTIS provides annual data for 2005-2023, covering 202 economies,
+  broken down by total services and 26 EBOPS 2010 service categories. This paper accompanies the
+  dataset and describes its compilation methodology in detail, including the collection and cleaning of the
+  reported data, the different methodologies used to estimate missing information, and the final balancing
+  of the export and import flows.
+
+1 This document, as well as any data and map included herein, are without prejudice to the status of or sovereignty
+over any territory, to the delimitation of international frontiers and boundaries and to the name of any territory, city or
+area.
+This paper is prepared under the responsibility of the WTO Secretariat. It does not necessarily reflect the positions or
+opinions of WTO members and it is without prejudice to their rights and obligations under the WTO agreements.
+2 
+
+Table of contents
+
+THE OECD-WTO BALANCED TRADE IN SERVICES DATABASE (BATIS)                                1
+
+1. Introduction                                                                         3
+
+2. Step A: Data collection and cleaning                                                 5
+
+2.1. Trade in services with partner world                                               5
+
+2.2. Bilateral trade in services                                                        7
+
+3. Step B: Estimating missing trade in services                                         9
+
+3.1. Step B.1: Estimating partner country breakdowns if some partner data are reported  10
+
+3.1.1. Simple derivations from reported items                                           10
+
+3.1.2. Backcasting, nowcasting and interpolation                                        10
+
+3.2. Step B.2: Estimating partner country breakdowns if no official data are available  12
+
+3.2.1. Gravity model specification                                                      12
+
+3.2.2. Estimation strategy                                                              13
+
+3.3. Towards a complete matrix: summary of the estimation steps                         15
+
+3.4. Step B.3: Ensuring the internal consistency of the dataset                         16
+
+3.4.1. Rescaling of estimates to officially reported world totals                       16
+
+3.4.2. Final bi-proportional scaling (RAS)                                              17
+
+4. Step C. Balancing of export and import flows                                         17
+
+5. Results                                                                              19
+
+5.1. Reported vs. balanced trade for total trade in services                            19
+
+5.2. Reported vs. balanced trade for individual service categories                      24
+
+6. Conclusions and next steps                                                           26
+
+7. References                                                                           27
+                                                                                                                             3
+1. Introduction
+
+Since the publication of the first OECD-WTO Balanced Trade in Services (BaTIS) dataset in 2017, several
+advancements have been made in the compilation of trade in services statistics. Firstly, more and more
+economies have been working to improve their data compilation methods and practices, bringing them
+closer to the international guidelines. At the same time, increased emphasis has been placed on another
+dimension of international trade in services, namely the mode of supply. The relevance of this dimension
+in trade negotiations motivated the WTO to create a global dataset on Trade in Services by Mode of Supply
+(TISMOS, see Wettstein et al., 2019). Finally, growing interest in measuring digitalization has spurred the
+development of the first framework for measuring digital trade, in which services play a dominant role
+(OECD, WTO and IMF, 2019).
+
+Despite such methodological and practical advancements, the accurate measurement of service flows
+continues to be challenging and the availability of high quality, detailed information on international trade
+in services remains inadequate for the needs of economic analysis and policy-making.
+
+To address the information gaps, the OECD and WTO developed a transparent methodology to build a
+global dataset of coherent bilateral trade in services statistics by main service categories. The OECD-WTO
+methodology leverages all official statistics available at national level and supplements them with
+estimations and adjustments to provide users with a complete matrix of exports and imports, covering
+virtually all economies in the world. Subsequently, the asymmetries between reported and mirror flows are
+reconciled by calculating a symmetry-index weighted average between the two, following a similar
+approach to the one developed for merchandise trade statistics.
+
+The ultimate goal of the OECD-WTO work is to develop and maintain a dataset that can be considered
+the international benchmark for trade in services statistics and which will be constantly improved as new
+official data become available. While the BaTIS dataset can serve as a stand-alone tool for economic
+analysis and policy-making, it also provides an essential input to the OECD Trade in Value Added (TiVA)
+initiative, as a balanced view of international trade is an essential feature of any inter-country Input-Ouput
+analysis.
+
+The first edition of BaTIS followed the fifth edition of the IMF Balance of Payments and International
+Investment Position Manual (BPM5) and included annual data for 1995 to 2012, covering 191 economies
+and the 11 main service categories, in line with the Extended Balance of Payments Services Classification
+(EBOPS) 20022 . The second edition of BaTIS, based on BPM6, provided annual data for 2005 to 2019,
+covering 202 economies and the 12 main EBOPS 2010 service categories. The third edition of BaTIS
+covers the period 2005-2021 and maintains the same geographical coverage of the previous edition,
+focusing on the 12 main EBOPS 2010 service categories. The fourth edition of BaTIS covers the period
+2005-2023, with more detailed EBOPS 2010 services categories (14 2-digit EBOPS 2010 sub-categories,
+in addition to the 12 main EBOPS 2010 services categories previously published). In line with the previous
+editions, methodology codes provide information on the source and/or the adjustments made to each
+record in the BaTIS dataset.
+
+The remainder of this paper provides further details regarding the steps followed in the construction of the
+dataset, as follows:
+
+     · Step A: Collection and cleaning of reported information;
+
+     · Step B: Estimation of non-reported bilateral flows; and
+
+     · Step C: Balancing of import and export flows.
+
+2 The description and the coverage of the first edition of BaTIS can be found here
+https://www.oecd.org/sdd/its/balanced-trade-in-services.htm.
+4 
+
+The results are presented and discussed in Section 5. Finally, Section 6 concludes and
+
+outlines areas for future work and research.
+                                                                                            5
+
+2. Step A: Data collection and cleaning
+
+         2.1. Trade in services with partner world
+
+As BaTIS is built following a top-down approach, the official statistics on international trade in services with
+partner world constitute the basic building blocks and provide the boundaries for all the subsequent
+estimations. The WTO-UNCTAD trade in services dataset,3 arguably the most comprehensive set of
+information publicly available, has been used as a starting point for BaTIS. It covers exports and imports
+of services to and from the world for 202 reporting economies from 2005 to 2023, broken down by service
+category according to the availability of the source data. For the purposes of BaTIS, the 12 main service
+categories as well as 14 sub-services categories from EBOPS 2010 have been selected for publication
+(Table 1).4
+
+Table 1. EBOPS 2010 categories classification: Code names and hierarchy
+
+    Code               EBOPS 2010 category description                Type     Derivation
+S         Total services                                             standard
+SA        Manufacturing services on physical inputs owned by others  standard
+SB        Maintenance and repair services n.i.e.                     standard
+SC        Transport                                                  standard
+SC1       Sea transport                                              standard
+SC2       Air transport                                              standard
+SC3       Other modes of transport
+SC4       Postal and courier services                                standard
+SD        Travel                                                     standard
+SDA       Travel; Business                                           standard
+SDB       Travel; Personal                                           standard
+SE        Construction                                               standard
+SF        Insurance and pension services                             standard
+SG        Financial services                                         standard
+SH        Charges for the use of intellectual property n.i.e.        standard
+SI        Telecommunications, computer, and information services     standard
+SI1       Telecommunications services                                standard
+SI2       Computer services                                          standard
+SI3       Information services                                       standard
+SJ        Other business services                                    standard
+SJ1       Research and development services                          standard
+SJ2       Professional and management consulting services            standard
+SJ3       Technical, trade-related, and other business services      standard
+SK        Personal, cultural, and recreational services              standard
+SK1       Audiovisual and related services                           standard
+SK2       Personal, cultural, and recreational services other than   standard
+          audiovisual and related services                           standard
+
+3 Available at https://stats.wto.org/.
+
+4 In addition to total services and the 26 service categories specified in EBOPS 2010, Table 1 presents a few
+memorandum items derived from the standard components and available in BaTIS. Commercial services, in particular,
+is used in the WTO context and excludes government goods and services n.i.e. because "services supplied in the
+exercise of governmental authority", that is neither on a commercial basis nor in competition with other suppliers, are
+excluded from the General Agreement on Trade in Services (GATS).
+6       Government goods and services n.i.e.                                           standard                  S - SL
+                   Memorandum items:
+  SL                                                                                   derived         SE + SF + SG + SH + SI
+        Commercial services                                                            derived                 + SJ + SK
+  SOX   Other commercial services
+  SOX1                                                                                                 SE + SF + SG + SH + SI
+                                                                                                            + SJ + SK + SL
+SPX1    Other services                                                                 derived
+                                                                                                               SA + SB
+SPX4    Goods-related services                                                         derived
+
+Source: UNSD, Extended Balance of Payments Services Classification 2010 (EBOPS 2010).
+
+The WTO-UNCTAD dataset combines reported data from Eurostat, the OECD, the IMF Balance of
+Payments Statistics, as well as national sources. In addition to the reported information, the dataset already
+includes a number of adjustments made to ensure cross-country comparability and, where possible,
+estimations to complement reported data.
+
+Table 2. Summary of reported, estimated and corrected exports and imports in the WTO-UNCTAD
+dataset (partner world), 2005-23
+
+Percentage
+
+                                                Exports                                                Imports
+
+                                % Count       90.7       % Value                       % Count                  % Value
+                                               9.3                   94.5
+Reported                                      100                     5.5                        90.0                    92.5
+Estimated / adjusted / derived                                        100
+Total                                                                                            10.0                    7.5
+
+                                                                                                 100                     100
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+As shown in Table 2, the reported information in the WTO-UNCTAD dataset covers more than 90% of the
+value of world trade in services. For a number of reporters sourced from Eurostat, the time series start
+after 2005 (mostly in 2010) and the time series were completed with estimates based on information
+published at national level. Other adjustments include, for example, the conversion to a free on board
+(f.o.b.) valuation, the conversion to the BPM6 presentation, or corrections for obvious misclassifications,
+as well as derivations from existing items, which exploit the parent-child relationships in EBOPS. Finally,
+completely missing time series (at the level of service items) were estimated using average shares for
+clusters of economies showing similar characteristics5.
+
+All the estimations carried out by WTO and UNCTAD were assumed to align to relevant quality
+requirements, and as such have been absorbed in BaTIS. However, two additional adjustments were made
+to the WTO and UNCTAD dataset:
+
+     · Correction of negative insurance flows. When events, such as natural catastrophes, require large
+          payments of claims, and exceed the value of premiums in the accounting period, the reported trade
+          in insurance services can be negative.6 As the interpretation (and treatment) of those negative
+          flows is not straightforward, the negative values were replaced with zeros and total services
+
+5 More details on the estimations produced by WTO and UNCTAD are available in the methodological paper provided
+with the TISMOS dataset (Wettstein et al., 2019).
+
+6 With the changeover to the BPM6 standards, a smoothing method was introduced to limit the occurrence of negative
+flows and to facilitate the economic interpretation of such flows, as well as better alignment with SNA aggregates, and,
+in particular with the Supply and Use tables. Indeed, negative flows are much less common in BPM6 than in BPM5,
+but they can still occur.
+                                                                                                                             7
+
+          adjusted accordingly. A similar approach was used to treat negative values and solve internal
+          consistency problems for the bilateral dataset (see Section 2.2. ).
+     · Treatment of unallocated trade (by service category). Whenever the internal consistency between
+          the reported parent service and the sum of its underlying children did not hold, some adjustments
+          were needed. In the case of positive residual trade, the difference was allocated proportionally
+          across the underlying EBOPS parent category. When negative residual trade existed, total services
+          and the other parent categories were adjusted in line with the sum of the reported children service
+          categories.
+
+         2.2. Bilateral trade in services
+
+As a second step, all available bilateral trade in services information, i.e. all information on trade in services
+by partner country, was collected from the following sources: the OECD International Trade in Services
+statistics; Eurostat International Trade in Services statistics; Eurostat Quarterly Balance of Payments
+statistics; UN Comtrade; official national sources; and complementary national data.7 Overall, for BaTIS,
+only 67 economies report full or at least partial bilateral information.
+Table 3 gives an overview of the proportion of total world trade in services that is bilaterally specified, by
+year, flow and EBOPS category. As the table shows, there is an improvement in coverage over time, with
+more than 65% of total world services trade being bilaterally specified towards the end of the period.
+Exports show a better coverage than imports, as advanced economies with more developed statistical
+systems tend to be larger service exporters (also, exports of services are generally considered to be better
+reported than imports). The coverage is however significantly lower for some main service categories such
+as construction, insurance and pension services, or personal, cultural, and recreational services. For most
+2-digit EBOPS categories, coverage is lower compared to that of their 1-digit parent categories. In cases
+where trade is concentrated among mostly advanced economies, the coverage of bilateral information is
+relatively high (like for charges for the use of intellectual property n.i.e).
+Some economies report bilateral trade flows with partners outside the list of 202 economies covered by
+BaTIS. This happens most often for some EU members, which publish a large list of trading partners for
+total services. Those additional partner economies (which include small territories such as American Virgin
+Islands, Marshall Islands, Isle of Man, etc.) are summed up into the `Rest of the World' (ROW) aggregate.
+Occasionally, this aggregate may represent between 3% and 5% of total trade for some reporters in
+specific years, but on average it accounts for less than 1% at world level.
+Further information about the availability of bilateral trade in services statistics and the composition of the
+aggregate ROW is presented in Annex A. The maximum number of partner countries per reporter and
+sector is shown in Annex B.
+
+7 Complementary national data sources include information published by institutions other than the main provider of
+balance of payments data. Those can cover a subset of services (most commonly travel) and sometimes are not
+entirely consistent with the official balance of payments statistics.
+8 
+Table 3. Bilaterally specified trade in services, by category
+
+Percentage of total value
+
+                                       Exports                            Imports
+
+Service category                  Code 2005 2010 2015 2020 2022 2023 2005 2010 2015 2020 2022 2023
+
+Total services                    S 36 60 72 71 67 52 34 55 65 65 63 48
+
+Manufacturing services on         SA 19 43 73 79 55 54 66 70 71 74 65 44
+physical inputs owned by
+others
+
+Maintenance and repair            SB 28 67 68 59 56 43 23 63 72 68 63 50
+services n.i.e.
+
+Transport                         SC 35 55 65 62 56 41 30 44 52 48 47 35
+
+Sea transport                     SC1  4 33 34 38 33                   7  8 21 23 24 26  8
+
+Air transport                     SC2 16 36 40 42 40 21 14 31 35 35 38 24
+
+Other modes of transport          SC3 10 36 61 65 63                   2  5 37 53 59 56  2
+
+Postal and courier services       SC4  7 25 30 35 36                   6  6 33 26 38 26  4
+
+Travel                            SD 30 52 62 59 59 49 37 50 60 43 50 38
+
+Travel; Business                  SDA 21 35 47 48 52 25 14 30 31 36 40 13
+
+Travel; Personal                  SDB 13 26 37 45 42 18 11 29 30 34 43 20
+
+Construction                      SE 11 25 41 37 31 27                    9 26 40 45 32 28
+
+Insurance and pension             SF 40 61 62 62 60 53 31 48 45 49 44 42
+services
+
+Financial services                SG 28 64 68 70 69 52 21 62 74 75 74 50
+
+Charges for the use of            SH 49 68 79 80 77 69 38 55 59 66 66 60
+intellectual property n.i.e.
+
+Telecommunications,               SI 20 53 56 57 53 43 24 61 63 62 61 49
+computer, and information
+services
+
+Telecommunications services       SI1  2 29 24 35 33 14                   1 31 30 38 38 11
+
+Computer services                 SI2  2 24 33 37 32                   8  2 45 36 41 42 12
+
+Information services              SI3  4 38 48 55 57 25                   5 25 41 44 50 12
+
+Other business services           SJ 30 57 66 65 63 53 28 55 65 63 68 52
+
+Research and development          SJ1  2 37 61 63 66 30                   1 30 61 45 67 23
+services
+
+Professional and management SJ2        3 39 46 56 51 26                   3 40 55 61 62 21
+consulting services
+
+Technical, trade-related, and     SJ3  2 27 39 51 50 19                   1 23 36 48 46 16
+other business services
+
+Personal, cultural, and           SK 15 51 53 61 71 57 28 40 41 46 46 40
+recreational services
+
+Audiovisual and related           SK1  7 59 56 59 63 44                   7 36 34 31 40 23
+services
+
+Personal, cultural, and           SK2 0.3 12 15 25 53 11                  1 10 15 19 24  4
+
+recreational services other than
+
+audiovisual and related
+
+services
+
+Government goods and              SL 19 25 30 33 29 18 24 27 25 23 34 23
+services n.i.e.
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+                                                                                                                             9
+
+Before proceeding to the subsequent estimations, the following cleaning steps were carried out on the
+collected bilateral data:
+
+     · Treatment of negative values. Negative trade flows are sometimes reported by the primary sources
+          (most often for categories such as manufacturing services on physical inputs owned by others,
+          maintenance and repair services n.i.e, insurance and pension services, and in some rare cases
+          also for total services). As negative trade flows have no economic rationale, those values were
+          corrected as follows:
+          o For manufacturing services on physical inputs owned by others and maintenance and repair
+               services n.i.e, the negative values were replaced by zeros.
+          o For insurance and pension services, the negative values were replaced with zeros and the total
+               services were adjusted accordingly for the reporter of such negative flows. If mirror flows
+               existed, the corresponding amounts were added to the mirror flow and total services were
+               recalculated in order to maintain the reported trade balance.8
+          o For all other service categories, negative values were removed and replaced with estimates
+               as described in step B.
+
+     · Treatment of unallocated trade (by service category). When positive residual trade existed, the
+          difference was allocated proportionally across the EBOPS subcomponents. When negative
+          residual trade existed, total services was replaced with the sum of the reported items.
+
+Finally, to ensure hierarchical consistency, firstly between total services and the 12 main 1-digit services
+items, then between 5 main 1-digit services and their 2-digit children services, the following rules were
+applied:
+
+     · If all children EBOPS categories were reported and their sum was not equal to their reported parent
+          service, the parent was replaced by the sum of its children items.
+
+     · If fewer EBOPS children categories were reported and the sum of the children items was greater
+          than the reported parent service, the parent was replaced by the sum of its individual children
+          items.
+
+     · If the parent service category was positive and all children categories were reported as zero, all
+          children service categories were removed and replaced by estimates as described in step B.
+
+3. Step B: Estimating missing trade in services
+
+Like in the previous edition of BaTIS, the construction of a complete matrix of trade in services exports and
+imports is a prerequisite for the subsequent balancing procedure and also constitutes an analytical product
+per se. Since bilateral trade in services data are not always available, a large number of bilateral
+observations need to be estimated to arrive at a complete matrix.
+
+Once again, a `top-down' approach was used: a full matrix of bilateral flows was first built at the level of
+total services, and then broken down by service categories. This approach reflects the assumption that
+the greatest amount and best quality data is available at the highest levels of aggregation, and ensures
+full consistency of the lower level estimates. More specifically, the estimation work was organised in three
+sub-steps:
+
+     · Step B.1: Estimating partner country breakdowns if some partner data are reported.
+     · Step B.2: Estimating partner country breakdowns if no official data are available.
+
+8 The corrections made to insurance and pension services, manufacturing services on physical inputs owned by
+others, and maintenance and repair services were given the lowest weight in the final balancing procedure (see
+Section 4. ).
+10 
+
+     · Step B.3: Ensuring the consistency of the dataset.
+
+         3.1. Step B.1: Estimating partner country breakdowns if some partner data are
+         reported
+
+Step B.1 involves the filling of all data gaps in existing time series. A time series exists if at least one data
+point (year) is reported for a given combination of reporter-partner-flow-category. When bilateral trade in
+services statistics are reported, in fact, they rarely cover the entire time span considered (2005-2023) and
+the complete list of service categories. This estimation step therefore uses derivations, backcasting,
+nowcasting and interpolation techniques to fill in the missing information. Gaps in total trade in services
+are always filled in first, and subsequent estimations for the sub-items are then rescaled to maintain internal
+consistency.
+
+         3.1.1. Simple derivations from reported items
+
+A number of additional data points in the bilateral dataset were derived exploiting the parent-child
+relationships in the EBOPS hierarchy:
+
+     · Firstly, if, for a country pair, total bilateral trade (S) is zero, then all main 1-digit service categories
+          are assumed to be zero for that particular pair/year.
+
+     · Then, if, for a country pair, any 1-digit service category is zero, then all its 2-digit children categories
+          were assumed to be zero for that particular pair/year.
+
+     · If, for a specific category and year, a country reports zero trade with the world, then all bilateral
+          values were assumed to be zero.
+
+         3.1.2. Backcasting, nowcasting and interpolation
+
+This step exploits the information contained within the time series. If a time series was reported for at least
+one year, and contained at least one missing value, either in the middle, at the beginning or at the end of
+the time series, the missing data point was interpolated, backcasted or nowcasted, respectively.
+
+Starting with total services, 3-year moving averages of the partner's share in total world trade were
+computed. Those shares were then applied to the world values to get an estimate of bilateral trade.
+The same approach was also applied to the bilateral breakdowns of individual EBOPS categories, which
+were subsequently benchmarked to the total services values.
+
+Table 4 shows an example of application of these techniques to the bilateral trade between France and
+Spain.
+Table 4. Exports of services from France to Spain, by year and EBOPS category
+Millions of USD
+
+     2005 2006 2007 2008 2009 2010 2011 2012                                  2013     2014     2015     2016     2017     2018     2019     2020     2021     2022     2023
+                                                                            10 759   11 482   10 164   11 190   12 284   15 296   18 040   11 044   14 256   16 189   18 130
+S    6 365 6 942 8 186 9 230 7 991 8 012 10 457 10 262                                                                                                        1 569    1 723
+                                                                               184      177      259      200      213      388      466      381      947
+SA   28  35  37  32  61   25   99                                      387     113      162       98      148      158      242      230      238      294      323      378
+                                                                             2 372    1 957    1 469    1 465    1 556    1 846    1 775    1 658    2 199    2 582    2 186
+SB   45  50  59  62  80   80   161                                     141     304      493      346      353      434      503      486      480      890    1 171    1 138
+                                                                               103      110      123      161      150      196      237       55       76
+SC   990 1 082 1 302 1 365 1 092 1 479 1 942 1 883                           1 956    1 328      976      911      910    1 098    1 007    1 041    1 136      117      103
+                                                                                10       25       24       39       61       49       46       82       97    1 208      881
+SC1  73 107 149 152 101   175  188                                     205   2 802    3 161    3 042    2 948    3 631    4 898    5 053    2 675    3 526                63
+                                                                               505      454      622      683      451      731      774      278      588       85    4 998
+SC2  141 156 180 202 156  170  278                                     175   2 297    2 707    2 420    2 265    3 181    4 166    4 279    2 397    2 939    4 472      318
+                                                                                                    5                                                                  4 680
+SC3  742 784 942 990 815 1 117 1 450 1 481                                        6        7     102         1        3        7        0        2        0     301
+                                                                               201      165      323      256      386      481      571      416      674    4 170         0
+SC4  34  35  31  21  20   17   26                                      22      469      355      416      249      242      224      237      364      519               842
+                                                                               288      276      753      691      629      647      840      420      335         1     731
+SD 2 652 2 839 3 334 4 046 3 252 2 645 3 111 3 035                             868      665      225    1 159    1 186    1 484    1 874    1 396    1 888      484      720
+                                                                               337      206      487      329      263      367      401      208      263      473    1 823
+SDA  399 428 510 639 479  424  596                                     400     482      431       41      776      879    1 040    1 372    1 094    1 471      328      229
+                                                                                49       28    3 641       54       44       77      101       95      154    1 877    1 431
+SDB 2253 2 412 2 824 3 407 2 773 2 221 2 514 2 636                           3 395    4 488    1 526    3 953    4 183    4 759    6 716    3 442    3 727      246      162
+                                                                             1 247    1 826      703    1 114    1 331    1 344    1 591      734      718    1 466    4 544
+SE   61  64  77  83  70   83   2                                       3       785    1 124    1 412      817    1 154    1 031    1 301    1 337    1 493      166      963
+                                                                             1 364    1 537       54    2 022    1 698    2 384    3 824    1 371    1 516    3 923    1 697
+SF   116 132 132 191 233  92   273                                     116      60       70       53      118       97      306      277       52      147      803    1 884
+                                                                                59       69         1     110       93      287      269       51      144    1 496      186
+SG   79  90 125  83 109   209  231                                     382                          0                        19                               1 623      180
+                                                                                  1        1                 8        4      15         9        1        3     158
+SH   249 268 298 401 284  260  353                                     207        0        0                 0        0                 0        0        0     154         6
+                                                                                                                                                                            0
+SI   371 413 498 492 541  538  768                                     699                                                                                         4
+                                                                                                                                                                   0
+SI1  169 188 227 220 241  245  363                                     305
+
+SI2  191 213 257 258 284  277  384                                     364
+
+SI3  11  12  14  14  16   16   22                                      30
+
+SJ 1 728 1 890 2 253 2 442 2 173 2 572 3 335 3 361
+
+SJ1  539 589 673 707 641  803  857                                     982
+
+SJ2  480 509 593 630 569  666  738                                     662
+
+SJ3  709 792 987 1 104 963 1 103 1 739 1 717
+
+SK   23  24  29  34  26   30   182                                     48
+
+SK1  22  24  28  34  26   30   180                                     48
+
+SK2  0   0   0   0   0    0    1                                       1
+
+SL   24  54  43  0   69   0    0                                       0
+
+Note: Shaded cells represent backcasted and interpolated figures.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+         3.2. Step B.2: Estimating partner country breakdowns if no official data are
+         available
+
+At the end of step B.1, 75% of the complete matrix in terms of data points remains to be filled, covering all
+the cases where no reported data are available for a given reporter-partner-flow-category combination.
+Those gaps are filled using a set of gravity models. Intuitively, gravity models relate trade flows between
+two countries positively to their economic size (proxied by the reporter and partner's GDP) and negatively
+to the trade costs (e.g. their geographical distance).
+
+The gravity models were defined as parsimoniously as possible, and by explicit design, do not include any
+policy variables. This choice facilitates the subsequent use of the estimated values for analytical purposes,
+as it limits the problem of circular causality whereby the data that are used to test particular hypotheses
+(e.g. of the impact of certain policy measures on trade flows) are developed exactly based on that premise.
+
+         3.2.1. Gravity model specification
+
+All regression models used in BaTIS share the following generic specification:
+
+                       = exp(0 + 1 + 2 + 3   + 4  )  
+                       = exp(0 + 1 + 2 + 3   + 4  )  
+
+where Xijt (Mijt) represents the service exports (imports) of country i to (from) country j in year t, which are
+deemed to depend on:
+
+     · the size of the two trading partners, proxied by their nominal GDPs (sourced from the IMF World
+          Economic Outlook database, and complemented by World Bank WDI, UN Data and WTO
+          estimates)
+
+     · a set of trade cost variables, including the bilateral distance, contiguity, common language, and the
+          presence, at any point in time, of a colonial relationship (all sourced from the CEPII GeoDist
+          database and complemented with manual imputations for countries not covered by CEPII)9
+
+     · additional predictors, including bilateral (total) merchandise exports and imports (sourced from the
+          UNCTAD Merchandise Trade Matrix10), the number of total tourist arrivals (exports) and departures
+          (imports) in/from a country (sourced from UNWTO11), exports and imports of services to the world
+          as a whole, a linear time trend, the reporter's GDP per capita and partner fixed effects.
+
+Bilateral merchandise trade proved to be a very important predictor of bilateral service flows as trade in
+goods and services are generally highly correlated (especially for some service categories such as
+transport). Tourist arrivals in a country also performed relatively well as predictor, given the importance of
+travel in total trade in services (around a fifth of total services at world level but significantly higher for some
+economies).
+
+Services trade with the world as a whole was used in the previous edition of BaTIS only to predict missing
+flows at the level of individual service categories, not total services. In this edition, instead, a cross
+validation exercise (described in Annex F) demonstrated that the inclusion of this predictor, despite the
+endogeneity with the response variable, improves significantly the predictive power of the models and was
+therefore used to predict all missing bilateral flows.
+
+9 The CEPII GeoDist database is available at www.cepii.fr/cepii/en/bdd_modele/bdd.asp. The manual imputations can
+be provided upon request.
+10 https://unctadstat.unctad.org.
+11 UNWTO Compendium of Tourism Statistics dataset, www.unwto.org/tourism-statistics/tourism-statistics-database.
+                                                                                                                           13
+
+The inclusion of reporter, partner and trading pair fixed effects is recommended in the empirical literature
+to capture omitted variables and to account for unobservable `multilateral resistance' terms12. However, a
+theory-consistent set of fixed effects cannot be used in BaTIS due to the need for out-of-sample
+predictions. Consequently, the reporter's GDP per capita was used as a proxy for (some) of the
+unobservable characteristics of the reporter, a linear time trend was added to capture global developments
+in trade, and partner fixed effects were used, where possible, to absorb any omitted variable correlated
+with a specific trading partner13.
+
+The models were fitted on the dataset resulting from all the previous estimation steps, using the Poisson
+Pseudo-Maximum Likelihood estimator (PPML). This method is considered superior to a log-linearised
+Ordinary Least Squares model (OLS), as it avoids biases in the parameter estimates in the presence of
+heteroscedasticity and allows for the presence of zero trade flows (Santos Silva and Tenreyro, 2006).
+
+         3.2.2. Estimation strategy
+
+The baseline gravity specification described above would result in the best possible predictions for the
+missing bilateral flows. However, as the matrix of regressors is not completely full, reduced models had
+to be used sequentially to derive the predictions, starting from the full, preferred model described
+above14. As the regressions were separately fitted on exports and imports, a total of ten models was
+used to fill in the gaps in the total services matrix. Only one model was used for each country pair, on the
+condition that it predicted at least five data points in the time series. Any gaps resulting from missing
+predictors were filled in with the backcasting/nowcasting techniques described in step B1.
+
+Table 5. Summary of the model specifications for the prediction of missing total services, 2005-23 summarises the
+
+specifications of the models used to predict the missing observations for total services, together with the
+percentage of observations and trade value predicted by each model.
+
+Table 5. Summary of the model specifications for the prediction of missing total services, 2005-23
+Percentage
+
+Distance                       Full model  Reduced model  Reduced model  Reduced model  Reduced model
+Contiguity                       (M1.1)         (M1.2)         (M1.3)         (M1.4)         (M1.5)
+Common language                     X              X              X              X              X
+Colony                              X              X              X              X              X
+GDP reporter                        X              X              X              X              X
+GDP partner                         X              X              X              X              X
+GDP per capita (reporter)           X              X              X              X              X
+Trade in services with world        X              X              X              X              X
+Merchandise trade (bilateral)       X              X              X              X              X
+                                    X              X              X              X              X
+                                    X              X
+
+12 The multilateral resistance terms capture the fact that a country's trade depends on the trade frictions across all
+possible destinations, not just on bilateral trade costs for a specific country pair. See Anderson and Van Wincoop
+(2003).
+
+13 The model selection builds on the work carried out for the first edition of BaTIS. For a detailed description of the
+model selection procedure, see Fortanier et al. (2017).
+
+14 The cross-validation presented in Annex F shows that the predictions are most accurate for the preferred model
+M1.1. In terms of prediction error: M1.1 < M2.1 < M3.1 < M4.1 < M5.1.
+14 
+
+Tourist arrivals/departures             X                              X
+
+Time trend (linear)                     X     X                        X     X     X
+
+Partner FE                              X     X                        X     X
+
+Exports % of total estimated            43.4  3.6                      31.9  7.0   14.1
+
+            observations
+
+            % of total estimated value  69.5  0.5                      26.2  0.6   3.2
+
+Imports % of total estimated            24.9  22.9                     11.7  26.7  13.8
+
+            observations
+
+            % of total estimated value  60.2  8.3                      17.9  10.4  3.2
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+All missing bilateral flows at the level of individual 1-digit or 2-digit service categories were estimated using
+a gravity model for each service category - trade flow combination, with the preferred, full model being
+complemented by a set of reduced models to deal with gaps in the availability of the explanatory variables.
+
+Again, in order to maintain the coherence of the time series, only one model was used to estimate a given
+reporter-partner series, and any gaps were filled using the backcasting, nowcasting or interpolation
+techniques described in step B.1.
+
+Table 6. Summary of the model specifications for the prediction of missing individual service categories,
+2005-23 summarizes the specifications of the models used to predict missing flows for the individual
+service items, as well as the percentage of data points and trade values predicted by each model.
+                                                                                                      15
+
+Table 6. Summary of the model specifications for the prediction of missing individual service
+categories, 2005-23
+
+Percentage
+
+                                                  Full model (M2.0)    Reduced model  Reduced model    Reduced
+                                                                            (M2.1)         (M2.2)    model (M2.3)
+GDP reporter                                      X                           X              X
+                                                                              X              X             X
+GDP partner                                       X                           X              X             X
+                                                                              X              X             X
+Distance                                          X                           X              X             X
+                                                                              X              X             X
+Contiguity                                        X                           X              X             X
+                                                                              X              X             X
+Common language                                   X                           X              X             X
+                                                                              X                            X
+Colony                                            X                           X              X
+                                                                                                       Not used
+GDP per capita (reporter)                         X                          52.1           43.2       Not used
+                                                                             53.1           29.6       Not used
+Trade in services with world (relevant category)  X                          52.7           44.5       Not used
+                                                                             55.5           31.4
+Time trend (linear)                               X                          45.4           37.7          8.7
+                                                                             53.1           22.5          0.7
+Merchandise trade (bilateral)                     X                          39.3           28.0         27.8
+                                                                             56.4           21.1          1.9
+Partner FE                                        X
+
+Tourist arrivals/departures (travel only)         X
+
+Exports: 1- % of total estimated observations     4.7
+
+digit services       % of total estimated value   17.3
+
+Imports: 1- % of total estimated observations     2.8
+
+digit services       % of total estimated value   13.1
+
+Exports: 2- % of total estimated observations     8.2
+
+digit services       % of total estimated value   23.7
+
+Imports: 2- % of total estimated observations     5.0
+
+digit services       % of total estimated value   20.5
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+It is worth emphasising that the a priori order of preference of the models generally provides the most
+accurate predictions, and that the choice of the model was solely driven by data availability in the regressor
+matrix for most cases. However, in some specific instances, expert judgement was used to inform the
+choice of the most suitable model, both for total trade in services and for the individual categories.
+
+For instance, when merchandise flows are too concentrated in primary commodities (e.g. oil) and thus very
+erratic, the merchandise trade variable was deliberately excluded from the explanatory variables. Similarly,
+partner fixed effects were intentionally excluded when based on very few, quite specific bilateral
+relationships.
+
+         3.3. Towards a complete matrix: summary of the estimation steps
+
+The process described in Sections 2. and 3. resulted in a fully consistent dataset of exports and imports
+by service category for 202 reporters and partners, from 2005 to 2023. Table 7 provides a summary
+overview of all the different types of estimates that were produced, showing that more than 90% of the
+data points and more than half of the trade value in the final bilateral database had to be estimated.
+16 
+
+Table 7. Building BaTIS: reported and estimated flows in the dataset, 2005-23
+
+                                          Total Services               1-digit EBOPS categories      2-digit EBOPS categories
+
+                                          % Value      % Count         % Value      % Count          % Value      % Count
+
+Total reported flows                               42           10              49               4            33               2
+Total estimated flows
+Derivations, corrections                           58           90              51               96           67           98
+Interpolations, back-casting, nowcasting
+Gravity estimations                                20           2               6                22           0            23
+Grand Total
+                                                   16           20              14               9            20               7
+
+                                                   22           68              31               66           47           67
+
+                                          100             100          100          100              100          100
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+         3.4. Step B.3: Ensuring the internal consistency of the dataset
+
+Having completed all the bilateral trade relationships in the BaTIS matrix, the following step is aimed at
+ensuring that the dataset is internally consistent in all directions, i.e. that the sum of trade across all partner
+countries equals the reported values with world as a whole for every children service category, and that
+the sum across the children service categories equals to total trade in the parent service for each trading
+pair. To achieve this, firstly the bilateral exports and imports (by service item) were rescaled to match each
+country's reported trade with the world. Secondly, a bi-proportional adjustment procedure (RAS) was
+carried out to eliminate any residual discrepancies first between total services and the sum of the 12 1-
+digit service categories, then between the RAS-adjusted 1-digit services and the sum of their 2-digit
+children.
+
+         3.4.1. Rescaling of estimates to officially reported world totals
+
+For those countries that did not report any geographical detail, the rescaling involved a relatively
+straightforward proportional scaling of the model-based estimates to the reported world totals (by service
+category). On the other hand, reported values and higher quality estimates (derivations, back- and
+nowcasting) were in principle kept as such (not rescaled) if relatively well aligned with the world totals.
+However, reported values were also rescaled if, despite reporting a nearly complete set of partners, large
+unallocated trade still existed or if the difference between the sum of (reported) bilateral trade was larger
+than the world totals (i.e. unallocated trade was negative).
+
+Three groups of reporters were therefore identified for which different rescaling strategies were applied.
+The attribution of countries to groups 2 and 3 was determined based on the ratio between unspecified
+trade and the sum of the unscaled model estimates. If that ratio was smaller than three, then reporters
+were allocated to group 3 and only the estimates were rescaled, not the reported data. If the ratio was
+equal or larger than three, implying a substantial misalignment between the reported bilateral flows and
+the world totals, the reporter was allocated to group 2 and the reported data was rescaled together with
+the estimated figures. In summary, the following rescaling rules were applied:
+
+     · Group 1. Countries that do not report any geographical detail and for which all bilateral
+          flows are derived from gravity-model estimates
+
+          The gravity-based bilateral estimates were rescaled to match the world totals (by service category).
+          The relative importance of each partner remained the same before and after the rescaling.
+
+     · Group 2. Countries that report many geographical partners, but their non-geographically
+          specified trade is substantial or negative
+
+          Both reported data and estimated flows are rescaled to match the world totals (by service
+          category).
+                                                                                                                           17
+
+     · Group 3. Countries where data consist of a mix of reported data and model-based estimates,
+          and the amount of unspecified trade is similar to the total amount of trade estimated by the
+          model for the missing partners
+          Reported data (including high quality estimates) were kept as such; model-based estimates were
+          rescaled to benchmark the world totals.
+
+In all cases specified above, if no trade with economies outside the BaTIS coverage was reported, 0.5%
+of total trade was allocated to the partner `rest of the world' (ROW) to cover any territories beyond the
+BaTIS scope (see also Section 2.2. ).
+
+         3.4.2. Final bi-proportional scaling (RAS)
+
+Any remaining discrepancies firstly between the total services values and the sum of the main 1-digit
+services items, then between the RAS-adjusted 1-digit service item and its children, were reconciled using
+a bi-proportional scaling routine (RAS), which used the reported world totals as constraints to ensure a
+fully consistent BaTIS matrix.
+
+4. Step C. Balancing of export and import flows
+
+Having a complete and consistent BaTIS dataset, the final step involved the reconciliation of the trade
+asymmetries to produce the final balanced matrix.
+The balancing process took place in three stages: (i) the asymmetries for exports and imports of total
+services were reconciled, to arrive at a balanced matrix of total trade in services; (ii) the balancing at the
+level of the main 1-digit service categories (iii) the balancing at the level of the 2-digit service categories,
+were carried out at the level of shares to ensure complete internal consistency in the matrix:
+
+     · First, the share of each individual 1-digit service category in the (unbalanced) total services flows
+          was calculated; then, those shares were balanced at the bilateral level; and finally, the balanced
+          shares were applied to the balanced value for total services.
+
+     · Secondly, the share of each individual 2-digit service category in the (unbalanced) parent service
+          flow was calculated; then, those shares were balanced for each 2-digit service at the bilateral level;
+          and finally, the balanced shares were applied to the balanced value for the main 1-digit parent
+          service.
+
+Again, this top-down approach was taken to ensure consistency, but also to recognise that the bilateral
+data at the higher level of aggregation (totals) are assumed to be of higher quality than those at the level
+of individual items.
+The reconciliation procedure entailed the calculation of a weighted average of the reported trade and its
+mirror flow (i.e. as reported by the partner country), and therefore the balanced value is always between
+the two flows, at least for total services.15
+
+15 The reconciled values for the individual service items, instead, may be outside the range of the reported and mirror
+value as the balancing was performed on the shares, not on the values themselves.
+18 
+
+The computation of the balancing weights follows the approach developed in cooperation with the Eurostat
+Full International and Global Accounts for Research in Input-Output (FIGARO) team.
+
+First, a bilateral asymmetry indicator was calculated as:
+                                                     = |  - |
+                                                                + 
+
+where X and M represent exports and mirror imports, respectively, and I refers to the exporter, j to the
+importer, k to the service category and t to the year.
+
+Second, an asymmetry index was calculated for each exporter (_ikt), importer (_jkt), service category k
+and year t as the trade-weighted average of the bilateral asymmetry indicator:
+
+                                               =    + 
+                                                                 ( + )
+
+                                                                                     
+
+                                               =    + 
+                                                                  ( + )
+
+                                                                                      
+
+Finally, the complement to 1 of the asymmetry index (symmetry index) was calculated, the 3-year moving
+average of which was used as weight to derive the balanced trade value.
+
+                                                            = (1-)
+                                                            = (1-)
+
+This method for the calculation of the symmetry indices does not need a discretionary threshold to
+determine the percentage of `good' bilateral trade flows16. Moreover, the use of 3-year moving averages
+further limits any unwanted fluctuations in the symmetry indices. Such stability is important in the process
+of balancing trade statistics as it avoids introducing potential disruptions in time series solely due to strong
+variance in the balancing weights.
+
+In addition to weighing the bilateral flows by the symmetry index of each partner, the balancing procedure
+also considers the varying levels of confidence surrounding the different estimation methodologies. For
+this purpose, four additional weights (w) were applied:
+
+     · weight of 1 for reported data or very high-quality estimates (such as derivations from reported
+          items)
+
+     · weight of 0.75 for estimates based on information from existing time series (backcasting,
+          nowcasting and interpolations)
+
+     · weight of 0.5 for gravity model estimates
+     · weight of 0.25 for reported data that are considered implausible or incorrect.17
+
+The final balancing formula between reporter i and partner j, for service item k in year t is therefore as
+follows:
+
+16 In the first (BPM5) edition of BaTIS, the symmetry index was calculated as the percentage of bilateral trade
+considered of sufficient quality (i.e. for which the asymmetry indicator was less than 30%). See Fortanier et al. (2017)
+for more information.
+17 These cases include zero trade reported for items that are in fact not compiled (may happen for manufacturing
+services on inputs owned by others, for instance), or corrections of reported negative insurance flows (see Section 2.2.
+).
+                                                                                                        19
+                   = (  )   + (  )  
+
+                                   (  ) + (  )
+
+Table 8 displays the average symmetry index for total services exports and imports (2005-2023), for a
+selection of large service traders, as well as the variation of this symmetry index over time (measured by
+its standard deviation). Overall, the symmetry indices of large service exporting economies are relatively
+high and show low standard deviations, while non-OECD countries typically display lower symmetry
+indices.
+
+Table 8. Symmetry indices for total services trade, 2005-23, selected economies (that report
+bilateral data)
+
+Index summarised as mean and standard deviation across all years
+
+                      Exports  Imports                            Exports           Imports
+                  mean sd
+                               mean     sd                        mean      sd      mean      sd
+                    0.82 0.04                                         0.74    0.04    0.76     0.02
+Australia           0.75 0.03  0.67     0.07  Korea
+Belgium             0.65 0.03                 Luxembourg
+Brazil              0.79 0.02  0.83     0.02  Malaysia            0.63      0.04    0.77      0.02
+Canada              0.73 0.04                 Netherlands
+China (People's                0.66     0.04  New Zealand         0.63      0.03    0.71      0.04
+Republic of)        0.70 0.03
+Denmark             0.81 0.01  0.87     0.02                      0.74      0.03    0.75      0.04
+France              0.81 0.01
+Germany             0.62 0.09  0.73     0.03                      0.75      0.07    0.76      0.02
+Hongkong (China)    0.74 0.03
+Ireland             0.80 0.02  0.80     0.03 Russian Federation   0.60      0.03    0.68      0.03
+Italy               0.80 0.02
+Japan                          0.85     0.01 Singapore            0.65      0.03    0.68      0.05
+
+                               0.85     0.02 Spain                0.83      0.02    0.80      0.02
+
+                               0.64     0.13 Sweden               0.74      0.01    0.81      0.01
+
+                               0.73     0.05 Switzerland          0.79      0.04    0.67      0.02
+
+                               0.85     0.02 United Kingdom       0.80      0.02    0.71      0.03
+
+                               0.80     0.03 United States        0.81      0.03    0.76      0.03
+
+Note: The symmetry index is a measure of the similarity between the reported trade values and the figures reported by their peers; the closer
+the index is to 1, the more a country's trade is aligned with what is reported by its partners.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+5. Results
+
+         5.1. Reported vs. balanced trade for total trade in services
+
+The BaTIS balanced trade values, resulting from the reconciliation method described above, differ by
+construction from both the reported flows and the relevant mirror flows. The size of the difference between
+the reported and the balanced value is a function of the asymmetry level between two countries as well as
+the symmetry index of each partner country. In general, the balanced value for a specific service category
+will be closer to that reported by the country whose statistics are, on average, more in line with what has
+been reported by its partner country (i.e. the country with a higher symmetry index).
+
+Figure 1 shows the comparison between the reported exports and imports and the final balanced trade at
+world level for total services. Because of the top-down approach followed, BaTIS does not change the
+overall picture of world trade. However, exports are systematically higher than imports and the gap has
+increased over time, from about 2% in 2005 to above 8% in 2021-2023, in parallel with the growth in overall
+services trade.
+20 
+Figure 1. World services trade
+Trillions of USD
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+While the difference between reported and balanced values is minimal at world level, it can be quite
+substantial for individual traders. In particular, it appears that some countries systematically under- or over-
+report their trade in services compared with what their partners declare, resulting in significant differences
+between the sum of the balanced trade figures and the original reported totals.
+Table 9 provides insights into the size of such differences by showing the ratio between the sum of
+balanced trade and the sum of reported trade across all partners and years for a selection of leading
+economies that reported bilateral data.
+                                                                                   21
+
+Table 9. Ratio between the sum of balanced bilateral trade and reported total trade across all years,
+selected countries reporting bilateral trade statistics
+
+Percentage
+
+Australia                      Exports   Imports                Korea    Exports   Imports
+Belgium                        6.5 (+)  34.6 (+)         Luxembourg      9.4 (-)  12.0 (-)
+Brazil                        16.6 (-)   7.3 (-)                        20.2 (-)   1.5 (-)
+Canada                        18.4 (+)   3.1 (-)             Malaysia   15.6 (-)   8.6 (-)
+China (People's Republic of)   6.9 (-)   2.7 (+)          Netherlands    3.4 (-)   1.2 (+)
+Denmark                        7.0 (-)  22.4 (-)        New Zealand      0.0      13.3 (+)
+France                        16.5 (-)  10.3 (-)  Russian Federation    11.8 (-)  11.8 (-)
+Germany                        9.5 (-)   5.0 (-)                         3.0 (-)   3.7 (-)
+Hongkong, China                0.5 (+)   3.0 (+)            Singapore    2.8 (-)  17.2 (+)
+Ireland                       34.6 (+)  45.1 (+)                 Spain   7.0 (-)   2.9 (+)
+Italy                         10.1 (-)   8.1 (-)                        18.3 (+)  44.8 (+)
+Japan                          7.1 (+)   1.4 (+)              Sweden     1.2 (-)  34.5 (+)
+                               5.2 (-)   6.1 (-)          Switzerland    9.5 (+)  20.5 (+)
+                                                     United Kingdom
+                                                        United States
+
+Note: (+) and (-) denote the respectively overall positive or negative difference during the 2005-2023 period, with (+) and (-) indicating that
+balanced trade values were on average higher (lower) than reported statistics.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+
+For some of the leading traders, especially in Europe, the average asymmetries at total services level are
+relatively low but they remain an issue. For instance, relative intra-EU asymmetries in trade in services
+showed a median of 10% for total services of EU-27 (see Eurostat, 2023). For Ireland and Luxembourg,
+for example, both exports and imports appear over-reported, with the difference reaching 20% in the case
+of Luxembourg's exports. Similarly, China and Singapore seem to over-estimate the level of their exports
+and imports compared to what their trading partners assess, while the opposite is true for Hong Kong
+(China). On the other hand, the reported exports of the United Kingdom and the United States are well
+aligned with the balanced figures, while they both seem to underestimate the level of their imports (by 20%
+for the United States and 34.5% for the United Kingdom). For Switzerland, which only recently started
+publishing bilateral trade in services statistics, the balanced figures are significantly higher than reported,
+particularly on the imports side and for services such as transport, travel and other business services.
+
+With a few exceptions, the balancing has a limited impact on the relative importance of the leading traders
+in world trade and on the shares of the top trading partners for these traders. Figure 2 shows, for a selection
+of reporting countries with significant trade in services, the share of their top ten partners according to their
+reported and balanced figures for total services.
+22 
+Figure 2. Top ten partner countries for selected service exporters: reported versus balanced trade
+data, 2023
+Partner share in total exports
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+While for (most of) the OECD economies, the asymmetries are relatively moderate, this is not always the
+case for other countries covered in BaTIS, including those for which data were imputed or estimated. In
+some cases, asymmetries can be so large that the total balanced trade figures end up being very different
+from the reported values.
+An overview of such extreme cases is provided in Table 10. Similarly to what was already observed in the
+previous update of BaTIS, Bermuda is at the top of the list: its balanced exports and imports are
+respectively 44 and 17 times higher than reported over the time period considered. While these figures
+might seem exaggerated, they reflect the fact that, amongst others, the United States, the Netherlands,
+Ireland and the United Kingdom report sizeable transactions with Bermuda, most notably in insurance and
+financial services, which appear to go completely undetected in Bermuda's own data. These issues are
+                                                                                                                           23
+
+most probably linked to the presence of foreign-controlled MNEs and also occur, although at a smaller
+scale, in countries such as the Cayman Islands and Barbados.
+
+Furthermore, Mexico, Cyprus and the United Arab Emirates all see their balanced exports considerably
+exceed the reported ones, while the opposite occurs for, amongst others, Macau (China), India and Israel.
+On the import side, some large non-OECD member economies such as India, Saudi Arabia and Thailand,
+appear to over-report their trade in services.
+
+Table 10. Extreme cases of under- or over-reporting, total services, selected economies
+Percentage, millions of USD
+
+Bermuda                  Exports          Average balanced         Bermuda                  Imports        Average balanced
+Liberia             Ratio between            trade value        Cayman Islands      Ratio between             trade value
+Barbados        balanced and reported           2005-23                         balanced and reported            2005-23
+Congo                                                   64 165     Barbados                                                17 275
+Afghanistan             2005-23                          2 849  Macau (China)           2005-23                              8 745
+Cayman Islands                    4 449%                10 163                                    1 702%                     4 092
+Mauritius                         1 311%                 2 248    Afghanistan                       670%                     8 845
+Bahamas                             669%                 2 949     Bahamas                          618%                     2 678
+Cyprus                              418%                 4 539       Liberia                        146%                     3 007
+                                    201%                 4 151      Panama                          122%                     1 115
+Nigeria                              72%                 4 476                                       89%                     7 155
+Brunei                               62%                18 506       Brunei                          84%                     2 776
+Darussalam                           52%                          Darussalam                         79%
+Tunisia                              40%                 4 569                                       75%                     3 333
+Panama                                                     759     Mauritius                                               12 632
+Mexico                               39%                            Cyprus                           75%
+Switzerland                          37%                                                             54%                  169 425
+United Arab                                                                                                                  3 875
+Emirates        34%                       7 408 Switzerland                                          45%                   49 061
+                                                                                                     42%                     3 154
+Sri Lanka       26%                       12 445                Congo                                14%
+Saudi Arabia                                                                                          6%                     4 172
+                18%                       36 499                Mexico                                                     24 178
+Uzbekistan                                                                                            -4%                  59 632
+Iraq            10%                       130 780               Tunisia                               -5%
+Thailand                                                                                              -5%                    3 440
+Jordan          4%                        56 074                                                                             1 552
+Israel                                                                                                -8%                  16 447
+Qatar                                                           Jordan                              -17%                   36 445
+India                                                                                               -20%                   18 826
+Macau (China)   -5%                       3 975                        Israel                       -21%                     3 647
+Cambodia                                                                                            -22%                   57 378
+Kuwait          -8%                       15 338 United Arab                                        -22%                   91 756
+Lebanon                                                                                             -23%                   14 116
+Iran                                                            Emirates                            -34%                     6 622
+Turkmenistan                                                                                        -34%                     8 194
+                -11%                      2 003 Uzbekistan                                          -40%                     2 432
+                                                                                                    -42%                     8 048
+                -15%                      3 568                 Cambodia                            -43%
+                                                                                                    -49%
+                -16%                      38 466                Nigeria
+
+                -25%                      4 275                 Thailand
+
+                -27%                      30 529                       Qatar
+
+                -29%                      9 179                 Sri Lanka
+
+                -33%                      110 648 Saudi Arabia
+
+                -39%                      16 547                       India
+
+                -40%                      1 761                 Kuwait
+
+                -43%                      4 734                 Lebanon
+
+                -49%                      6 823                        Iraq
+
+                -49%                      4 485 Turkmenistan
+
+                -62%                      1 146                        Iran
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+24 
+
+         5.2. Reported vs. balanced trade for individual service categories
+
+As shown in Figure 1, the aggregate absolute differences between the reported data and the final balanced
+estimates are around 1 to 4% at world level. Those differences are generally much larger, however, for the
+individual service categories.
+
+Table 11 summarizes the (trade weighed) average differences between reported and balanced figures,
+again calculated as the ratio between the sum of the balanced trade and the sum of reported trade across
+all reporters, partners and years. The ratios are displayed for all the bilateral flows (including the BaTIS
+estimations) and for the reported flows only.
+
+With an absolute ratio of about 3% for both exports and imports, travel is the most aligned category at
+world level. Transport, instead, appears to be systematically over-reported on the import side. Somewhat
+surprisingly, reported and balanced values for charges for the use of intellectual property n.i.e seem to be
+relatively well aligned, possibly reflecting the fact that those services are mostly traded by economies with
+advanced statistical systems.
+
+Two BPM6 items, manufacturing services on physical inputs owned by others and maintenance and repair
+services n.i.e., seem to be systematically under-reported on the import side (indeed, these items are not
+yet compiled by many reporters, including a few OECD members). Consequently, balanced trade values
+in these categories are very close to the reported exports, as the most important exporters in these
+categories are more likely to report the related transactions.
+
+Imports of insurance services are systematically higher than exports, while the opposite is true for financial
+services, possibly hinting at a misclassification of transactions in this area.
+
+High asymmetries are also observable for telecommunication, computer and information services and
+government goods and services n.i.e, while the discrepancies for construction, personal, cultural and
+recreational services and, most notably, other business services are relatively moderate at the aggregate
+level.
+                                                                                                                              25
+
+Table 11. Ratio between the sum of balanced bilateral trade and reported trade by EBOPS category,
+across all years
+
+Percentage
+
+                                                          Exports                                                   Imports
+
+                                                          All observations Reported flows  All observations                  Reported flows
+
+Total services                                            -2.1     0.0                                              1.7      8.1
+Manufacturing services on physical inputs owned by
+others                                                    6.5      -15.7                                            35.3     4.4
+Maintenance and repair services n.i.e.
+Transport                                                 -3.2     -4.9                                             47.5     15.4
+Sea transport
+Air transport                                             5.1      3.4                                              -11.5    2.1
+Other modes of transport
+Postal and courier services                               8.6      9.8                                              -15.1    6.3
+Travel
+Travel; Business                                          2.2      -7.8                                             -9.5     -2.9
+Travel; Personal
+Construction                                              2.5      -4.4                                             -8.9     -3.3
+Insurance and pension services
+Financial services                                        3.1      -15.2                                            25.2     6.7
+Charges for the use of intellectual property n.i.e.
+Telecommunications, computer, and information             -2.6     2.8                                              2.7      4.7
+services
+Telecommunications services                               7.0      -1.7                                             -0.2     0.6
+Computer services
+Information services                                      -4.4     0.7                                              3.4      5.3
+Other business services
+Research and development services                         2.4      -3.7                                             13.8     3.8
+Professional and management consulting services
+Technical, trade-related, and other business services     26.4     2.6                                              -21.6    0.4
+Personal, cultural, and recreational services
+Audiovisual and related services                          -21.0    -22.1                                            54.9     49.5
+Personal, cultural, and recreational services other than
+audiovisual and related services                          10.5     5.7                                              -5.1     -5.7
+Government goods and services n.i.e.
+                                                          -22.4    -15.4                                            26.0     25.9
+
+                                                          -8.0     -2.6                                             5.8      3.1
+
+                                                          -26.8    -11.7                                            32.4     29.7
+
+                                                          -7.8     -19.2                                            34.8     33.9
+
+                                                          -1.0     2.6                                              -2.3     0.3
+
+                                                          11.0     13.2                                             -10.8    -6.3
+
+                                                          -7.5     -2.0                                             8.5      10.0
+
+                                                          0.7      8.8                                              -6.4     8.2
+
+                                                          2.8      -1.8                                             5.5      13.1
+
+                                                          11.3     -4.9                                             9.8      16.0
+
+                                                          -8.7     4.5                                              -0.7     13.3
+
+                                                          29.8     35.6                                             -1.6     2.8
+
+Note: A positive (negative) ratio indicates that the balanced values are higher (lower) than the reported figures.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+26 
+6. Conclusions and next steps
+
+This paper presented the OECD-WTO BaTIS dataset, describing the methodology developed by the
+OECD and WTO to build a complete, consistent and balanced matrix of trade in services statistics.
+Further work is necessary to improve future editions of the dataset. Over the past years, several countries
+have been actively involved in bilateral and multilateral efforts to examine the causes of the observed
+asymmetries, including by sharing compilation methodologies and detailed information.18 Such efforts at
+the level of national compilers are crucial to improve the reliability of trade in services statistics at source
+and to enhance public trust in these data. National efforts to reconcile the observed asymmetries are
+preferable to any mechanical balancing procedure, and therefore new results made available will be
+absorbed in the future editions of BaTIS.
+While the development of BaTIS was driven by the need for complete and coherent trade in services
+statistics for the purposes of constructing global Supply and Use and Input-Output tables, the dataset also
+constitutes a standalone analytical product. In particular for countries with less developed statistical
+systems, BaTIS can serve as a starting point to identify the most important trends and to support trade in
+services policies, hopefully fostering continuous improvements in existing data compilation practices.
+BaTIS is intended to be regularly updated and improved. The most prominent areas for future work include
+adding the Mode of Supply dimension. The methodology underpinning the construction of BaTIS is fully
+compatible with the WTO dataset on Trade in Services by Mode of Supply (TISMOS). Indeed, the two
+products were developed with a view to be eventually merged. A detailed, multidimensional dataset
+providing information on the type of service traded, the partner and the mode of supply, whereas
+challenging to construct, would constitute an invaluable tool for policy-makers and trade negotiators.
+Furthermore, given the inherent relationship between the supply of services via mode 1 (cross border
+supply) and the digital delivery of services (IMF et al., 2019), the addition of the mode of supply dimension
+to BaTIS would allow a deeper understanding of how services are traded in the 21st century.
+
+18 A number of bilateral and trilateral meetings have been held in the context of the OECD Working Party on Trade in
+Goods and Services (WPTGS).
+                                                                                                                           27
+
+7. References
+
+Anderson, J.E. and E. van Wincoop (2003), "Gravity with gravitas: A solution to the border puzzle",
+    American Economic Review, Vol. 93, No. 1, pp. 170-192.
+
+Cassimon, S., I. Gutierrez, A. Liberatore and K. Sarrazin (2025), "The balanced international
+    merchandise trade dataset", OECD Technical Papers, OECD Publishing, Paris, forthcoming.
+
+Eurostat (2023), Quality Report on Balance of Payments (BOP), International Investment Position (IIP),
+    International Trade in Services, (ITS) and Foreign Direct Investment Statistics (FDI), 2023 edition,
+    https://ec.europa.eu/eurostat/fr/web/products-statistical-reports/-/ks-ft-23-004
+
+Fortanier, F., A. Liberatore, A. Maurer, G. Pilgrim and L. Thomson (2017), "The OECD-WTO balanced
+    trade in services database", 467721-OECD-WTO-Balanced-Trade-in-Services-database-
+    methodology.pdf.
+
+IMF et al. (2023), Handbook on Measuring Digital Trade, Second Edition, OECD Publishing,
+    Paris/International Monetary Fund/UNCTAD, Geneva 10/WTO,
+    Geneva, https://doi.org/10.1787/ac99e6d3-en.
+
+Santos Silva, J.M.C. and S. Tenreyro (2006), "The log of gravity", The Review of Economics and
+    Statistics, Vol. 88, No. 4, pp. 641-658.
+
+Wettstein, S., A. Liberatore, J. Magdeleine and A. Maurer (2019), "A global Trade in Services dataset by
+    sector and by Mode of Supply (TISMOS)",
+    www.wto.org/english/res_e/statis_e/daily_update_e/Tismos_methodology.pdf.
+28 
+
+Annex A. List of economies covered in the BaTIS
+dataset
+
+List of reporters and partners:
+
+Afghanistan, Albania, Algeria, Angola, Anguilla, Antigua and Barbuda, Argentina, Armenia, Aruba,
+Australia, Austria, Azerbaijan, Bahamas, Bahrain, Bangladesh, Barbados, Belarus, Belgium, Belize, Benin,
+Bermuda, Bhutan, Bolivia, Bosnia and Herzegovina, Botswana, Brazil, Brunei Darussalam, Bulgaria,
+Burkina Faso, Burundi, Cabo Verde, Cambodia, Cameroon, Canada, Cayman Islands, Central African
+Republic, Chad, Chile, People's Republic of China, , Colombia, Comoros, Congo, Costa Rica, Côte
+d'Ivoire, Croatia, Cuba, Curaçao, Cyprus, Czech Republic, Democratic Republic of the Congo, Denmark,
+Djibouti, Dominica, Dominican Republic, Ecuador, Egypt, El Salvador, Equatorial Guinea, Eritrea, Estonia,
+Eswatini, Ethiopia, Faeroe Islands, Fiji, Finland, France, French Polynesia, Gabon, Georgia, Germany,
+Ghana, Greece, Grenada, Guatemala, Guinea, Guinea-Bissau, Guyana, Haiti, Honduras, Hong Kong
+(China), Hungary, Iceland, India, Indonesia, Islamic Republic of Iran, Iraq, Ireland, Israel, Italy, Jamaica,
+Japan, Jordan, Kazakhstan, Kenya, Kiribati, Democratic People's Republic of Korea, Korea, Kuwait,
+Kyrgyzstan, Lao People's Democratic Republic, Latvia, Lebanon, Lesotho, Liberia, Libya, Lithuania,
+Luxembourg, Macau (China), Madagascar, Malawi, Malaysia, Maldives, Mali, Malta, Mauritania, Mauritius,
+Mexico, Republic of Moldova, Mongolia, Montenegro, Montserrat, Morocco, Mozambique, Myanmar,
+Namibia, Nepal, Netherlands, Netherlands Antilles, New Caledonia, New Zealand, Nicaragua, Niger,
+Nigeria, Republic of North Macedonia, Norway, Oman, Pakistan, Palestinian Authority or West Bank and
+Gaza Strip, Panama, Papua New Guinea, Paraguay, Peru, Philippines, Poland, Portugal, Qatar, Romania,
+Russian Federation, Rwanda, Saint Kitts and Nevis, Saint Lucia, Saint Martin, Saint Vincent and the
+Grenadines, Samoa, Sao Tomé and Principe, Saudi Arabia, Senegal, Serbia, Former Serbia and
+Montenegro, Seychelles, Sierra Leone, Singapore, Slovak Republic, Slovenia, Solomon Islands, Somalia,
+South Africa, Spain, Sri Lanka, Sudan, Suriname, Sweden, Switzerland, Syrian Arab Republic, Chinese
+Taipei Tajikistan, United Republic of Tanzania, Thailand, The Gambia, Timor-Leste, Togo, Tonga, Trinidad
+and Tobago, Tunisia, Republic of Türkiye, Turkmenistan, Turks and Caicos Islands, Tuvalu, Uganda,
+Ukraine, United Arab Emirates, United Kingdom, United States, Kosovo, Uruguay, Uzbekistan, Vanuatu,
+Bolivarian Republic of Venezuela, Viet Nam, Yemen, Zambia, Zimbabwe.
+
+List of partners covered in entity "Rest of the World" (ROW):
+
+Andorra; Antarctica; Samoa; Bonaire; Saint Eustatius; Saba; Bouvet Island; Cocos (Keeling) Islands; Cook
+Islands; Christmas Island; Western Sahara; Falkland Islands (Malvinas); , Federated States of Micronesia;
+French Southern and Antarctic Lands; French Guiana; Guernsey; Gibraltar; Greenland; Guadeloupe;
+South Georgia and the South Sandwich Islands; Guam; Heard Island and McDonald Islands; Isle of Man;
+British Indian Ocean Territory; Jersey; Liechtenstein; Monaco; Marshall Islands; Northern Mariana Islands;
+Martinique; Norfolk Island; Nauru; Niue; Saint Pierre and Miquelon; Pitcairn; Puerto Rico; Palau; Réunion;
+Saint Helena, Ascension and Tristan da Cunha; San Marino; South Sudan; Tokelau; United States Minor
+Outlying Islands; Holy See; British Virgin Islands; United States Virgin Islands; Wallis and Futuna Islands.
+Annex B. Reported data availability: maximum number of partners by
+reporter and EBOPS 2010 category
+
+ISO3 Partner name       S SA SB SC SD SE SF SG SH SI SJ SK SL SC1 SC2 SC3 SC4 SDA SDB SI1 SI2 SI3 SJ1 SJ2 SJ3 SK1 SK2
+
+XKV Kosovo              200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+ALB Albania
+ARG Argentina           200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+AUS Australia
+AUT Austria             194  3 65 176 185 10 176 65 59       .. 134  ..  ..  ..      ..      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..
+BGD Bangladesh
+BLR Belarus             34 34 34 34 34 34 34 34 34 34 34 34 34               ..      ..      ..  ..  34  34  ..  ..  ..  ..  ..  ..      ..      ..
+BEL Belgium
+BTN Bhutan              200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+BOL Bolivia
+BIH Bosnia and          193 81 45 171 189 34 51 93 43 158 164 121 104 164 132                39 29   ..  .. 75 158 54 46 136 155         ..      ..
+
+          Herzegovina   187 41 69 160 161 53 134 157 96 171 128 103 114 113 138 110 75               ..  .. 131 157 57 49 105 116 78 101
+BRA Brazil
+BGR Bulgaria            200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+CAN Canada
+CHL Chile               1    ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..
+CHN China
+                        ..   ..  ..  .. 28   ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..
+          (People's
+          Republic of)  200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+COL Colombia
+CRI Costa Rica          37   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..
+HRV Croatia
+CYP Cyprus              200 59 59 59 59 59 59 59 59 59 59 59 59              59      59      59 59   59  59 59 59 59 59 59 59 59 59
+CZE Czech
+          Republic      58   .. 83 58 58 83 83 83 83 83 81 83 41             1       1       1   1   1   1 83 83     1 83 83 81      83      83
+DNK Denmark
+                        ..   ..  .. 31 12    ..  ..  ..  ..  6 14    ..  ..  ..      ..      ..  ..  ..  ..  ..  6   ..  ..  ..  ..      ..      ..
+
+                        13 13 13 13 13 13 13 13 13 13 13 13 13               ..      ..      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..      ..      ..
+
+                        ..   3 17 42     1   2   ..  .. 32 57 62 44      1   23      26      34  6   ..  .. 33   .. 53 18    .. 27 13            ..
+
+                        200 200 200 200  .. 200 200 200 200 200 200 200 200  ..      ..      ..  ..  ..  .. 200  .. 200 200 200 200 200 200
+
+                        200 59 59 59 59 59 59 59 59 59 59 59 59 59               59      59      59  59  59 59 59 59 59 59 59        59      59
+
+                        200 59 59 59 59 59 59 59 59 59 59 59 59 59               59      59      59  59  59 59 59 59 59 59 59        59      59
+
+                        200 59 59 59 59 59 59 59 59 59 59 59 59 59               59      59      59  59  59 59 59 59 59 59 59        59      59
+
+                        199 59 59 59 59 59 59 59 59 59 59 59 59 59               59      59      59  59  59 59 59 59 59 59 59        59      59
+30 
+
+ISO3 Partner name     S SA SB SC SD SE SF SG SH SI SJ SK SL SC1 SC2 SC3 SC4 SDA SDB SI1 SI2 SI3 SJ1 SJ2 SJ3 SK1 SK2
+
+EGY Egypt             .. 114 119 149 137 100 94 126 135 131 139 107 132   ..  18 114  51  ..  .. 91   ..  ..  ..  ..  ..  ..  ..
+EST Estonia
+FIN Finland           200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+FRA France
+DEU Germany           200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+GRC Greece
+HKG Hong Kong         200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+          (China)     199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+HUN Hungary
+ISL Iceland           199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+IRL Ireland
+ISR Israel            46  1   7 46 21     .. 43 42 40 40 44 41        .. 23   21  18  15  ..  .. 19 19 18 18 23 22 16 16
+ITA Italy
+JPN Japan             200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+KAZ Kazakhstan
+KOR Korea             199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+LVA Latvia
+LTU Lithuania         199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+LUX Luxembourg
+MYS Malaysia          ..  .. 37   .. 38 31    .. 15 37 28     .. 16   ..  ..  ..  ..  ..  ..  .. 38 44 29 35      ..  9 16 43
+
+                      200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+                      34 34 34 34 34 34 34 34 34 34 34 34 34 34               34  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+                      .. 11 59 117 91 20      .. 24 28 67 72 37 59        ..  ..  ..  ..  ..  .. 20 39 32     5   .. 21   ..  ..
+
+                      4   4   ..  4   4   ..  4   ..  4   4   4   ..  4   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+                      199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+                      200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+                      200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+                      47 20   .. 20 20 20     ..  ..  .. 20 20 20 20      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+MLT Malta             200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+MEX Mexico            67 20 18 44     3   ..  ..  .. 15 25 39     9   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+MNE Montenegro 200 59 59 59 59 59 59 59 59 59 59 59 59 59                     59  59  59  59  59 59 59 59 59 59 59        59  59
+
+NLD Netherlands 200 59 59 59 59 59 59 59 59 59 59 59 59 59                    59  59  59  59  59 59 59 59 59 59 59        59  59
+
+NZL New Zealand 198 .. 53 58 194 58 58 58 58 58 58 58 190 7                   8   ..  6 191 196 12 19 10 15 33 32         5 13
+
+MKD North             1   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+          Macedonia
+
+NOR Norway            199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+PAK Pakistan          34  .. 68 184 152 49 183 174 88 161 182 64 127      ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+PER Peru              ..  ..  ..  .. 71   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..
+
+POL Poland            200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+PRT Portugal          200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+ROU Romania           200 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+
+RUS Russian           197 81 129 176 81 100 149 192 115 184 184 136   1 79    79  79  79  ..  .. 79 79 79 79 79 79 79         ..
+          Federation
+
+SRB Serbia            199 59 59 59 59 59 59 59 59 59 59 59 59 59              59  59  59  59  59 59 59 59 59 59 59        59  59
+                                                                                                                                            31
+
+ISO3 Partner name S SA SB SC SD SE SF SG SH SI SJ SK SL SC1 SC2 SC3 SC4 SDA SDB SI1 SI2 SI3 SJ1 SJ2 SJ3 SK1 SK2
+
+SGP Singapore       31  9   9   9   ..  9   9   9                      9   9   9   9   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..   ..
+
+SVK Slovak          199 59 59 59 59 59 59 59 59 59 59 59 59 59                                 59  59  59  59  59 59 59 59 59 59 59        59   59
+          Republic
+
+SVN Slovenia        200 59 59 59 59 59 59 59 59 59 59 59 59 59                                 59  59  59  59  59 59 59 59 59 59 59        59   59
+
+ESP Spain           199 59 59 59 59 59 59 59 59 59 59 59 59 59                                 59  59  59  59  59 59 59 59 59 59 59        59   59
+
+SWE Sweden          200 59 59 59 59 59 59 59 59 59 59 59 59 59                                 59  59  59  59  59 59 59 59 59 59 59        59   59
+
+CHE Switzerland     40  ..  .. 40 40    .. 40 40 40 40 40                          ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  .. 16 40 40     ..   ..
+
+TTO Trinidad and    ..  ..  ..  ..  ..  3   ..  3                      3   3   3   3   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..   ..
+
+Tobago
+
+TUN Tunisia         65  ..  .. 131 103  ..  ..  ..                     ..  ..  ..  .. 70   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..   ..
+
+TUR Turkey          38 38 38 38 59      1 38 38 38 38 38 38                            1   1   1   1   59  1   1 59    1 59    1 59    1   1    1
+
+UKR Ukraine         6   6   6   6   6   6   6   6                      6   6   6   6   5   ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..  ..   ..
+
+GBR United          200 59 59 59 63 59 59 59 59 60 61 59 59 59                                 59  59  59  60  61 59 59 59 59 59 59        59   59
+          Kingdom
+
+USA United          73  .. 73 73 73 64 73 73 73 73 73 73 60 73                                 73  73  ..  73  73 73 71 73 69 71 71        71   71
+          States
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+Annex C. Results of PPML regressions for total
+services (exports)
+
+Constant                   Model 1        Model 2        Model 3        Model 4        Model 5
+Distance                   -9.10***       -7.53***        7.63***        6.27***       22.64***
+Contiguity                   -1.28          -1.11          -1.16          -1.03
+Common language            -0.21***       -0.21***       -0.43***       -0.44***         -1.13
+Colony                                                                                 -0.53***
+GDP of reporter                0              0              0              0
+GDP of partner              0.13***        0.15***        0.34***        0.33***           0
+GDP/capita of reporter       -0.01          -0.01          -0.01          -0.01         0.20***
+Total trade with world      0.38***        0.38***        0.50***        0.51***         -0.01
+Merchandise trade            -0.01          -0.01          -0.01          -0.01         0.66***
+Arrivals                    0.16***        0.17***        0.08***        0.09***         -0.01
+t                            -0.01          -0.01          -0.01          -0.01         0.22***
+Partner FE                 -0.04***       -0.05***        0.19***        0.18***         -0.01
+Deviance                                                                                0.20***
+Num. obs.                      0              0              0              0
+Mc Fadden pseudo R2         0.24***        0.22***        0.44***        0.42***           0
+                             -0.01          -0.01          -0.01          -0.01         0.74***
+                            0.08***        0.07***       -0.09***       -0.07***
+                             -0.01          -0.01          -0.01                           0
+                            0.65***        0.67***        0.83***           0          -0.11***
+                             -0.01          -0.01          -0.01         0.81***         -0.01
+                            0.37***        0.37***                                      0.79***
+                                                         -0.02***           0            -0.01
+                               0              0              0
+                            0.02***                                     -0.00***       -0.01***
+                                            0.00*        -0.01***           0              0
+                               0              0              0              Y              Y
+                            0.00**            Y              Y
+                                                                     28 704 368.57  49 986 801.61
+                               0       19 911 293.59  23 993 456.94   148 981.00     148 981.00
+                               Y        116 035.00     120 373.00         0.93           0.87
+                        16 839 122.86       0.94           0.93
+                          94 687.00
+                             0.94
+
+Note: Significance levels indicated with *** for 0.1%, ** for 1% and * for 5%. The McFadden pseudo- R2 is defined as one minus the ratio
+between the (maximized) likelihood value from the fitted model, and the corresponding value for the null model.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+                                                                                                                           33
+
+Annex D. Results of PPML regressions for total
+services (imports)
+
+Constant                   Model 1        Model 2        Model 3        Model 4        Model 5
+Distance                     2.98*        -7.75***       14.44***        5.06***       29.09***
+Contiguity                   -1.31          -1.15                         -1.23
+Common language            -0.21***       -0.21***         -1.42        -0.42***         -2.29
+Colony                         0                         -0.43***                      -0.54***
+GDP of reporter             0.14***           0                             0            -0.01
+GDP of partner               -0.01         0.15***           0           0.24***        0.05**
+GDP/capita of reporter      0.32***         -0.01         0.24***         -0.01          -0.02
+Total trade with world       -0.01         0.33***         -0.01         0.52***        0.69***
+Merchandise trade              0            -0.01         0.51***         -0.01          -0.01
+Departures                   -0.01          -0.01          -0.01        -0.06***        0.11***
+t                           0.02***         -0.01        -0.05***         -0.01          -0.02
+Partner FE                     0          -0.06***         -0.01         0.17***        0.17***
+Deviance                    0.16***                       0.24***                        -0.01
+Num. obs.                    -0.02            0                             0           0.72***
+Mc Fadden pseudo R2        -0.04***        0.18***           0           0.32***
+                               0            -0.01         0.30***         -0.01            0
+                            0.75***         -0.01          -0.02        -0.07***       -0.15***
+                             -0.01                       -0.10***                        -0.01
+                            0.40***           0            -0.01            0           0.89***
+                               0           0.73***        0.89***        0.86***         -0.01
+                           -0.14***                        -0.01          -0.01
+                               0              0                                        -0.02***
+                           -0.00***        0.38***       -0.12***       -0.01***           0
+                               0                             0              0              Y
+                               Y              0                             Y
+                                                         -0.01***                   55 850 590.42
+                        16 985 168.57      0.00**            0       29 313 863.14     140 468
+                            87 001            0              Y          140 468          0.84
+                             0.93             Y                           0.92
+                                                      24 551 368.79
+                                       20 400 852.34     111 523
+                                          107 307          0.92
+                                            0.93
+
+Note: Significance levels indicated with *** for 0.1%, ** for 1% and * for 5%. The McFadden pseudo- R2 is defined as one minus the ratio
+between the (maximized) likelihood value from the fitted model, and the corresponding value for the null model.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+34 
+
+Annex E. Estimated bilateral trade by model,
+service category and flow
+
+Percentage, across all years
+
+                                                                     Exports                       Imports
+
+Item                  Description                             Model  % of total     % of total     % of total     % of total
+
+                                                              M2.1   est. obs.      est. val.      est. obs.      est. val.
+                                                              M2.2
+SA Manufacturing services on physical inputs owned by others  M2.1   64                        79  64                        89
+                                                              M2.2
+                                                              M2.1   36                        21  36                        11
+                                                              M2.2
+SB Maintenance and repair services n.i.e.                     M2.1   60                        64  58                        74
+                                                              M2.2
+                                                              M2.3   40                        36  42                        26
+                                                              M2.1
+SC Transport                                                  M2.2   54                        74  54                        73
+                                                              M2.3
+                                                              M2.1   46                        26  46                        27
+                                                              M2.2
+SC1 Sea transport                                             M2.3   50                        86  53                        84
+                                                              M2.1
+                                                              M2.2   32                        13  35                        15
+                                                              M2.3
+                                                              M2.0   18                         1  13                         1
+                                                              M2.1
+SC2 Air transport                                             M2.2   49                        71  48                        71
+                                                              M2.0
+                                                              M2.1   36                        28  33                        28
+                                                              M2.2
+                                                              M2.3   15                         1  19                         2
+                                                              M2.0
+SC3 Other modes of transport                                  M2.1   52                        67  48                        59
+                                                              M2.2
+                                                              M2.3   29                        28  26                        35
+                                                              M2.1
+                                                              M2.2   19                         5  26                         6
+                                                              M2.1
+SC4 Postal and courier services                               M2.2   33                        57  35                        64
+                                                              M2.1
+                                                              M2.2   20                        21  17                        25
+                                                              M2.1
+                                                              M2.2   47                        22  48                        11
+                                                              M2.1
+SD Travel                                                            47                        67  30                        63
+
+                                                                                 4              1  22                         6
+
+                                                                     49                        33  48                        31
+
+SDA Travel; Business                                                 49                        73  32                        71
+
+                                                                                 3              3  22                         7
+
+                                                                     45                        24  45                        23
+
+                                                                                 3              0              1              0
+
+SDB Travel; Personal                                                 49                        71  32                        70
+
+                                                                                 4              3  22                         6
+
+                                                                     46                        26  45                        24
+
+                                                                                 1              0              1              0
+
+SE Construction                                                      59                        75  54                        47
+SF Insurance and pension services
+SG Financial services                                                41                        25  46                        53
+SH Charges for the use of intellectual property n.i.e.
+SI Telecommunications, computer, and information services            57                        51  55                        46
+
+                                                                     43                        49  45                        54
+
+                                                                     56                        62  55                        67
+
+                                                                     44                        38  45                        33
+
+                                                                     61                        69  57                        70
+
+                                                                     39                        31  43                        30
+
+                                                                     55                        74  55                        79
+                                                                                                              35
+
+                                                                   Exports                       Imports
+
+Item                        Description                    Model   % of total     % of total     % of total  % of total
+                                                                   est. obs.       est. val.     est. obs.    est. val.
+
+                                                           M2.2    45             26             45          21
+
+SI1 Telecommunications services                            M2.1    56             59             44          68
+
+                                                           M2.2    44             41             27          30
+
+                                                           M2.3                1              0  29                                            2
+
+SI2 Computer services                                      M2.1    55             79             38          78
+
+                                                           M2.2    37             21             23          18
+
+                                                           M2.3                8              0  39                                            4
+
+SI3 Information services                                   M2.1    59             75             34          62
+
+                                                           M2.2    40             25             15          27
+
+                                                           M2.3                1              0  51          10
+
+SJ Other business services                                 M2.1    55             76             54          74
+
+                                                           M2.2    45             24             46          26
+
+SJ1 Research and development services                      M2.1    63             81             37          80
+
+                                                           M2.2    36             19             15          14
+
+                                                           M2.3                1              0  48                                            6
+
+SJ2 Professional and management consulting services        M2.1    59             86             44          85
+
+                                                           M2.2    41             14             28          13
+
+                                                           M2.3                0              0  27                                            2
+
+SJ3 Technical, trade-related, and other business services  M2.1    56             77             50          79
+
+                                                           M2.2    43             23             34          20
+
+                                                           M2.3                1              0  16                                            1
+
+SK Personal, cultural, and recreational services           M2.1    61             73             58          69
+
+                                                           M2.2    39             27             42          31
+
+SK1 Audiovisual and related services                       M2.1    63             83             35          59
+
+                                                           M2.2    37             16             16          24
+
+                                                           M2.3                0              1  49          17
+
+SK2 Personal, cultural, and recreational services other than M2.1  60             71             34          61
+
+      audiovisual and related services                     M2.2    39             28             16          17
+
+                                                           M2.3                1              1  50          22
+
+SL Government goods and services n.i.e.                    M2.1    57             46             56          35
+
+                                                           M2.2    43             54             44          65
+
+Note: The percentages refer to the gravity-based estimates only, i.e. they exclude the reported data as well as the other types of estimates.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+36 
+
+Annex F. Assessing the predictive power of the
+gravity models
+
+This Annex describes the cross-validation exercise carried out to measure the out-of-sample accuracy of
+the models used to predict total services trade. In particular, the predictive power of the five models used
+in the previous edition of BaTIS was compared with that of the same models but with the addition of the
+trade in services with partner world variable for all five specifications.
+
+Old BaTIS specification  Distance             Full model    Reduced       Reduced       Reduced       Reduced
+Old BaTIS specification  Contiguity             (M1.1)    model (M1.2)  model (M1.3)  model (M1.4)  model (M1.5)
+Old BaTIS specification  Common language           X
+Old BaTIS specification  Colony                    X            X             X             X             X
+Old BaTIS specification  GDP reporter              X            X             X             X             X
+Old BaTIS specification  GDP partner               X            X             X             X             X
+Old BaTIS specification  GDP per capita            X            X             X             X             X
+                         (reporter)                X            X             X             X             X
+Old BaTIS specification  Merchandise trade         X            X             X             X             X
+Old BaTIS specification  Tourist                                X             X             X             X
+                         arrivals/departures       X
+Old BaTIS specification  Time trend (linear)       X            X             X             X             X
+Old BaTIS specification  Partner FE                                                         X
+Additional variable      Trade in services         X            X             X             X             X
+                         with world                X            X             X
+                                                   X            X             X
+
+Source: OECD-WTO (2021), BaTIS database.
+
+The sample used for the cross-validation contained information available for all specifications, i.e. the
+sample of model M1.1. The algorithm took the following steps:
+
+     i. The sample was randomly split into two datasets: the training set (70%) and the test set (30%).
+          Each reporter-partner pair was represented in both sets.
+
+     ii. Each model was fit on the training set and then the coefficients were used to predict the test set.
+
+     iii. For each specification M1.1, M1.2, M1.3, M1.4, and M1.5, the prediction accuracy was computed
+          using the mean absolute error (MAE) criterion.
+
+     iv. Steps i. to iii. were repeated 200 times.
+
+The resulting distributions of the MAE are plotted in Figure A F.1, with the top panel including the old
+specifications and the bottom panel covering the trade with world as additional predictor. As expected, the
+preferred specification M1.1 better predicts trade on average. The second-best model is M1.2, the third
+M1.3, then M1.4 and finally M1.5. This means that, starting from the most parsimonious model (M1.5),
+adding each explanatory variable provides useful information and enables to better predict bilateral trade.
+The bottom panel shows that the accuracy of the out of sample predictions improves significantly (for all
+                                                                                                                           37
+
+five specifications) when total trade in services with partner world is added as explanatory variable, despite
+the obvious endogeneity with the response variable. Although small values appeared more difficult to
+predict, these results hold when the sample is split between large trade flows (above 50 million USD) and
+smaller flows (below 50 million of USD). Also, changing the proportions of the training and test sets or the
+number of repetitions gave a similar picture.
+
+Figure A F.1. Accuracy of predictions for total services trade: Mean absolute error
+Million USD
+
+Source: OECD-WTO (2023), Balanced Trade in Services (BaTIS) database.
+38 
+
+Annex G. McFadden pseudo R-squared for the
+gravity estimations of individual service
+categories, by model and flow
+
+                                                               Exports          Imports
+
+Service category                                     Code M2.0 M2.1 M2.2 M2.3 M2.0 M2.1 M2.2 M2.3
+
+Manufacturing services on physical inputs owned by SA          80  80   70      89  89   82
+others
+
+Maintenance and repair services n.i.e.               SB        63  64   53      89  88   83
+
+Transport                                            SC        89  88   83      89  88   82
+
+Sea transport                                        SC1       87  87   76      83  81   64
+
+Air transport                                        SC2       87  85   81      87  86   78
+
+Other modes of transport                             SC3       85  84   77      88  86   78
+
+Postal and courier services                          SC4       87  86   76      89  88   76
+
+Travel                                               SD    90  89  89   85  91  91  90   82
+
+Travel; Business                                     SDA 92    91  89   84  91  90  87   84
+
+Travel; Personal                                     SDB 91    89  87   83  92  92  90   76
+
+Construction                                         SE        76  74   66      75  75   68
+
+Insurance and pension services                       SF        89  89   80      87  91   63
+
+Financial services                                   SG        94  94   83      89  90   74
+
+Charges for the use of intellectual property n.i.e.  SH        92  92   80      89  90   75
+
+Telecommunications, computer, and information SI               91  91   86      90  90   78
+services
+
+Telecommunications services                          SI1       86  85   78      84  82   72
+
+Computer services                                    SI2       90  90   84      91  89   73
+
+Information services                                 SI3       88  88   82      86  85   73
+
+Other business services                              SJ        94  93   84      93  93   86
+
+Research and development services                    SJ1       90  89   69      91  91   83
+
+Professional and management consulting services SJ2            95  94   82      93  92   83
+
+Technical, trade-related, and other business services SJ3      91  90   84      90  89   82
+
+Personal, cultural, and recreational services        SK        90  89   85      84  84   77
+
+Audiovisual and related services                     SK1       92  92   87      90  88   79
+
+Personal, cultural, and recreational services other SK2        83  81   75      67  66   54
+than audiovisual and related services
+
+Government goods and services n.i.e.                 SL        83  83   71      64  64   47
+
+Note: The McFadden pseudo R2 is defined as one minus the ratio between the (maximized) likelihood value from the fitted model, and the
+corresponding value for the null model. The full regression tables at the level of individual service categories are available upon request.
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+                                                                                                                           39
+
+Annex H. Methodology codes used in BaTIS
+
+  Methodology                                                             Description
+R_OECD         Reported: OECD International Trade in Services Statistics (ITSS).
+R_EU_ITS       Reported: EUROSTAT International Trade in Services statistics.
+R_EU_EBOP      Reported: EUROSTAT Quarterly Balance of Payments statistics.
+R_NAT          Reported: National source.
+R_NAT.1        Reported: National source, but different from main balance of payments provider. Data rescaled to fit world totals.
+R_UNSD         Reported: United Nations Statistics Division (Comtrade).
+R_WTO_UNCTAD   Reported: WTO UNCTAD (partner world only).
+E0             Estimated as negligible/zero.
+E1             Simple derivation from reported figures.
+E1.2           Simple derivation - after backcasting/nowcasting/interpolation.
+E2             Estimation of most recent year(s) missing in primary source by using the national BOP growth rate (partner world only).
+E2.1           Estimation of most recent year(s) missing in primary source by using the national BOP growth rate. Past shares used to
+               estimate subitems (partner world only).
+E3             Estimated using past or future shares (partner world only).
+E4             Correction of mistakes in source data, such as implausible negative values, definition not in line with international
+               recommendations, etc. (partner world only).
+E5             Estimates based on regional growth rates (partner world only).
+E6             Correction for negative insurance.
+E7             Completely missing time series information. Estimated using reported shares within a cluster of similar economies for a given
+               year (partner world only).
+E8             Gaps in reported time series: estimated by back/nowcasting or interpolation (partner world only).
+E8.0           Gaps in reported time series: estimated as zero using interpolation or back-nowcasting (bilateral data).
+E8.1           Gaps in reported time series: estimated as non-zero value using interpolation or back-nowcasting (bilateral data). As only one
+               data point is reported, the same share is applied to all years.
+E8.2           Gaps in reported time series: estimated as non-zero value using interpolation or back-nowcasting (bilateral data).
+M1.1           Estimation of total services from gravity model: specification (M1.1).
+M1.2           Estimation of total services from gravity model: specification (M1.2).
+M1.3           Estimation of total services from gravity model: specification (M1.3).
+M1.4           Estimation of total services from gravity model: specification (M1.4).
+M1.5           Estimation of total services from gravity model: specification (M1.5).
+M2.0           Estimation of service item from gravity model: specification (M2.0).
+M2.1           Estimation of service item from gravity model: specification (M2.1).
+M2.2           Estimation of service item from gravity model: specification (M2.2).
+M2.3           Estimation of service item from gravity model: specification (M2.3).
+M8.0           Remaining gaps in total services after prediction from gravity models: estimated as zero using interpolation or back-
+               nowcasting on predicted data.
+M8.2           Remaining gaps in total services after prediction from gravity models: estimated as non-zero value using interpolation or
+               back-nowcasting on predicted data.
+M8.3           Imputation of Rest of the World aggregate.
+W0             Derived as zero, as partner world is zero.
+A              Aggregation of figures with different methodology codes (used for country groups).
+Z              Reporter or partner country not available at the time of analysis.
+
+Source: OECD-WTO (2025), Balanced Trade in Services (BaTIS) database.
+

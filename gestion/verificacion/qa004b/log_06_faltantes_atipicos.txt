@@ -1,0 +1,148 @@
+── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.1     ✔ readr     2.2.0
+✔ forcats   1.0.1     ✔ stringr   1.6.0
+✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+✔ purrr     1.2.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
+Attaching package: 'scales'
+
+The following object is masked from 'package:purrr':
+
+    discard
+
+The following object is masked from 'package:readr':
+
+    col_factor
+
+# A tibble: 12 × 5
+   Item_code      AR    BR    CL    UY
+   <chr>       <dbl> <dbl> <dbl> <dbl>
+ 1 SA         99.3     100 100     100
+ 2 SB         55.8     100 100     100
+ 3 SC          1.03    100  14.6   100
+ 4 SD          7.36    100  47.6   100
+ 5 SE         98.9     100 100     100
+ 6 SF         37.9     100 100     100
+ 7 SG         29.1     100 100     100
+ 8 SH         18.3     100 100     100
+ 9 SI          3.03    100 100     100
+10 SJ          0.794   100  64.3   100
+11 SK          2.75    100 100     100
+12 SL        100       100 100     100
+Filas sin valor informado en la base al mundo (12 sectores, 2005-2024): 9263 de 47880 
+# A tibble: 12 × 10
+   Item_code Servicio paises paises_con_cero pct_ceros cero_informado cero_mixto
+   <chr>     <chr>     <int>           <int>     <dbl>          <int>      <int>
+ 1 SA        Manufac…    200              78      39               18         26
+ 2 SB        Manteni…    200              52      26                8         14
+ 3 SC        Transpo…    200               1       0.5              0          0
+ 4 SD        Viajes      200               2       1                0          1
+ 5 SE        Constru…    200              47      23.5             15         15
+ 6 SF        Seguros…    200              23      11.5              7         11
+ 7 SG        Financi…    200              15       7.5              2          4
+ 8 SH        Propied…    200              37      18.5             10         12
+ 9 SI        Telecom…    200               7       3.5              0          2
+10 SJ        Otros s…    200              11       5.5              2          3
+11 SK        Persona…    200              33      16.5              7         12
+12 SL        Bienes …    200              12       6                4          1
+# ℹ 3 more variables: cero_e0 <int>, cero_completado <int>,
+#   pct_celdas_estimadas <dbl>
+# A tibble: 5 × 2
+  tipo_cero                                                 n
+  <chr>                                                 <int>
+1 Cero informado los 10 años                               73
+2 Mixto: algunos años informados                          101
+3 Nunca informado: OCDE-OMC lo completa con cero          127
+4 Nunca informado: OCDE-OMC lo estima despreciable (E0)    17
+5 <NA>                                                   2082
+# A tibble: 12 × 7
+   Item_code Servicio             paises_con_valor atipicos_bajos atipicos_altos
+   <chr>     <chr>                           <int>          <int>          <int>
+ 1 SA        Manufactura sobre i…              122              2              0
+ 2 SB        Mantenimiento y rep…              148              0              0
+ 3 SC        Transporte                        199              0              0
+ 4 SD        Viajes                            198              1              0
+ 5 SE        Construcción                      153              1              0
+ 6 SF        Seguros y pensiones               177              2              0
+ 7 SG        Financieros                       185              2              0
+ 8 SH        Propiedad intelectu…              163              2              0
+ 9 SI        Telecom., informáti…              193              0              0
+10 SJ        Otros servicios emp…              189              0              0
+11 SK        Personales, cultura…              167              1              0
+12 SL        Bienes y servicios …              188              5              1
+# ℹ 2 more variables: limite_inferior_musd <dbl>, limite_superior_musd <dbl>
+# A tibble: 2 × 2
+  tipo_atipico     n
+  <chr>        <int>
+1 alto             1
+2 bajo            16
+# A tibble: 48 × 5
+   Reporter Item_code socios_con_valor atipicos_altos pct_valor_atipicos_altos
+   <chr>    <chr>                <int>          <int>                    <dbl>
+ 1 AR       SA                      76              0                      0  
+ 2 AR       SB                     164              0                      0  
+ 3 AR       SC                     198              0                      0  
+ 4 AR       SD                     196              0                      0  
+ 5 AR       SE                     185              0                      0  
+ 6 AR       SF                     196              0                      0  
+ 7 AR       SG                     183              0                      0  
+ 8 AR       SH                     166              0                      0  
+ 9 AR       SI                     197              0                      0  
+10 AR       SJ                     196              0                      0  
+11 AR       SK                     173              0                      0  
+12 AR       SL                     189              0                      0  
+13 BR       SA                     148              0                      0  
+14 BR       SB                     199              0                      0  
+15 BR       SC                     199              1                     12.1
+16 BR       SD                     199              0                      0  
+17 BR       SE                     196              0                      0  
+18 BR       SF                     199              0                      0  
+19 BR       SG                     199              1                     50.3
+20 BR       SH                     198              0                      0  
+21 BR       SI                     199              0                      0  
+22 BR       SJ                     199              1                     23.2
+23 BR       SK                     199              0                      0  
+24 BR       SL                     199              2                     36.9
+25 CL       SA                      82              0                      0  
+26 CL       SB                     141              0                      0  
+27 CL       SC                     199              1                     37.4
+28 CL       SD                     199              0                      0  
+29 CL       SE                     157              0                      0  
+30 CL       SF                     199              0                      0  
+31 CL       SG                     198              0                      0  
+32 CL       SH                     184              0                      0  
+33 CL       SI                     199              0                      0  
+34 CL       SJ                     199              0                      0  
+35 CL       SK                     198              2                     43.2
+36 CL       SL                     178              1                     25.3
+37 UY       SA                      77              0                      0  
+38 UY       SB                     195              0                      0  
+39 UY       SC                     199              0                      0  
+40 UY       SD                     199              0                      0  
+41 UY       SE                     156              0                      0  
+42 UY       SF                     198              0                      0  
+43 UY       SG                     197              0                      0  
+44 UY       SH                     192              0                      0  
+45 UY       SI                     199              0                      0  
+46 UY       SJ                     199              0                      0  
+47 UY       SK                     198              0                      0  
+48 UY       SL                     193              0                      0  
+# A tibble: 11 × 2
+   tema                                                       magnitud          
+   <chr>                                                      <chr>             
+ 1 Faltantes en el valor balanceado y en el final (nulos)     0 nulos en las do…
+ 2 Faltantes reales en la base al mundo (sin valor informado) 9.263 de 47.880 f…
+ 3 Distribución por socio estimada (Argentina)                Total: 100% hasta…
+ 4 Distribución por socio estimada (Brasil)                   Total: 100% hasta…
+ 5 Distribución por socio estimada (Chile)                    Total: 100% todos…
+ 6 Distribución por socio estimada (Uruguay)                  100% en el total …
+ 7 Resto del mundo (ROW)                                      Como máximo 0,7% …
+ 8 Ceros en la base bilateral                                 7.978 flujos país…
+ 9 Ceros en la base al mundo                                  318 de 2.400 celd…
+10 Atípicos en la base al mundo (1,5 RIC sobre el log)        16 bajos y 1 alto…
+11 Atípicos en la base bilateral (1,5 RIC sobre el log, 2024) 9 socios atípicos…

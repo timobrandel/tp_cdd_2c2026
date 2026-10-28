@@ -1,0 +1,128 @@
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+ [1] "medida"              "Reporter"            "Item_code"           "Pais"                "Servicio"            "dato_propio"         "anios"               "socios_con_ventas"   "pct_estimado"       
+[10] "socios_equivalentes" "socio_principal"     "cr1_pct"             "cr4_pct"             "hhi_x10000"         
+== rangos y cocientes, todas las filas vs anios==10
+      medida Reporter  n n10   mn    mx    ratio mn10  mx10  ratio10        cv      cv10
+1 balanceado       AR 12  12 2.04 18.94 9.284314 2.04 18.94 9.284314 0.8367286 0.8367286
+2 balanceado       BR 12  12 3.16 20.14 6.373418 3.16 20.14 6.373418 0.7140022 0.7140022
+3 balanceado       CL 12  12 2.49 16.83 6.759036 2.49 16.83 6.759036 0.6494356 0.6494356
+4 balanceado       UY 12  12 5.78 20.90 3.615917 5.78 20.90 3.615917 0.3601151 0.3601151
+5      final       AR 12  10 2.43 16.40 6.748971 2.43 16.40 6.748971 0.5481763 0.5505735
+6      final       BR 12  12 4.44 34.96 7.873874 4.44 34.96 7.873874 0.5944764 0.5944764
+7      final       CL  8   8 5.47 17.21 3.146252 5.47 17.21 3.146252 0.3100702 0.3100702
+8      final       UY 11  10 6.34 33.23 5.241325 6.34 18.78 2.962145 0.4194452 0.3562129
+== filas con anios<10
+  medida Reporter Item_code anios socios_equivalentes
+1  final       AR        SA     4                9.76
+2  final       AR        SE     9                2.95
+3  final       UY        SE     1               33.23
+== AR bal SA, SK, SG, SH, SB, SC, SI, SJ
+       medida Item_code anios socios_equivalentes socio_principal pct_estimado
+1  balanceado        SA    10                3.99              PY        98.38
+2  balanceado        SB    10               18.93              SA        55.25
+3  balanceado        SC    10               18.94              CL         1.01
+4  balanceado        SD    10               15.97              BR         6.62
+5  balanceado        SE    10                9.87              DK        98.70
+6  balanceado        SF    10               13.43              US        38.69
+7  balanceado        SG    10                4.44              US        29.06
+8  balanceado        SH    10                4.51              US        18.27
+9  balanceado        SI    10                8.06              US         2.98
+10 balanceado        SJ    10                9.14              US         0.80
+11 balanceado        SK    10                2.04              US         3.34
+12 balanceado        SL    10               14.14              AE       100.00
+13      final        SA     4                9.76              US        92.16
+14      final        SB    10                9.77              US        20.76
+15      final        SC    10               16.40              BR         0.09
+16      final        SD    10               11.47              BR         3.85
+17      final        SE     9                2.95              PA        91.60
+18      final        SF    10                6.05              US        16.75
+19      final        SG    10                3.61              US        27.84
+20      final        SH    10                2.64              US         5.26
+21      final        SI    10                3.87              US         0.44
+22      final        SJ    10                5.14              US         0.07
+23      final        SK    10                2.43              US         0.87
+24      final        SL    10                4.52              US       100.00
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+      medida Reporter      Pais anios socios_con_ventas pct_estimado socios_equivalentes puesto_hhi puesto_cr4 cr1_pct cr4_pct hhi_x10000
+1 balanceado       CL     Chile    10             198.6       100.00               11.15          1          1   22.84   50.13     897.20
+2 balanceado       AR Argentina    10             198.8         0.12               11.39          2          3   25.71   42.27     878.21
+3 balanceado       UY   Uruguay    10             199.0       100.00               14.83          3          2   15.90   47.03     674.24
+4 balanceado       BR    Brasil    10             199.0        32.07               15.40          4          4   22.27   35.62     649.22
+5      final       AR Argentina    10             144.3         0.03                8.36          1          1   30.00   51.94    1195.99
+6      final       CL     Chile    10             198.6       100.00               10.95          2          2   26.12   45.44     912.95
+7      final       BR    Brasil    10             199.0        43.68               12.70          3          4   26.08   35.75     787.29
+8      final       UY   Uruguay    10             199.0       100.00               14.80          4          3   20.42   42.27     675.52
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+                                                         tema
+1      Faltantes en el valor balanceado y en el final (nulos)
+2  Faltantes reales en la base al mundo (sin valor informado)
+3                 Distribución por socio estimada (Argentina)
+4                    Distribución por socio estimada (Brasil)
+5                     Distribución por socio estimada (Chile)
+6                   Distribución por socio estimada (Uruguay)
+7                                       Resto del mundo (ROW)
+8                                  Ceros en la base bilateral
+9                                   Ceros en la base al mundo
+10        Atípicos en la base al mundo (1,5 RIC sobre el log)
+11 Atípicos en la base bilateral (1,5 RIC sobre el log, 2024)
+                                                                                                                                                                                                    magnitud
+1                                                                                                                                           0 nulos en las dos medidas; grilla completa (05_cobertura_bases)
+2                                                                                              9.263 de 47.880 filas país-sector-año sin valor informado (2005-2024); 17,8% de los años de la base del ANOVA
+3                                 Total: 100% hasta 2014 y como máximo 0,4% en 2015-2024. Por sector (2015-2024): SA 99%, SB 56%, SC 1%, SD 7%, SE 99%, SF 38%, SG 29%, SH 18%, SI 3%, SJ 1%, SK 3%, SL 100%
+4                          Total: 100% hasta 2009 y entre 29,7% y 37,3% en 2015-2024. Por sector: SA 100%, SB 100%, SC 100%, SD 100%, SE 100%, SF 100%, SG 100%, SH 100%, SI 100%, SJ 100%, SK 100%, SL 100%
+5                                                Total: 100% todos los años. Por sector (2015-2024): SA 100%, SB 100%, SC 15%, SD 48%, SE 100%, SF 100%, SG 100%, SH 100%, SI 100%, SJ 64%, SK 100%, SL 100%
+6                                                                                                                                                   100% en el total y en todos los sectores, todos los años
+7                                                                                                                                                                                 Como máximo 0,7% del valor
+8                                7.978 flujos país-socio-sector-año en cero en 2015-2024: 144 declarados por el país, 1.043 estimados despreciables (E0) y el resto, ceros de otras estimaciones de OCDE-OMC
+9  318 de 2.400 celdas país-sector con promedio cero: 73 informadas los diez años, 101 mixtas, 17 nunca informadas y estimadas despreciables (E0) y 127 nunca informadas y completadas con cero por OCDE-OMC
+10                                                                                                      16 bajos y 1 alto(s), sobre 2.082 celdas; 14 de los 16 bajos tienen años en cero dentro del promedio
+11                                                                                                                                              9 socios atípicos altos en 7 de 48 combinaciones país-sector
+                                                                                                                            decision
+1                                                                                                                   Nada que imputar
+2                                                               Se usa el valor final, que los completa con estimaciones de OCDE-OMC
+3                                           El análisis principal usa 2015-2024; 2005-2014 no se usa como comparación para Argentina
+4                                                             Se compara el total, con la salvedad; por sector, solo como referencia
+5                      Se compara, con la salvedad; transporte, viajes y otros empresariales son los únicos sectores con dato propio
+6                                                                                Se compara, con la salvedad en cada tabla y gráfico
+7                                                                                                     Se excluye de la concentración
+8                                                                                                                       Se conservan
+9  Quedan fuera del ANOVA sobre log(valor); entran en el Kruskal-Wallis, el RCA y los percentiles como "no exportó", con la salvedad
+10                                                                                                                      Se conservan
+11                                                                                                                      Se conservan
+                                                                                                                                                                                                                                                                                                                                                                    justificacion
+1                                                                                                                                                                                                                        Las combinaciones ausentes son economías que no existían ese año (Yugoslavia, Serbia, Montenegro, Antillas Neerlandesas, Curazao, Sint Maarten, Kosovo).
+2                                                                                                                                                                                                      No hay nulos porque OCDE-OMC completa lo que el país no informa (06_faltantes_valor_final). Imputar de nuevo no agregaría información; se informa cuánto pesa lo estimado.
+3                                                                                                                                                   Desde 2015 Argentina declara a quién le vende. Antes, OCDE-OMC retroproyecta esa misma estructura hacia atrás (código E8.2): no es información propia de esos años. Los sectores con más de 50% estimado se leen con cautela.
+4                                                                                                                                                                                                                                                   Declara por socio el total de servicios de sus 37 socios principales, pero no la apertura por sector: esa la estima OCDE-OMC.
+5                                                                                                                                                                      No declara el total por socio, pero sí parte de tres sectores. En el resto, la parte del exportador sale del modelo de gravedad de OCDE-OMC; el balanceado la combina con lo que declaran sus compradores.
+6                                                                                                                                                                                           No declara su comercio de servicios por socio. En el valor final, su distribución es el modelo de gravedad de OCDE-OMC; el balanceado la combina con lo que declaran sus compradores.
+7                                                                                                                                                                                                                           Es un residuo de socios no identificados: contarlo como un socio más inventaría un comprador que no existe. Pesa poco, así que no cambia los índices.
+8                                                                                                                                                                 Son ventas no registradas ni estimadas; en su mayoría, ceros del modelo de OCDE-OMC, no un "no exportó" declarado. En el HHI pesan cero y no cambian ningún índice; sí cuentan en la columna socios_con_ventas.
+9                                   El logaritmo de cero no existe. Solo los ceros informados son un "no exportó" declarado; los nunca informados son faltantes completados con cero (Chile en manufactura, mantenimiento, construcción y gobierno). Por eso, el RCA y el percentil de Chile en esos sectores no se interpretan, y el Kruskal-Wallis se presenta con y sin ceros.
+10 No son errores de carga. Los bajos son, sobre todo, series intermitentes: países con varios años en cero, cuyo promedio queda muy bajo (06_atipicos_mundo_detalle). El alto es EE.UU. en gobierno. El logaritmo reduce su influencia y el Kruskal-Wallis no depende de ellos. Efecto de la regla: una celda con nueve años en cero entra al ANOVA y una con diez queda afuera.
+11                                                                                                                                   Un socio que compra mucho más que el resto es la concentración que se quiere medir. Que el criterio marque tan pocos muestra que, en log, los flujos por socio varían mucho; por eso la concentración se mide con CR y HHI, no con atípicos.
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+[1] "Reporter"                "Year"                    "valor_total"             "pct_valor_informado"     "pct_valor_derivado"      "pct_valor_estimado"      "socios_con_dato_oficial"
+ℹ Using "','" as decimal and "'.'" as grouping mark. Use `read_delim()` for more control.
+Error in `summarise()`:
+ℹ In argument: `imin = Item_code[which.min(percentil)]`.
+ℹ In group 1: `Reporter = "AR"`.
+Caused by error:
+! object 'Item_code' not found
+Backtrace:
+     ▆
+  1. ├─base::print(...)
+  2. ├─dplyr::summarise(...)
+  3. ├─dplyr:::summarise.grouped_df(...)
+  4. │ └─dplyr:::summarise_cols(.data, dplyr_quosures(...), by, "summarise")
+  5. │   ├─base::withCallingHandlers(...)
+  6. │   └─dplyr:::map(quosures, summarise_eval_one, mask = mask)
+  7. │     └─base::lapply(.x, .f, ...)
+  8. │       └─dplyr (local) FUN(X[[i]], ...)
+  9. │         └─mask$eval_all_summarise(quo)
+ 10. │           └─dplyr (local) eval()
+ 11. └─base::.handleSimpleError(...)
+ 12.   └─dplyr (local) h(simpleError(msg, call))
+ 13.     └─dplyr (local) handler(cnd)
+ 14.       └─rlang::abort(message, class = error_class, parent = parent, call = error_call)
+Execution halted

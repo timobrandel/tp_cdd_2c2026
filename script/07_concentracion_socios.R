@@ -353,7 +353,7 @@ g_sectores <- ggplot(datos_g2, aes(Pais, Servicio, fill = socios_equivalentes)) 
                       tolower(etiquetas_servicios[[var_ar$sector_mas_concentrado]]),
                       " a ", formato_num(var_ar$socios_eq_max, 1), " en ",
                       tolower(etiquetas_servicios[[var_ar$sector_menos_concentrado]])), 75),
-       subtitle = paste0("Socios equivalentes (1 / HHI medio 2015-2024). Más rojo = más ",
+       subtitle = paste0("Socios equivalentes asociados al HHI medio 2015-2024 (10.000 / HHI medio). Más rojo = más ",
                          "concentrado.\n", unname(etiquetas_paises[cv_mayor$Reporter]),
                          " es el país donde más varía entre sectores. ",
                          "* Más de la mitad del valor con socios\nque no declara el ",

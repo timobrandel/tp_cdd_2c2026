@@ -242,6 +242,7 @@ Registro de decisiones técnicas y de proyecto. Formato: contexto, decisión, al
   - Posición de los cuatro países (`08_posicion_paises`): Brasil queda entre el percentil 56 y el 91 en todos los sectores (corregido por QA-005, C1: el máximo es 91,46). Argentina va del 39 (construcción) al 84 (personales y culturales). Chile figura en el percentil 0 en manufactura, mantenimiento, construcción y gobierno porque nunca informa esos sectores y OCDE-OMC los completa con cero: no son interpretables (columna `interpretable`).
 - **Lectura contra la hipótesis:** la tercera parte ("el valor exportado difiere según el sector") se cumple con todos los métodos. Es una asociación descriptiva entre sector y valor, no una causa.
 - **Limitación que va al PDF (reescrita por QA-004, M5):** las celdas de un mismo país no son independientes. Como el país está cruzado con el sector, ignorarlo infla el error: el ANOVA de un factor es conservador, no optimista (la F sube de 38,9 a 154,3 al descontar el país). El modelo con bloque y el Friedman muestran que la conclusión no depende del tamaño de los países.
+- **Corrección (29/10, observación de Diego):** "el ANOVA de un factor es conservador" no es una regla general y se retira. La limitación queda así: "El ANOVA simple no modela la dependencia entre las observaciones de un mismo país. Como control, agregamos el país como bloque y el test de Friedman; en estos datos, la F sube de 38,9 a 154,3 al descontar el país". Tampoco se lo llama "medidas repetidas": es un ANOVA con el país como bloque, con el Friedman como control dentro de cada país.
 - **Pares:** la clase 10 usa la regla del cociente (1,90 < 2, que daría Tukey); se agregó Levene, que con n = 2.082 rechaza casi siempre. Como la conclusión no cambia (41 pares contra 42), en el PDF van los dos números.
 
 ## D-029 · 28/10/2026 · Medida de la concentración por socio después de QA-004
@@ -277,3 +278,11 @@ Registro de decisiones técnicas y de proyecto. Formato: contexto, decisión, al
 - **Decisión (Timothy):** se aplica en la Fase 4 (Instancia 3, 13/11). Los gráficos del PDF de la Instancia 2 quedan como se validaron.
 - **Por qué:** el guion de la Instancia 2 ya estaba validado y la entrega vencía al día siguiente. Cambiar las figuras obligaba a otra vuelta de QA y a reemplazar imágenes a último momento. La Instancia 3 es justamente la de visualizaciones.
 - **Alternativa descartada:** aplicar ahora solo el tema y la paleta.
+
+## D-033 · 29/10/2026 · Claude arma el borrador del PDF de la Instancia 2 (cambia D-007 para esta entrega)
+- **Contexto:** D-007 dice que la PPT la arma el grupo y Claude entrega material y guion, porque la consigna pide limitar la IA en el armado de la presentación. La Instancia 2 vencía el mismo día y el guion ya estaba validado por el grupo.
+- **Decisión (Timothy, 29/10):** esquema híbrido. Claude arma un borrador completo del .pptx sobre el guion, con la estética de la PPT de la Instancia 1, y lo exporta a PDF. El grupo lo toma como borrador: valida y edita textos y estética y lo termina. El envío lo hace el grupo.
+- **Cómo se armó:** `gestion/herramientas_ppt/armar_borrador_instancia2.js` (pptxgenjs) genera `gestion/insumos/Instancia 2 - borrador.pptx`; PowerPoint lo exporta a `Instancia 2 - borrador.pdf`. 14 diapositivas de contenido + carátula + anexo, con los gráficos validados de `output/graficos/` y las cifras del guion.
+- **Alternativas descartadas:** (a) que el grupo arme todo desde el texto del guion (la recomendada por D-007): Timothy priorizó llegar a tiempo con un borrador completo; (b) que Claude entregue la versión final: va contra la consigna y el grupo igual tiene que poder defender cada diapositiva en el oral.
+- **Por qué es defendible:** igual que en D-021 y D-031, la IA arma la base y el grupo edita y decide el contenido final. Queda registrado para poder explicarlo si la cátedra pregunta.
+- **Vigencia:** solo para la Instancia 2. Para la entrega final se vuelve a decidir.

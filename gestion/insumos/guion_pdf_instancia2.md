@@ -2,12 +2,12 @@
 
 - **Consigna:** `CURSO/trabajo_practico/consignas_instancia_2.md`. PDF de 10 a 15 diapositivas sin contar carátula y cierre; sin código. Vence el **jueves 29/10 a las 23:59**. Envío a nsidicaro.fce@gmail.com, asunto `curso_2c_2026_grupo_XX_instancia_2`, un integrante envía con los demás en copia.
 - **Hilo que pide la consigna:** ¿de dónde venimos? → ¿qué hicimos con faltantes y outliers? → ¿qué método aplicamos y por qué? → ¿qué encontramos? → ¿qué significa para la hipótesis?
-- **Quién arma qué (D-007):** este archivo es material e interpretación. La redacción y el diseño de las diapositivas los hace el grupo con sus palabras.
+- **Quién arma qué (D-007, D-033):** este archivo es material e interpretación. Para la Instancia 2, Claude arma un borrador del .pptx sobre este guion (D-033) y el grupo lo edita, valida textos y estética y lo termina.
 - **Origen de cada cifra:** entre corchetes, el archivo de `output/tablas/` o `output/graficos/`. Las tablas se abren con doble clic en Excel (D-016). Ninguna cifra sale de memoria: todas se cotejaron contra esas tablas (sección final).
 - **Unidades:** millones de USD corrientes. Período del análisis: 2015-2024 (D-024).
-- **Medidas (D-023, D-029):** concentración por socio con el **valor balanceado** (principal) y el **valor final** (sensibilidad). ANOVA y diversidad con el **valor final** al mundo (D-026).
+- **Medidas (D-023, D-029):** concentración por socio con el **valor balanceado** (principal) y el **valor final** (sensibilidad). ANOVA y diversidad sectorial (RCA) con el **valor final** al mundo (D-026).
 
-**Recuento:** 14 diapositivas de contenido + carátula + anexo. Si sobra espacio, la 5 y la 6 se pueden unir; si falta, la 11 (diversidad) pasa al anexo.
+**Recuento:** 14 diapositivas de contenido + carátula + anexo. Si sobra espacio, la 5 y la 6 se pueden unir; si falta, la diversidad sectorial de la 11 pasa al anexo.
 
 ---
 
@@ -38,15 +38,15 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 | Pidió el docente (nota 7/10) | Qué hicimos | Diapositiva |
 |---|---|---|
 | Aprovechar el comercio bilateral | Nueva base país × socio: 4 países × 202 socios × 13 ítems × 20 años | 4 |
-| Concentración de socios por país y sector, con cualquier índice | CR1, CR4 y HHI por país, sector y año | 8 a 10 |
-| Índice de diversidad | Sectores con ventaja comparativa revelada (RCA > 1), como en la clase 12 | 11 |
-| ANOVA con todos los países para ver si los sectores difieren en el valor | ANOVA de log(valor) entre 12 sectores, 200 economías, con robustez | 12 y 13 |
+| Concentración de socios por país y sector, con cualquier índice | CR1, CR4 y HHI por país, sector y año | 8 a 11 |
+| Índice de diversidad | Diversidad sectorial: sectores con ventaja comparativa revelada (RCA > 1), como en la clase 12. Mide la canasta de sectores, no la de socios | 11 |
+| ANOVA con todos los países para ver si los sectores difieren en el valor | ANOVA de log(valor) entre 12 sectores, sobre las 2.082 combinaciones país-sector con exportaciones positivas (de 2.400; 318 en cero), con robustez | 12 y 13 |
 
 **Otros cambios:**
 - La pregunta guía pasó a ser una hipótesis contrastable (diapositiva 3).
 - Para lo bilateral se usa el **valor balanceado** (D-023): concilia lo que declaran exportador e importador y es la medida que la metodología de BaTIS recomienda para los flujos entre pares (secciones 5.1 y 6). Para los totales al mundo sigue el valor final, como en la Instancia 1 (D-015).
 
-**Observaciones de la devolución no incorporadas:** ninguna; las tres herramientas que sugirió el docente están aplicadas tal como las propuso (D-024). *Antes de entregar, el grupo tiene que cotejar esta tabla con el texto de la devolución: no está transcripto en el repo, solo resumido en la hoja de ruta (paso 2.1) y en D-023. Si la devolución tenía otra observación, va acá con lo que se hizo o por qué no.*
+**Observaciones de la devolución no incorporadas:** ninguna: incorporamos las tres sugerencias del docente (D-024). La diversidad que medimos es sectorial, no de socios. *Antes de entregar, el grupo tiene que cotejar esta tabla con el texto de la devolución: no está transcripto en el repo, solo resumido en la hoja de ruta (paso 2.1) y en D-023. Si la devolución tenía otra observación, va acá con lo que se hizo o por qué no.*
 
 **Además, qué quedó pendiente de nuestros propios "próximos pasos" de la Instancia 1:**
 - **Test pareado de crecimiento entre países:** se priorizó el ANOVA entre sectores que pidió el docente, que responde una parte de la hipótesis. Queda para la entrega final.
@@ -116,7 +116,7 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 
 **Estrategia:**
 - Base al mundo: se usa el valor final, que completa lo no informado; se informa cuánto pesa lo estimado. Los ceros quedan fuera del ANOVA sobre log(valor), porque log(0) no existe, y entran en el Kruskal-Wallis, el Friedman y el RCA.
-- Bilateral: los ceros se conservan. En el HHI pesan cero y no cambian ningún índice.
+- Bilateral: los ceros se conservan. En el HHI pesan cero y no cambian ningún índice; tampoco cuentan como socios con ventas.
 
 **Consecuencias:** el ANOVA compara solo celdas con valor positivo, así que en los sectores con muchos ceros (manufactura sobre insumos de terceros: 78 países) describe a los países que sí exportan. Por eso se presenta también el Kruskal-Wallis con ceros. Chile nunca informa manufactura, mantenimiento, construcción y gobierno: su posición en esos sectores no se interpreta [08_posicion_paises, columna `interpretable`].
 
@@ -147,7 +147,7 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 **Justificación:** la hipótesis habla de "concentrarse en menos socios". CR y HHI (clase 12) miden eso directamente con las participaciones de cada socio.
 
 **Decisiones metodológicas** (D-026, D-029):
-- **Índices:** CR1 (participación del primer socio), CR4 (de los cuatro primeros), HHI = suma de las participaciones al cuadrado, en escala 0 a 10.000 (10.000 = un solo comprador). **Socios equivalentes** = 10.000 / HHI: cuántos socios del mismo tamaño darían esa concentración.
+- **Índices:** CR1 (participación del primer socio), CR4 (de los cuatro primeros), HHI = suma de las participaciones al cuadrado, en escala 0 a 10.000 (10.000 = un solo comprador). **Socios equivalentes asociados al HHI promedio 2015-2024** (10.000 / HHI promedio): cuántos socios del mismo tamaño darían esa concentración. No escribir "1 / HHI" a secas.
 - **Medida:** balanceado como principal (mide igual a los cuatro países); valor final como sensibilidad.
 - **ROW excluido:** es un residuo de socios no identificados; contarlo inventaría un comprador. Pesa como máximo 0,7%.
 - **Cálculo:** índices año por año y promedio 2015-2024. Los socios equivalentes salen del HHI promedio.
@@ -170,11 +170,18 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 | Balanceado (principal) | HHI | 878 | 649 | 897 | 674 |
 | Balanceado (principal) | CR4 | 42,3% | 35,6% | 50,1% | 47,0% |
 | Balanceado (principal) | CR1 | 25,7% | 22,3% | 22,8% | 15,9% |
-| Balanceado (principal) | Socios equivalentes | 11,4 | 15,4 | 11,1 | 14,8 |
+| Balanceado (principal) | Socios equivalentes (10.000 / HHI promedio) | 11,4 | 15,4 | 11,1 | 14,8 |
 | Final (sensibilidad) | HHI | 1.196 | 787 | 913 | 676 |
 | Final (sensibilidad) | CR4 | 51,9% | 35,7% | 45,4% | 42,3% |
 
 - El primer socio es EE.UU. en Argentina, Brasil y Chile; en Uruguay es Argentina [07_concentracion_sectores, columna `socio_principal`].
+
+**Qué socios explican la concentración de Argentina (propuesta de Brenda)** [07_principales_socios, balanceado, participación en el acumulado 2015-2024]:
+- EE.UU. 25,51%, Brasil 6,80%, Chile 5,31%, Uruguay 4,22%, España 3,73%.
+- Primer socio de los vecinos: Brasil, EE.UU. 22,08%; Chile, EE.UU. 23,13%; Uruguay, Argentina 15,67%.
+- Evolución del HHI de Argentina (ítem S, balanceado) [07_concentracion_anual]: 859 en 2015, máximo de 1.006 en 2020, mínimo de 752 en 2023 y 814 en 2024. No se usa 2005-2014: es retroproyección (E8.2, D-027).
+- **Lectura:** la concentración de Argentina viene de un solo comprador. Tiene el CR1 más alto de los cuatro (25,7%), pero su CR4 (42,3%) es más bajo que el de Chile (50,1%) y Uruguay (47,0%): después de EE.UU., reparte más que ellos.
+- **Ojo al poner las dos cifras juntas:** el CR1 de 25,7% es el promedio de los porcentajes anuales; el 25,51% es la participación en el acumulado del período. Son medidas distintas y la diapositiva lo aclara.
 
 **Interpretación:** con la medida principal, Argentina es la que concentra la mayor parte de sus ventas en su primer comprador (CR1 25,7%), pero en el HHI queda casi igual que Chile y por encima de Brasil y Uruguay. Con el valor final, Argentina es la más concentrada con los dos índices, pero ahí los socios de Chile y Uruguay salen de un modelo.
 
@@ -205,20 +212,20 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 
 ---
 
-## 11. La concentración difiere según el sector (y la diversidad de la canasta)
+## 11. La concentración difiere según el sector (y la diversidad sectorial)
 **Material:** `07_g2_socios_equivalentes_sectores.png`. Opcional al costado: `07_g3_rca_sectores.png`.
 
 **Cifras** [07_concentracion_sectores; el coeficiente de variación se calcula sobre la columna `hhi_x10000` de los sectores (sin el total S) que tienen valor los 10 años]:
 - Argentina, balanceado: de **2,0 socios equivalentes** en personales, culturales y recreativos (EE.UU. 67,1% del valor) a **18,9** en transporte, empatado con mantenimiento y reparación (18,9; este último con más de la mitad estimado).
 - Otros sectores concentrados en Argentina: manufactura sobre insumos de terceros 4,0 (Paraguay 40,5%; 98% del valor con socios estimados, se lee con cautela), financieros 4,4 y propiedad intelectual 4,5 socios equivalentes, estos dos con EE.UU. como primer socio (43,7% y 41,9%).
 - Coeficiente de variación del HHI entre sectores, balanceado: Argentina 0,84, Brasil 0,71, Chile 0,65, Uruguay 0,36. Con el valor final, con los mismos sectores que los cocientes de abajo (los que tienen valor los 10 años): Brasil 0,59, Argentina 0,55, Uruguay 0,36, Chile 0,31.
-- **Diversidad** (sectores con RCA de Balassa > 1, promedio 2015-2024, contra 199 economías) [07_diversidad]: Argentina 5 de 12 (viajes, telecom. e informática, otros empresariales, personales y culturales, gobierno), más que el 82,8% de las economías; Brasil 4; Chile 3; Uruguay 3.
+- **Diversidad sectorial (sectores con RCA > 1)** (RCA de Balassa, promedio 2015-2024, contra 199 economías) [07_diversidad]: Argentina 5 de 12 (viajes, telecom. e informática, otros empresariales, personales y culturales, gobierno), más que el 82,8% de las economías; Brasil 4; Chile 3; Uruguay 3.
 
 **Interpretación:**
 - "La concentración difiere según el sector" se cumple con las dos medidas. Con el balanceado (12 sectores con los 10 años en los cuatro países), el sector que más reparte tiene entre 3,6 y 9,3 veces los socios equivalentes del más concentrado. Rangos: Argentina 2,0 a 18,9; Brasil 3,2 a 20,1; Chile 2,5 a 16,8; Uruguay 5,8 a 20,9.
 - Con el valor final, el cociente es de 3,0 a 7,9 veces, contando solo los sectores con valor los 10 años: Argentina 2,4 a 16,4; Brasil 4,4 a 35,0; Chile 5,5 a 17,2; Uruguay 6,3 a 18,8 (2,96 veces, el más chico). Con el final hay menos sectores: Chile tiene valor en 8, Uruguay en 11 (y construcción, con un solo año, queda afuera de la comparación), y en Argentina manufactura tiene 4 años y construcción 9 [07_concentracion_sectores, columna `anios`].
 - "Argentina es la que más varía entre sectores" vale solo con el balanceado; con el valor final, Brasil varía más.
-- La diversidad mide la canasta de **sectores**, no de socios: Argentina tiene la canasta más diversa de los cuatro aunque esté entre los más concentrados en socios. No responde la primera parte de la hipótesis.
+- La diversidad sectorial mide la canasta de **sectores**, no la diversidad de socios: Argentina tiene la canasta más diversa de los cuatro aunque esté entre los más concentrados en socios. No responde la primera parte de la hipótesis.
 
 **Limitaciones:** los sectores marcados con * en el gráfico tienen más de la mitad del valor con socios estimados. En Brasil, toda la apertura por sector es estimada (declara el total por socio, no los sectores). Las 4 ventajas en cero de Chile (manufactura, mantenimiento, construcción y gobierno) son faltantes completados y no se interpretan.
 
@@ -231,7 +238,7 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 
 **Por qué ANOVA:** variable numérica (valor exportado) contra una categórica con 12 grupos (sector). Es lo que sugirió el docente.
 
-**Base** (D-026, D-028): 200 economías presentes los diez años × 12 sectores, una observación por país y sector con el promedio anual 2015-2024 del valor final. Así cada país aparece una vez por sector y no diez. El ANOVA usa las 2.082 celdas positivas sobre log(valor); en logaritmos se comparan medias geométricas, el valor de un "país típico" [08_descriptivos_sectores].
+**Base** (D-026, D-028): 200 economías presentes los diez años × 12 sectores, una observación por país y sector con el promedio anual 2015-2024 del valor final. Así cada país aparece una vez por sector y no diez. El ANOVA usa **las 2.082 combinaciones país-sector con exportaciones positivas (de 2.400; 318 en cero)** sobre log(valor). En la diapositiva se dice así, nunca "compara los 200 países"; en logaritmos se comparan medias geométricas, el valor de un "país típico" [08_descriptivos_sectores].
 
 **Hipótesis:**
 - H0: el valor medio (en log) que exporta un país típico es igual en los 12 sectores.
@@ -269,11 +276,13 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 - No comparar el eta² parcial del modelo con bloque (0,48) con el 0,17: tiene otro denominador (D-028).
 
 **Limitaciones:**
-- **Independencia:** las celdas de un mismo país no son independientes. Como el país está cruzado con el sector, ignorarlo infla el error: el ANOVA de un factor es conservador, no optimista (la F sube de 38,9 a 154,3 al descontar el país).
+- **Independencia:** el ANOVA simple no modela la dependencia entre las observaciones de un mismo país. Como control, agregamos el país como bloque y el test de Friedman; en estos datos, la F sube de 38,9 a 154,3 al descontar el país (D-028, corregido el 29/10).
 - Los residuos del modelo con bloque cumplen peor los supuestos (Shapiro W = 0,96, asimetría −0,84; cociente de desvíos 3,01); por eso se agregó el Friedman.
 - El modelo con bloque es aditivo: con una observación por país y sector, la interacción no se puede estimar.
 - USD corrientes, sin deflactar. El valor final incluye estimaciones de OCDE-OMC en el 17,8% de los años.
 - Rechazar H0 describe una asociación entre sector y valor, no una causa.
+
+**Para el oral:** "¿es un ANOVA de medidas repetidas?" → "No exactamente: usamos un ANOVA con el país como bloque y el test de Friedman como control dentro de cada país." No llamarlo "medidas repetidas" en el PDF.
 
 ---
 
@@ -288,7 +297,7 @@ Título del TP, integrantes (Brenda Firmano, Diego Sebastián Díez de Los Ríos
 
 **Cómo se relacionan los dos métodos:** son complementarios y responden partes distintas de la hipótesis. El ANOVA muestra que los sectores difieren en **cuánto** exporta un país típico; la concentración, que también difieren en **a cuántos socios** les venden. Con estos resultados no se puede afirmar que los sectores más chicos sean los más concentrados: en Argentina hay sectores grandes que reparten mucho (transporte, viajes) y otros que están en la mitad concentrada (telecom. e informática 8,1 y otros empresariales 9,1 socios equivalentes), y sectores chicos que reparten mucho (mantenimiento). Es una pregunta para la entrega final, no una conclusión.
 
-**Veredicto global:** la hipótesis se **matiza**: se confirma frente a Brasil y en las dos partes sectoriales, y frente a Chile y Uruguay depende de la medida y del índice.
+**Veredicto global:** **apoyo parcial** como etiqueta de la primera parte; el veredicto completo es el de D-029: frente a Brasil se cumple con las dos medidas y los dos índices; frente a Chile y Uruguay depende de la medida y del índice. Las dos partes sectoriales se cumplen.
 
 **Próximos pasos (entrega final):**
 - Relacionar la concentración por socio con el tamaño del sector (¿los sectores chicos están más concentrados?).

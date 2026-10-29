@@ -421,7 +421,7 @@ diagnostico <- tribble(
                            ceros_bilateral$Final_value_methodology == "E0"), 0),
          " estimados despreciables (E0) y el resto, ceros de otras estimaciones de OCDE-OMC"),
   "Se conservan",
-  "Son ventas no registradas ni estimadas; en su mayoría, ceros del modelo de OCDE-OMC, no un \"no exportó\" declarado. En el HHI pesan cero y no cambian ningún índice; sí cuentan en la columna socios_con_ventas.",
+  "Son ventas no registradas ni estimadas; en su mayoría, ceros del modelo de OCDE-OMC, no un \"no exportó\" declarado. En el HHI pesan cero y no cambian ningún índice; tampoco cuentan como socios con ventas.",
 
   "Ceros en la base al mundo",
   paste0(sum(base_anova$valor_medio == 0), " de ", formato_num(nrow(base_anova), 0),

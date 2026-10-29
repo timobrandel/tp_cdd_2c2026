@@ -82,7 +82,7 @@ Solo se entrega el PDF.
   **Cierre:** el resultado, interpretado contra la hipótesis.
 - 3.5 ✅ (28/10) QA del bloque 3.1–3.4 (HO-004, `qa-auditor`): QA-004 rechazó, QA-004b aprobó con observaciones, todas corregidas.
 - 3.6 ✅ (28/10, QA-005b aprobado con observaciones, commit `a774e55`) Tablas, gráficos, cifras y guion de 10 a 15 diapositivas para el PDF del grupo. Guion en `gestion/insumos/guion_pdf_instancia2.md`; tabla de variables en `script/09_tabla_variables_bilateral.R`.
-- 3.7 Armado del PDF sobre el guion validado, con las correcciones de redacción de Diego (ceros y `socios_con_ventas`, "conservador", muestra del ANOVA, socios equivalentes, RCA como diversidad sectorial, bloque ≠ medidas repetidas) y, opcional, los socios que explican la concentración (Brenda). **Cierre:** PDF revisado contra el guion y validado por Timothy. Handover: `gestion/handovers/2026-10-29-armado-pdf-instancia2.md`.
+- 3.7 ✅ (29/10, QA-006b aprobado con observaciones, commit `8d798d2`; borrador armado por Claude, D-033) Armado del PDF sobre el guion validado, con las correcciones de redacción de Diego (ceros y `socios_con_ventas`, "conservador", muestra del ANOVA, socios equivalentes, RCA como diversidad sectorial, bloque ≠ medidas repetidas) y, opcional, los socios que explican la concentración (Brenda). **Cierre:** PDF revisado contra el guion y validado por Timothy. Handover: `gestion/handovers/2026-10-29-armado-pdf-instancia2.md`.
 
 **Diferido a después del 29/10:** 2.3 (prueba del MCP de R), 2.4 (colaboradores y README) y 2.7 (consolidación del 03 y el 04).
 

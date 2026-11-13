@@ -60,5 +60,18 @@ Falta lo visual:
 - **Instancia 2 (vence mañana):** no tocaría los gráficos. El guion está validado y el grupo está armando el PDF; cambiar las figuras obliga a regenerar, a pasar otra vez por el QA y a que el grupo reemplace imágenes con el reloj encima.
 - **Instancia 3 (13/11, visualizaciones):** es el lugar natural. La consigna pide al menos dos visualizaciones con storytelling, una para comunicar y otra para explorar, cada una con su rol. Los pares de la tabla (mapa de calor → lollipop; líneas o barras de las dos medidas) cubren eso con los modelos del docente.
 
+## Actualización 11/11: consigna de la Instancia 3 y clases 22 y 24
+- **Consigna** (`CURSO/trabajo_practico/consignas_instancia_3.md`): se entregan dos JPG, uno exploratorio y uno comunicativo. La bajada está en la hoja de ruta, Fase 4. Ya no pide "rol y ubicación en la presentación": ese texto no se entrega.
+- **Clase 22 (30/10, `grafico_en_clase.R`):** boxplot por región con `geom_jitter`, la media como rombo rojo, `reorder()`, `coord_flip()`, escala log aclarada en el subtítulo, `theme_set()` con el tema de la casa y la paleta manual `paleta_cont`. En la clase pidió nombres en castellano, evitar el rojo contra el verde y sacar el título de la leyenda cuando sobra.
+- **Clase 24 (06/11, `clase24_graficos_owid.R`):** el lenguaje de Our World in Data, que es el modelo del comunicativo.
+  - `theme_owid()`: título alineado a la izquierda, grilla horizontal punteada, sin títulos de ejes (el subtítulo dice qué se mide) y sin leyenda.
+  - `pintar()` + `ggtext::element_markdown()`: las palabras del título van del color de su serie y reemplazan a la leyenda.
+  - `annotate("richtext")` con las cifras calculadas en el código, no tipeadas, y un punto en el último dato.
+  - `geom_text_repel(direction = "y")` para las etiquetas directas al final de cada línea, y `annotate("curve")` para las flechas.
+  - `num()` para el formato argentino (punto de miles y coma decimal).
+  - Exportar fijando ancho y alto y cambiando solo los dpi, porque si se cambia el tamaño, las letras quedan desproporcionadas.
+- **Clase 24, anexo (`clase24_latam_small_multiples.R`):** el mundo en gris de fondo y la región en color, una curva loess como "valor esperado" y los países pintados según queden mejor o peor que lo esperado. Es el paso de exploratorio a comunicativo que mostró en clase.
+- **Transcripciones:** las notas de Gemini de las clases 22 y 24 están en `gestion/insumos/transcripciones/` (no se publican, D-031). La 23 no se dio, y la 20 (regex y loops) no aporta a esta fase.
+
 ## Sobre "que no parezca hecho con IA"
 Alinear los gráficos con los de la clase es lo correcto en cualquier caso: es lo que el docente enseñó y lo que va a evaluar. Pero no reemplaza lo que cuenta en el oral, que es poder explicar cada decisión: por qué barras y no torta, por qué escala log, por qué el gris. Por eso cada cambio de la tabla tiene su diapositiva de referencia: si preguntan, se responde "como en la clase 21, diapositiva tal".

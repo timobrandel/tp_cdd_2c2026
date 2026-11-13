@@ -286,3 +286,56 @@ Registro de decisiones técnicas y de proyecto. Formato: contexto, decisión, al
 - **Alternativas descartadas:** (a) que el grupo arme todo desde el texto del guion (la recomendada por D-007): Timothy priorizó llegar a tiempo con un borrador completo; (b) que Claude entregue la versión final: va contra la consigna y el grupo igual tiene que poder defender cada diapositiva en el oral.
 - **Por qué es defendible:** igual que en D-021 y D-031, la IA arma la base y el grupo edita y decide el contenido final. Queda registrado para poder explicarlo si la cátedra pregunta.
 - **Vigencia:** solo para la Instancia 2. Para la entrega final se vuelve a decidir.
+
+## D-034 · 13/11/2026 · Hallazgo que comunican los gráficos de la Instancia 3
+- **Contexto:** la consigna de la Instancia 3 pide dos JPG, uno exploratorio y uno comunicativo, que cuenten "la historia del trabajo". Antes de graficar hay que poder nombrar el hallazgo principal en una oración.
+- **Decisión (Timothy, 13/11):** el hallazgo es "a quién le vende Argentina depende de qué vende". Los viajes y el transporte se reparten entre los países de América del Sur; los servicios basados en el conocimiento van sobre todo a Estados Unidos. En el total, los dos destinos pesan lo mismo (25,5% cada uno con el balanceado), y esa igualdad esconde dos carteras de clientes distintas.
+- **Por qué:** responde la pregunta con la que el docente registró el TP ("¿A quién le vende servicios Argentina?"), usa lo bilateral que pidió la devolución de la Instancia 1 y es la versión concreta de la segunda parte de la hipótesis (D-024): la concentración por socio difiere según el sector. Se entiende sin saber qué es un HHI.
+- **Robustez:** vale con las dos medidas. Con el balanceado y con el final, América del Sur supera a EE.UU. en viajes (42,5% contra 13,2%; 59,1% contra 10,5%) y EE.UU. supera a América del Sur en los cuatro servicios basados en el conocimiento. El script 10 frena si deja de cumplirse.
+- **Alternativas descartadas:**
+  - "La concentración cambia hasta nueve veces entre sectores": es una estadística, no un hallazgo, y obliga a explicar "socios equivalentes".
+  - Titular con el sector cultural (EE.UU. compra el 71%): su peso en lo exportado pasa de 10,5% a 2,7% según la medida. Queda como anotación dentro del gráfico.
+  - "La brecha con Brasil se triplicó": solo vale con el balanceado.
+- **No es causal:** el gráfico describe a quién se le vende cada servicio. No afirma que la distancia sea la causa.
+
+## D-035 · 12/11/2026 · Paquetes de R para los gráficos
+- **Decisión (Timothy, 12/11):** autorizó instalar los paquetes que hagan falta para la Instancia 3. Se instalaron `ggrepel`, `ggtext`, `patchwork`, `ggbeeswarm` y `ggridges`. El script 10 usa solo `ggtext` (palabras de color en el título) y `ggrepel` (etiquetas que no se pisan), los dos vistos en las clases 22 y 24 y nombrados en la consigna.
+- **Descartado:** `showtext` (tipografías de Google). El docente advierte en la clase 24 que obliga a ajustar los dpi a mano; se usa la tipografía del sistema.
+- **Pendiente para la entrega final:** el README tiene que listar `ggtext` y `ggrepel` entre los paquetes necesarios.
+
+## D-036 · 13/11/2026 · Diseño de los dos gráficos de la Instancia 3 (script 10)
+- **Origen:** Claude, autónoma, sobre el hallazgo de D-034. Timothy valida los JPG.
+- **Comunicativo (`grupo_26_comunicativo.jpg`):** solo Argentina. Una fila para el total y una por sector; en cada fila, dos puntos unidos por una línea: cuánto compra EE.UU. (naranja) y cuánto el resto de América del Sur (azul). Es el dumbbell de la clase 22, con el lenguaje de la clase 24: el título afirma el hallazgo y sus palabras de color reemplazan la leyenda, las cifras de las anotaciones salen del código y no hay grilla horizontal.
+- **Exploratorio (`grupo_26_exploratorio.jpg`):** los cuatro países, un panel cada uno, y un círculo por sector. Eje x: parte que compra EE.UU.; eje y: parte que compra el resto de América del Sur; tamaño: peso del sector; color: tipo de servicio; círculo vacío si la distribución por socio la estima OCDE-OMC. Las líneas punteadas son los valores del total del país y arman los cuadrantes. Es la dispersión con cuadrantes y los small multiples que nombra la consigna. Deja ver que el patrón de Argentina se repite en Uruguay, no en Brasil (casi no le vende a la región) y a medias en Chile (su transporte va a EE.UU.).
+- **"Resto de América del Sur":** los doce países soberanos del subcontinente, sin el exportador. Se prefirió a "países limítrofes" porque es la misma definición para los cuatro países (Chile tiene 3 limítrofes y Brasil, 9). Con limítrofes el hallazgo también vale para Argentina (viajes: 35,2% contra 13,2%).
+- **Participación sobre el acumulado 2015-2024**, como en `07_principales_socios`, y no como promedio de las participaciones anuales (así se calculan el CR1 y el HHI del 07). Por eso EE.UU. en culturales da 70,8% acá y 67,1% en el CR1 medio del 07: son dos medidas distintas del mismo dato.
+- **"Servicios basados en el conocimiento":** SJ (otros empresariales), SI (informática y telecomunicaciones), SK (personales, culturales y recreativos) y SH (propiedad intelectual), que es como se agrupan en las estadísticas argentinas. El 03 y el 04 usaban una versión más angosta (SI + SJ): hay que unificarla en la entrega final. **A verificar por el grupo** con una fuente (INDEC o Argencon) antes del oral.
+- **Sectores del comunicativo:** viajes, transporte y los cuatro basados en el conocimiento. Suman 94% de lo exportado; los otros seis quedan fuera y el pie lo dice.
+- **Medida:** balanceado (D-023, D-029). El pie del comunicativo aclara que con el valor final el patrón es el mismo.
+- **Tema y funciones:** `utils/tema_tp.R` (tema de la casa, D-032) y `utils/pintar.R`. Los scripts 03 a 08 siguen con su tema viejo copiado: se migran en la entrega final. La paleta fija por país de D-032 no se usó porque ninguno de los dos gráficos colorea por país.
+- **MCP de R:** no se usó. El servidor `r-mcptools` solo lista y elige sesiones de R abiertas, y no había ninguna. Los gráficos se generan con Rscript, que es la prueba de reproducibilidad de la cátedra.
+
+## D-037 · 13/11/2026 · Correcciones posteriores a QA-007
+- **Origen:** Timothy autorizó las correcciones propuestas, la reparación de R y una nueva revisión independiente.
+- **Exploratorio:** mantenemos cuatro paneles y retiramos los cuadrantes. Conservamos la diagonal de igualdad, con proporción física 1:1.
+- Repetimos números en los ejes de todos los paneles. Diferenciamos los grupos también por luminosidad.
+- La leyenda explicita el umbral del 50% y el promedio anual de cobertura estimada.
+- Conservamos esa ponderación del script 07. No reclasificamos sectores ni modificamos sus participaciones.
+- **Comunicativo:** el título compara ambos destinos sin sugerir exclusividad ni mayorías sobre todas las ventas.
+- Retiramos la anotación cultural para priorizar el hallazgo general. La cifra permanece visible junto al punto.
+- Ambos pies aclaran ROW. El exploratorio agrega la limitación chilena de 2023–2024.
+- **Definición:** SH + SI + SJ + SK tiene respaldo como aproximación agregada del CEI, informe de servicios 2025, página 5.
+- La definición desagregada del CEI es más precisa. La agrupación no describe modalidades exclusivamente remotas.
+- **Entorno:** un caso mínimo aisló el cierre defectuoso en cli, cuando falta `PROCESSOR_ARCHITECTURE`.
+- `utils/preparar_entorno_graficos.R` completa esa variable solamente si falta y activa UTF-8 cuando corresponde.
+- La corrección afecta el proceso de R; no modifica configuraciones globales ni paquetes.
+- **Exportación:** `ggsave()` utiliza Cairo para registrar también la densidad física de 300 dpi.
+- **Diego:** entregamos el script editable y un ZIP con funciones, insumos y proyecto de RStudio.
+- **Cierre:** Timothy pidió ver los JPG antes del commit. El 13/11 validó ambas imágenes y autorizó commit y push.
+- **Espaciado posterior:** Timothy pidió separar más nombres de ejes, porcentajes y otros elementos. Ampliamos márgenes y altura sin cambiar datos.
+- **Textos posteriores:** Timothy prefirió recuperar el título y los ejes completos del exploratorio. Desglosamos el subtítulo manteniendo el espaciado.
+- **Alternativas descartadas:** cambiar cálculos para simplificar el relato, forzar una salida exitosa de R o actualizar paquetes sin evidencia.
+
+Fuentes técnicas y económicas:
+- [Temporizador de cli](https://github.com/r-lib/cli/blob/main/src/thread.c).
+- [CEI, comercio de servicios 2025](https://cancilleria.gob.ar/userfiles/ut/2026-06_analisis_del_comercio_de_servicios_de_la_argentina_2026.pdf).

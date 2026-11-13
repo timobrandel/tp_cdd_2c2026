@@ -86,47 +86,97 @@ Solo se entrega el PDF.
 
 **Diferido a después del 29/10:** 2.3 (prueba del MCP de R), 2.4 (colaboradores y README) y 2.7 (consolidación del 03 y el 04).
 
-**A confirmar:** la clase 18 menciona que la entrega final pasa al 30/11, con una clase de consultas el 27/11.
+**Resultado:** nota 10/10 (devolución del 11/11). Sugerencia del docente para la final: un cluster para ver a qué países se parece Argentina por tipo de servicio o por continente de destino, con un promedio de los últimos años.
 
-## Fase 4 · Instancia 3: visualizaciones (13/11)
-**Insumo (28/10):** `gestion/insumos/graficos_catedra.md` mapea cada gráfico del TP con su modelo de la cátedra (clases 10, 12, 21 y 22): tema de la casa en `utils/tema_tp.R`, paleta fija por país, pares exploración → comunicación. Se aplica en esta fase (D-032).
-**Requisitos (consigna del TP):**
-- Al menos dos visualizaciones con los elementos de storytelling de la Unidad 4.
-- Para cada una:
-  - qué rol cumple: describir una relación, presentar el resultado de un método, apoyar las conclusiones o mostrar el tratamiento de nulos y outliers;
-  - en qué parte de la presentación final va y cómo ayuda al argumento.
-- Tienen que ser funcionales al análisis, no decorativas. En la entrega final, una va orientada a la comunicación y otra al análisis exploratorio.
-- Pesa 10%.
+## Fase 4 · Instancia 3: visualizaciones (vence jueves 12/11, 23:59)
+Consigna: `CURSO/trabajo_practico/consignas_instancia_3.md` (publicada el 06/11; reemplaza los requisitos viejos de esta fase). Apoyo: clases 22 y 24 (`CURSO/clases/clase24/clase24_graficos_owid.R` y `clase24_latam_small_multiples.R`) y `gestion/insumos/graficos_catedra.md` (D-032).
 
-**Pendientes anotados (sesión SES-001, 21/09):**
+**Qué se entrega:**
+- Dos JPG hechos en R y exportados con `ggsave()`, a 300 dpi como mínimo y de 20 a 25 cm de ancho: `grupo_26_exploratorio.jpg` y `grupo_26_comunicativo.jpg`.
+- Sin código, sin PPT y sin texto que los acompañe: cada gráfico se sostiene solo.
+- Por mail a nsidicaro.fce@gmail.com, asunto `curso_2c_2026_grupo_26_instancia_3`. Envía un integrante, con el resto en copia.
+- Pesa 10%. Los gráficos no son definitivos: con la devolución, se mejoran para la entrega final.
+
+**Exploratorio** (para el equipo y el docente):
+- Complejidad técnica real, con muchas dimensiones a la vez.
+- Prueba: si lleva a una conclusión obvia, no es exploratorio. No alcanzan las barras ordenadas, una sola serie de tiempo ni un gráfico lindo que no se use.
+- Sirven: boxplots o violines por grupo, dispersión con cuadrantes y color y tamaño por variable, small multiples, mapa de calor, ECDF superpuestas o resultados de métodos de la Instancia 2.
+- Título y rótulos que digan qué variables se miran y sobre qué universo.
+
+**Comunicativo** (para alguien que no leyó el TP):
+- Un solo mensaje, entendible en menos de 10 segundos. Tiene complejidad, pero el diseño la reduce.
+- Título que afirma el hallazgo; subtítulo con unidad, universo y período.
+- Color como jerarquía: una o dos series destacadas y el resto en gris.
+- Anotaciones dentro del gráfico, líneas de referencia, etiquetas directas en vez de leyenda y fuente al pie.
+- Modelo: Our World in Data, Data Insights (clase 24).
+
+**Prolijidad en los dos:**
+- Ejes en castellano y con unidad.
+- Números con formato argentino.
+- Fuente en el `caption`.
+- Escalas honestas: si se corta el eje o se usa log, se aclara.
+- Paleta que se distinga en escala de grises, sin depender de rojo contra verde. Nada de tortas.
+
+**Pasos:**
+- 4.1 ✅ Mensaje y tipos aprobados por Timothy (D-034, D-037). Paquetes autorizados en D-035.
+- 4.2 ✅ Tema reutilizable en `utils/tema_tp.R`, con números argentinos y una función por archivo. Colores por destino o servicio (D-036).
+- 4.3 ✅ `script/10_destinos_sectores.R` genera los dos JPG desde la raíz. Rscript termina con salida 0.
+- 4.4 ✅ QA-008, QA-008b y QA-008c aprobados. Timothy validó ambas imágenes y autorizó commit y push el 13/11.
+- 4.5 **Pendiente:** el grupo envía los dos JPG. **Cierre:** confirmar el envío y su fecha.
+  - La consigna escrita indica 12/11, 23:59. Timothy indicó el 13/11 a medianoche argentina como plazo operativo.
+  - No verificamos una modificación oficial del plazo ni el envío.
+
+**Pendientes anotados (sesión SES-001, 21/09):** van a la entrega final como gráficos de informe.
 - **Tasas anuales en líneas, junto al boxplot de la diap. 9.**
   - Gráfico: variación interanual por año, los 4 países, Argentina resaltada y 2020 y 2022 marcados.
-  - Por qué: el boxplot no se entiende sin explicación (Timothy no lo leía). Las líneas cuentan la historia y muestran que los cuatro caen y rebotan juntos, lo que prepara el test pareado. El boxplot formaliza los atípicos con la regla de 1,5 RIC que pide la clase 08.
-  - Se hace en el script 03, en el formato de la diapositiva, y pasa por QA.
+  - Por qué: el boxplot no se entiende sin explicación (Timothy no lo leía). Las líneas cuentan la historia y muestran que los cuatro caen y rebotan juntos. El boxplot formaliza los atípicos con la regla de 1,5 RIC que pide la clase 08.
   - Candidato natural para "mostrar el tratamiento de outliers".
 - **Letras de los ejes más grandes en el boxplot (`03_g4_boxplot_tasas.png`).** A tamaño de diapositiva se leen chicas.
 - **Histograma de tasas de la diap. 8 (`03_g3_histograma_tasas.png`):** con 19 años por país queda ralo. Evaluar si lo reemplaza el gráfico de líneas.
 
-## Fase 5 · Entrega final (24/11) y oral (24/11 al 01/12)
-**Contenido mínimo (consigna del TP):**
-- Hipótesis de trabajo, apoyada por todo lo que se haga.
-- Presentación de la base: variables (qué significan, qué valores toman, de qué tipo son), dimensiones y periodicidad de publicación.
-- Estadísticas descriptivas con tablas y visualizaciones.
-- Análisis de las distribuciones, los faltantes y los outliers.
-- Al menos 3 métodos además de los descriptivos:
-  - al menos uno estadístico, con sus supuestos verificados y corregidos;
-  - al menos una herramienta de análisis económico o cuantitativo.
-- Las visualizaciones de la Instancia 3, con las buenas prácticas de la Unidad 4.
-- Conclusiones y próximos pasos.
-- Todo método y visualización, interpretado. No causal.
+## Fase 5 · Entrega final (martes 24/11, 23:59) y oral (24/11 al 01/12)
+Consigna: `CURSO/trabajo_practico/consignas_entrega_final.md` (publicada el 10/11). La fecha del 24/11 la confirmó el docente en la clase 24, así que no se pasa al 30/11.
 
-**PPT:** .pptx o PDF de 15 a 20 diapositivas, sin contar carátula ni cierre, más un anexo con tablas y gráficos de respaldo.
+**Presentación:** PDF o PPTX de 15 a 20 diapositivas, sin contar carátula ni cierre, más un anexo. Recorrido: ¿qué nos preguntamos? → ¿con qué datos? → ¿cómo quedaron después de limpiarlos? → ¿qué métodos y en qué orden? → ¿qué encontramos? → ¿qué concluimos?
+1. Hipótesis específica y contrastable. Si cambió desde la Instancia 1, se dice y se explica por qué.
+2. La base: quién la produce, periodicidad, unidad de observación, filas y variables con las que se trabaja, período y limitaciones.
+3. Tabla de las variables usadas: descripción, tipo, faltantes y cómo se construyeron las variables nuevas.
+4. Bases auxiliares, o decir explícitamente que no hay.
+5. Descriptivas **antes** de la limpieza: tendencia central, dispersión y distribución, con tablas y gráficos.
+6. Faltantes y outliers: cómo se detectaron, qué se hizo, por qué y qué consecuencias tiene.
+7. Descriptivas **después** de la limpieza. Si no se limpió, mostrar que no cambian de forma considerable.
+8. Al menos 3 métodos: uno de inferencia (Unidad 2), uno cuantitativo (Unidad 3) y un tercero. Quien ya tenía tres los profundiza en vez de sumar uno sin función.
+   - Orden: tests → ANOVA → regresión. Los índices van antes si construyen la variable que se analiza después; clustering y PCA, antes de los métodos que los usan.
+   - Por cada método: por qué se eligió, decisiones, supuestos (y qué se hizo si no se cumplen), resultados con estadístico, gl, p-valor y tamaño del efecto, interpretación contra la hipótesis y limitaciones.
+9. Conclusión sin resultados nuevos.
+10. Próximos pasos.
 
-**Repo de GitHub:**
-- Estructura raw / auxiliar / input / output (tablas, graficos) / script / utils / README, usando todas las carpetas.
-- Datos cargados, scripts, outputs y README en Markdown: objetivo, justificación de la base, qué se hizo, estructura de carpetas y cómo reproducir.
-- Hoy es privado (D-018): al entregar, se hace público o se suma al docente como colaborador.
+**Visualizaciones:**
+- Los dos gráficos de la Instancia 3, corregidos y ubicados en el argumento.
+- Además, gráficos de informe en al menos tres momentos: descriptivas, faltantes y outliers, y resultados de los métodos.
+- Todos cumplen los criterios de la clase: castellano, unidades, fuente, orden con sentido, sin tortas y legibles en la diapositiva.
 
-**Oral:** virtual y sincrónico; participan todos los integrantes. El foco está en entender el código y las decisiones: repasar `decisiones.md`.
+**Repo:**
+- Todas las carpetas en uso.
+- Scripts autónomos que leen lo que guardó el anterior, con prefijo numérico y un nombre que explique qué hacen.
+- Una función por archivo en `utils/`.
+- Rutas relativas y librerías al principio.
+- Sin `setwd()`, `rm(list = ls())` ni `install.packages()`.
+- README con: título, integrantes, objetivo e hipótesis, base con link, período y unidad, análisis, estructura, cómo reproducir (paquetes, orden y qué genera cada script) y conclusiones.
+- **Prueba obligatoria:** clonar el repo en otra carpeta y correr todo de cero.
+- No cuentan los commits posteriores al 24/11, 23:59.
+- Ojo con los datos pesados fuera de git (D-010): la consigna admite excepciones "habilitadas expresamente por el docente", así que conviene confirmarlo con él.
 
-**Evaluación:** pesa 60%, con el oral incluido. La devolución llega con una grilla de evaluación que se comparte en las últimas semanas: usarla como checklist.
+**Envío:** asunto `curso_2c_2026_grupo_26_entrega_final`, con el link al repo y los nombres de los integrantes en el cuerpo del mail y la presentación adjunta.
+
+**Oral:**
+- 20 minutos: 15 de exposición, con corte estricto, y 5 de preguntas sobre el código y las decisiones, a cualquier integrante. Hablan todos.
+- Fecha a elegir en https://forms.gle/oguR4XUZRVLvS2M17
+- Repasar `decisiones.md`.
+
+**Devoluciones a incorporar:**
+- Instancia 1: bilateral (D-023).
+- Instancia 2: el cluster sugerido.
+- Instancia 3: la que llegue.
+
+**Evaluación:** pesa 60% con el oral. Llega con una grilla que se comparte en las últimas semanas: usarla como checklist.

@@ -1,69 +1,79 @@
-# ¿A quién le vende servicios Argentina?
+# Exportaciones de servicios: Argentina en comparación con Brasil, Chile y Uruguay (2005–2024)
 
-**Grupo 26 · Ciencia de Datos para Economía y Negocios · FCE-UBA · 2.º cuatrimestre de 2026**
+Trabajo práctico del **Grupo 26** de Ciencia de Datos para Economía y Negocios (FCE-UBA, segundo cuatrimestre de 2026, docente Nicolás Sidicaro).
 
 **Integrantes:** Timothy Brandel, Diego Sebastián Díez de los Ríos y Brenda Firmano.
 
-**Docente:** Nicolás Sidicaro.
+## Objetivo
 
-## Pregunta e hipótesis
+Describir la evolución, la composición y los destinos de las exportaciones de servicios de Argentina. Comparamos los resultados con Brasil, Chile y Uruguay entre 2005 y 2024.
 
-Comparamos la evolución, la composición y los destinos de las exportaciones de servicios de Argentina, Brasil, Chile y Uruguay.
+La hipótesis que guía el análisis es:
 
-La hipótesis propone que, entre 2015 y 2024, Argentina concentra sus exportaciones en menos socios que sus tres vecinos. También propone que la concentración por destino y el valor exportado difieren entre sectores. La especialización relativa complementa la hipótesis y describe qué exporta cada país.
+> Entre 2015 y 2024, las exportaciones de servicios de Argentina se concentran en menos socios que las de Brasil, Chile y Uruguay, y tanto esa concentración como el valor exportado difieren según el sector.
 
-## Datos y decisiones
+El trabajo describe asociaciones. El análisis bilateral principal empieza en 2015, cuando Argentina empieza a declarar destinos de forma comparable.
 
-Usamos la edición de diciembre de 2025 de [OECD–WTO Balanced Trade in Services (BaTIS)](https://www.wto.org/english/res_e/statis_e/daily_update_e/), con clasificación BPM6 y EBOPS 2010. La base cubre 2005–2024, con valores anuales en millones de USD corrientes.
+## Base de datos
 
-| Base procesada | Unidad de observación | Filas × variables | Uso |
-| --- | --- | ---: | --- |
-| `batis_filtrada.csv` | Exportador × ítem × año, destino mundo | 1.040 × 12 | Evolución y composición de los cuatro países |
-| `batis_bilateral.csv` | Exportador × socio × ítem × año | 207.480 × 11 | Concentración por socio y gráficos de destinos |
-| `batis_mundo_sectores.csv` | Exportador × ítem × año, destino mundo | 51.870 × 10 | Especialización y comparación entre sectores |
+[OECD-WTO Balanced Trade in Services (BaTIS)](https://www.wto.org/english/res_e/statis_e/daily_update_e/), clasificación BPM6 / EBOPS 2010, edición de diciembre de 2025. Cubre 2005–2024, con observaciones anuales en millones de USD corrientes.
 
-La cobertura de las bases es 2005–2024. Usamos 2015–2024 para los métodos principales porque Argentina empieza a declarar destinos en 2015. Conservamos 2005–2024 como contexto de evolución y composición. El ANOVA usa una celda por economía y sector, con el promedio anual del decenio.
+**Por qué esta base:** BaTIS reúne datos de comercio de servicios por país, socio y sector con una metodología común. Eso permite comparar los cuatro países y medir la concentración por socio. Para el análisis usamos dos medidas del valor exportado:
 
-- **Valor final:** dato informado, derivado o completado por OCDE–OMC. Lo usamos para totales al mundo, RCA y ANOVA.
-- **Valor balanceado:** estimación que concilia las dos direcciones de reporte de un mismo flujo bilateral. Lo usamos para concentración y destinos. El valor final bilateral sirve como sensibilidad.
-- **Cobertura:** los totales bilaterales de Chile y Uruguay carecen de distribución por socio declarada por el exportador. La calidad de la información también cambia entre sectores.
-- **Faltantes y atípicos:** conservamos las cifras completadas por OCDE–OMC y los atípicos detectados. El ANOVA sobre logaritmos toma celdas positivas. La sensibilidad muestra el efecto de conservar ceros o retirar atípicos.
-- **Archivos auxiliares:** no cruzamos bases externas. El diccionario de BaTIS aporta etiquetas de economías. Una transcripción del Anexo H completa cuatro códigos metodológicos.
+- **Valor final:** parte de lo que informa cada país. OCDE–OMC deriva o estima valores donde falta información. Usamos esta medida para los totales al mundo, el RCA y el ANOVA.
+- **Valor balanceado:** concilia lo que declara el exportador con lo que declara el importador. Lo usamos para concentración y destinos. Repetimos esos cálculos con el valor final para ver cuánto cambia el resultado.
 
-Consultá el [diccionario de variables](output/tablas/09_tabla_variables.csv), el [diagnóstico de cobertura](output/tablas/06_diagnostico_resumen.csv) y las [descriptivas de sensibilidad](output/tablas/06_descriptivas_sensibilidad.csv).
+Documentación oficial: [metodología BaTIS](raw/OECD-WTO_Batis_methodology_BPM6.pdf) y [diccionario de códigos](raw/OECD-WTO_BATIS_BPM6_December2025_codes.xlsx).
 
-## Métodos y resultados
+| Base procesada | Unidad de observación | Filas × variables |
+| --- | --- | ---: |
+| `batis_filtrada.csv` | Exportador × ítem × año, destino mundo | 1.040 × 12 |
+| `batis_bilateral.csv` | Exportador × socio × ítem × año | 207.480 × 11 |
+| `batis_mundo_sectores.csv` | Exportador × ítem × año, destino mundo | 51.870 × 10 |
 
-| Método | Pregunta | Resultado |
-| --- | --- | --- |
-| Concentración con HHI, CR1 y CR4 | ¿Cuánto pesan los socios principales? | Argentina supera a Brasil en HHI y CR4 con ambas medidas. Frente a Chile y Uruguay, la lectura depende del indicador y la medida. |
-| Ventaja comparativa revelada (RCA) | ¿Qué sectores tienen más peso en la canasta argentina que en la mundial? | Argentina tiene RCA mayor que uno en 5 de los 12 sectores. |
-| ANOVA sobre el logaritmo del valor exportado y pruebas complementarias | ¿Difiere el valor exportado típico entre sectores? | El ANOVA simple de referencia da F(11, 2070) = 38,87, p < 0,001 y η² = 0,17. Welch y Friedman también encuentran diferencias sectoriales. |
+Chile y Uruguay no declaran la distribución por socio del total de servicios. Chile sí aporta información parcial para algunos sectores. El diccionario y el Anexo H de BaTIS permiten interpretar los códigos. El trabajo usa BaTIS como única base de datos.
 
-Levene detecta varianzas desiguales. Usamos Welch como contraste principal de medias, aunque comparte el supuesto de independencia entre observaciones. Friedman compara rangos dentro de cada país e incluye las 318 celdas con promedio cero. Los tres resultados corresponden a la muestra mundial, con 200 economías y 12 sectores antes del filtro de positivos.
+## Qué se hizo
 
-Argentina registra de 2,0 socios equivalentes en servicios personales, culturales y recreativos a 18,9 en transporte. Estados Unidos explica el 25,5 % del valor bilateral identificado que Argentina acumuló en 2015–2024. La orientación geográfica cambia según el servicio. Los resultados describen asociaciones.
+1. **Descarga y filtrado inicial** ([00](script/00_descarga_datos.R) y [01](script/01_filtrado_batis.R)). El 00 descarga los originales desde la OMC. El 01 guarda `input/batis_filtrada.csv` y controla el tamaño y los nulos de la fuente.
+2. **Estructura y exploración** ([02](script/02_estructura_variables.R) a [04](script/04_comparacion_medidas.R)). El 02 registra variables, unidades y origen con el diccionario y el Anexo H. El [03](script/03_exploracion.R) guarda las descriptivas y los gráficos de evolución y composición. El 04 compara las dos medidas del valor exportado.
+3. **Comercio bilateral** ([05](script/05_filtrado_bilateral.R)). A partir del CSV original y el diccionario, guarda la base bilateral de cuatro exportadores y la base de exportaciones al mundo por sector.
+4. **Faltantes y atípicos** ([06](script/06_faltantes_atipicos.R)). Lee las dos bases del 05 y describe los faltantes, el origen de los ceros y los valores extremos. Identifica atípicos con la regla de 1,5 rangos intercuartílicos. La [tabla de sensibilidad](output/tablas/06_descriptivas_sensibilidad.csv) compara las 2.400 celdas, las 2.082 positivas y las 2.065 positivas sin atípicos.
+5. **Concentración y diversidad** ([07](script/07_concentracion_socios.R)). Lee las bases del 05. Guarda CR1, CR4, el índice de Herfindahl–Hirschman (HHI), socios equivalentes, los principales destinos y el RCA de Balassa.
+6. **Inferencia** ([08](script/08_anova_sectores.R)). Lee la base mundial del 05 y guarda descriptivas sectoriales, diagnósticos, contrastes y gráficos. Incluye Welch, Kruskal–Wallis, ANOVA con bloque país, Friedman y comparaciones de Games–Howell.
+7. **Diccionario** ([09](script/09_tabla_variables_bilateral.R)). Lee las bases del 05 y guarda el [diccionario de variables](output/tablas/09_tabla_variables.csv), con tipos, unidades y faltantes.
+8. **Destinos por servicio** ([10](script/10_destinos_sectores.R)). Lee la base bilateral del 05 y la cobertura sectorial que guarda el 07. Calcula qué porcentaje compra cada destino sobre todos los socios identificados. Verifica el patrón con ambas medidas y guarda la tabla de destinos y los JPG [exploratorio](output/graficos/grupo_26_exploratorio.jpg) y [comunicativo](output/graficos/grupo_26_comunicativo.jpg).
 
-Visualizaciones de la tercera instancia: [exploratoria](output/graficos/grupo_26_exploratorio.jpg) y [comunicativa](output/graficos/grupo_26_comunicativo.jpg).
+## Conclusiones principales
 
-El [script 10](script/10_destinos_sectores.R) cruza la base bilateral con la cobertura sectorial que guarda el script 07. Acumula los flujos de 2015–2024, excluye los socios sin identificar (`ROW`) y calcula las participaciones de Sudamérica y Estados Unidos. El denominador reúne **todos** los socios identificados de cada exportador y rubro. Antes de guardar los JPG, el script verifica que el orden entre los dos destinos se mantenga en los seis rubros argentinos del gráfico comunicativo. Usa tanto el valor final como el balanceado.
+- **Frente a Brasil,** Argentina está más concentrada en pocos socios con las dos medidas y con los dos índices (HHI y CR4).
+- **Frente a Uruguay,** el resultado depende del índice: Argentina está más concentrada según el HHI, pero no según el CR4 del valor balanceado.
+- **Frente a Chile,** con la medida principal, Argentina no está más concentrada: en HHI empatan en años y en CR4 Chile está más concentrado. Con el valor final Argentina queda por encima, pero ahí los socios de Chile salen de un modelo de OCDE-OMC.
+- **Por sector,** la concentración de Argentina varía mucho: de 2,0 socios equivalentes en servicios personales, culturales y recreativos a 18,9 en transporte.
+- **Diversidad:** Argentina tiene ventaja comparativa en 5 de 12 sectores, más que sus vecinos.
+- **Valor exportado:** en la muestra mundial, el ANOVA simple da F(11, 2070) = 38,87, p < 0,001 y η² = 0,17. Usa las 2.082 celdas positivas y conserva los 17 atípicos. Welch compara medias con varianzas desiguales. Friedman compara rangos dentro de cada país e incluye los ceros.
+- **Destinos:** EE. UU. explica el 25,5 % del acumulado argentino a socios identificados. En viajes, Sudamérica representa 42,5 % y EE. UU. 13,2 %. En servicios personales, culturales y recreativos, representan 8,6 % y 70,8 %, respectivamente.
 
-## Arquitectura del repositorio
+## Estructura del repositorio
 
-| Ruta | Contenido |
-| --- | --- |
-| [`raw/`](raw/) | Originales de BaTIS. El script 00 descarga y extrae el archivo pesado desde la OMC. |
-| [`auxiliar/`](auxiliar/) | Códigos del Anexo H que lee el script 02 y antecedente de código del grupo. |
-| [`input/`](input/) | Bases filtradas que leen los scripts de análisis. |
-| [`script/`](script/) | Scripts numerados, con entradas y salidas en el encabezado. |
-| [`utils/`](utils/) | Funciones que los scripts cargan con `source()`. |
-| [`output/tablas/`](output/tablas/) | Tablas en CSV con coma decimal y separador de punto y coma. En R, usar `readr::read_csv2()`. |
-| [`output/graficos/`](output/graficos/) | Figuras en PNG y JPG exportadas en R con `ggsave()`. |
-| [`gestion/`](gestion/) | Decisiones, revisiones y antecedentes del grupo. |
+```
+tp_cdd_2c2026/
+├── raw/        # Datos originales de la OMC. Los archivos pesados no se suben: los descarga el script 00
+├── auxiliar/   # Códigos del Anexo H y script original del grupo como referencia
+├── input/      # Bases procesadas que usan los scripts de análisis
+├── output/
+│   ├── tablas/    # Resultados en CSV con formato argentino (se leen con readr::read_csv2)
+│   └── graficos/  # Gráficos en PNG y JPG
+├── script/     # Scripts numerados NN_nombre.R, uno por objetivo
+├── utils/      # Funciones propias, una por archivo
+├── gestion/    # Registro del trabajo (ver "Proceso de trabajo")
+├── CLAUDE.md   # Reglas del proyecto para el asistente de IA
+└── .claude/agents/  # Definición de los agentes auditores
+```
 
-El [registro de decisiones](gestion/decisiones.md) documenta las elecciones metodológicas. El grupo usó asistentes de IA como apoyo para los scripts, la interpretación, las verificaciones y el material de presentación. Los integrantes definieron las decisiones metodológicas y prepararon la presentación final.
+Los números de las tablas y gráficos de `output/` coinciden con el del script que los genera.
 
-## Reproducción desde un clon
+## Cómo reproducir
 
 1. Cloná el repositorio y trabajá desde la raíz. En RStudio, abrí `tp_cdd_2c2026.Rproj`.
 2. Instalá los paquetes una sola vez desde la consola de R. Usamos R 4.6.1 para la comprobación local.
@@ -106,20 +116,20 @@ El [registro de decisiones](gestion/decisiones.md) documenta las elecciones meto
 
 Para **regenerar solo los dos JPG** desde las salidas versionadas, verificá que estén `input/batis_bilateral.csv` y `output/tablas/07_concentracion_sectores.csv`. Con los paquetes instalados y desde la raíz, corré `Rscript --vanilla script/10_destinos_sectores.R`. El script actualiza la tabla de destinos y los dos JPG de 300 dpi. Para reconstruir las bases desde la fuente, corré la secuencia completa.
 
-### Orden de los scripts
+El 00 descarga unos 500 MB la primera vez. Reutiliza los archivos presentes en `raw/`. El 01 y el 05 consultan con DuckDB el CSV de casi 3 GB. A partir del 06, los scripts trabajan con archivos procesados.
 
-| Orden | Entrada principal | Qué genera |
-| --- | --- | --- |
-| [00 Descarga](script/00_descarga_datos.R) | Sitio de la OMC | ZIP, CSV original, diccionario y metodología en `raw/`. |
-| [01 Filtrado inicial](script/01_filtrado_batis.R) | CSV de BaTIS | `input/batis_filtrada.csv`, dimensiones y nulos de la base completa. |
-| [02 Estructura](script/02_estructura_variables.R) | Base filtrada, tabla 01, diccionario y Anexo H | Diccionario analítico, unidad de observación y origen de datos. |
-| [03 Exploración](script/03_exploracion.R) | Base filtrada | Descriptivas, evolución, composición y gráficos de contexto. |
-| [04 Comparación de medidas](script/04_comparacion_medidas.R) | Base filtrada | Tablas y gráficos con valor final y balanceado. |
-| [05 Filtrado bilateral](script/05_filtrado_bilateral.R) | CSV original y diccionario | Dos bases procesadas, controles de cobertura y diagnóstico bilateral. |
-| [06 Calidad y sensibilidad](script/06_faltantes_atipicos.R) | Bases del script 05 | Faltantes, ceros, atípicos, descriptivas comparables y gráficos de diagnóstico. |
-| [07 Concentración y RCA](script/07_concentracion_socios.R) | Bases del script 05 | Índices, principales socios, RCA y gráficos de resultados. |
-| [08 Inferencia](script/08_anova_sectores.R) | Base mundial del script 05 | Descriptivas sectoriales, pruebas, comparaciones por pares y figuras. |
-| [09 Diccionario](script/09_tabla_variables_bilateral.R) | Bases del script 05 | Variables y unidades de observación de las dos bases. |
-| [10 Destinos](script/10_destinos_sectores.R) | Base bilateral y tabla de concentración del 07 | Tabla de destinos y dos JPG del grupo 26. |
+Las bases procesadas se leen con `read_csv(..., na = "")` donde corresponde. Así R conserva `NA`, el código ISO de Namibia. Las tablas de resultados se leen con `readr::read_csv2()`.
 
-En las bases bilaterales, `na = ""` preserva `NA`, el código ISO de Namibia. Los datos crudos pesados superan el límite de GitHub. El script 00 los recupera desde su fuente y el repositorio incluye las bases procesadas.
+## Proceso de trabajo
+
+El trabajo se organizó con un registro escrito, que está en `gestion/`:
+
+- `hojaderuta.md`: los pasos de cada instancia, con su criterio de cierre.
+- [`decisiones.md`](gestion/decisiones.md): cada decisión técnica, con su contexto, las alternativas descartadas y quién la tomó.
+- `estadodelproyecto.md`: en qué punto está el trabajo.
+- `qa/` y `handovers/`: cada bloque se auditó con un revisor independiente, que vuelve a correr los scripts desde cero, recalcula las cifras y las contrasta con la consigna. Los handovers explican qué se entregó a cada auditoría.
+- `verificacion/`: los scripts con los que se recalcularon las cifras en cada auditoría, y sus resultados.
+- `insumos/`: el material de apoyo de las presentaciones (cifras, revisiones y guion) y las versiones de la presentación de la Instancia 1.
+- `herramientas_ppt/`: scripts que aplicaron correcciones de texto a la presentación de la Instancia 1.
+
+**Uso de IA.** El grupo usó asistentes de IA para apoyar el código, la interpretación y el material de las presentaciones. Otro asistente realizó verificaciones independientes. Los integrantes tomaron las decisiones metodológicas, como la hipótesis y la medida del valor exportado, y armaron la presentación final.

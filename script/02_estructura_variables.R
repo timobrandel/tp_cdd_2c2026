@@ -6,6 +6,7 @@
 # Entrada     input/batis_filtrada.csv
 #             output/tablas/01_nulos_base_completa.csv
 #             raw/OECD-WTO_BATIS_BPM6_December2025_codes.xlsx (diccionario)
+#             auxiliar/batis_codigos_metodologicos_anexo_h.csv
 # Salida      output/tablas/02_unidad_observacion.csv
 #             output/tablas/02_tabla_variables.csv
 #             output/tablas/02_origen_datos_por_pais.csv
@@ -44,17 +45,12 @@ metodologias <- read_excel(
 
 # El Excel de códigos no trae todos los códigos que aparecen en los datos.
 # Los faltantes están en el Anexo H de la metodología oficial
-# (raw/OECD-WTO_Batis_methodology_BPM6.pdf); los agregamos a mano.
-metodologias <- bind_rows(
-  metodologias,
-  tribble(
-    ~Methodology, ~Description,
-    "R_OECD", "Reported: OECD International Trade in Services Statistics (ITSS).",
-    "E2",     "Estimation of most recent year(s) missing in primary source by using the national BOP growth rate (partner world only).",
-    "E3",     "Estimated using past or future shares (partner world only).",
-    "E5",     "Estimates based on regional growth rates (partner world only)."
-  )
+# (raw/OECD-WTO_Batis_methodology_BPM6.pdf). El CSV conserva esa transcripción.
+codigos_anexo_h <- read_csv(
+  "auxiliar/batis_codigos_metodologicos_anexo_h.csv",
+  col_types = cols_only(Methodology = col_character(), Description = col_character())
 )
+metodologias <- bind_rows(metodologias, codigos_anexo_h)
 
 
 # 1. DIMENSIÓN Y UNIDAD DE OBSERVACIÓN --------------------------------------

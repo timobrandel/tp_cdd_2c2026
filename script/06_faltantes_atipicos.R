@@ -12,6 +12,7 @@
 #             output/tablas/06_atipicos_mundo_detalle.csv
 #             output/tablas/06_atipicos_bilateral.csv
 #             output/tablas/06_diagnostico_resumen.csv
+#             output/tablas/06_descriptivas_sensibilidad.csv
 #             output/graficos/06_g1_origen_bilateral.png
 #             output/graficos/06_g2_boxplot_sectores.png
 # -----------------------------------------------------------------
@@ -268,6 +269,35 @@ atipicos_mundo_detalle <- positivos |>
 
 print(atipicos_mundo_detalle |> count(tipo_atipico))
 
+# Las tres muestras usan la misma unidad y escala. La tercera sirve solo
+# como sensibilidad: el ANOVA principal conserva estos valores atípicos.
+escenarios <- bind_rows(
+  mutate(base_anova, escenario = "Con ceros"),
+  mutate(positivos, escenario = "Solo positivos (muestra principal)"),
+  positivos |>
+    filter(is.na(tipo_atipico)) |>
+    mutate(escenario = "Positivos sin atípicos (sensibilidad)")
+)
+
+descriptivas_sensibilidad <- bind_rows(
+  escenarios,
+  mutate(escenarios, Item_code = "S")
+) |>
+  group_by(escenario, Item_code) |>
+  summarise(
+    celdas = n(),
+    media_musd = mean(valor_medio),
+    mediana_musd = median(valor_medio),
+    desvio_musd = sd(valor_medio),
+    ric_musd = IQR(valor_medio),
+    .groups = "drop"
+  ) |>
+  mutate(
+    Servicio = if_else(Item_code == "S", "12 sectores agrupados",
+                       unname(etiquetas_servicios[Item_code])),
+    .after = Item_code
+  )
+
 # Gráfico: distribución del log del valor por sector, con los cuatro países
 # del TP marcados.
 orden_sectores <- positivos |>
@@ -463,6 +493,7 @@ guardar_tabla(atipicos_mundo,         "output/tablas/06_atipicos_mundo_sectores.
 guardar_tabla(atipicos_mundo_detalle, "output/tablas/06_atipicos_mundo_detalle.csv")
 guardar_tabla(atipicos_bilateral,     "output/tablas/06_atipicos_bilateral.csv")
 guardar_tabla(diagnostico,            "output/tablas/06_diagnostico_resumen.csv")
+guardar_tabla(descriptivas_sensibilidad, "output/tablas/06_descriptivas_sensibilidad.csv")
 
 ggsave("output/graficos/06_g1_origen_bilateral.png", g_origen,
        width = 8, height = 5.5, dpi = 200, bg = "white")

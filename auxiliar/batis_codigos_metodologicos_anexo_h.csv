@@ -1,0 +1,5 @@
+Methodology,Description
+R_OECD,Reported: OECD International Trade in Services Statistics (ITSS).
+E2,Estimation of most recent year(s) missing in primary source by using the national BOP growth rate (partner world only).
+E3,Estimated using past or future shares (partner world only).
+E5,Estimates based on regional growth rates (partner world only).

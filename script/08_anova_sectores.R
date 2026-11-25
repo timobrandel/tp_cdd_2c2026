@@ -217,16 +217,14 @@ epsilon2_con <- unname(kw_con_ceros$statistic) / (nrow(base_anova) - 1)
 epsilon2_sin <- unname(kw_sin_ceros$statistic) / (nrow(positivos) - 1)
 
 
-# 6. CONTROL DE INDEPENDENCIA: EL PAÍS COMO SEGUNDO FACTOR --------------------
+# 6. COMPARACIÓN POR PAÍS: EL PAÍS COMO SEGUNDO FACTOR ------------------------
 
 # El país está CRUZADO con el sector: cada país aparece en varios sectores.
-# En el ANOVA de un factor, las diferencias de tamaño entre países van a
-# parar al error, que queda inflado. Eso hace al test de un factor
-# CONSERVADOR (le cuesta más rechazar), no optimista.
-# aov(log_valor ~ pais + sector) saca esa variabilidad del error y mide la
-# del sector DESPUÉS de descontar el tamaño de cada país (el orden importa:
-# primero pais). Si la diferencia entre sectores fuera solo un efecto del
-# tamaño de los países, acá desaparecería.
+# El ANOVA de un factor omite las diferencias de nivel entre países. Como
+# cada país aporta varias celdas, la dependencia puede afectar el contraste.
+# Comparar los dos estadísticos F no establece la dirección de ese efecto.
+# aov(log_valor ~ Reporter + sector) evalúa el efecto del sector después
+# de descontar el efecto aditivo del país. El orden importa en esta tabla.
 anova_bloque <- aov(log_valor ~ Reporter + sector, data = positivos)
 tabla_bloque <- summary(anova_bloque)[[1]]
 print(tabla_bloque)
@@ -260,8 +258,8 @@ cat("Residuos del modelo con bloque: Shapiro W =", formato_num(shapiro_bloque$st
 # de un factor. Por eso se agrega su versión por rangos: el test de Friedman,
 # que es al ANOVA con bloque lo que el Kruskal-Wallis es al de un factor.
 # Ordena los 12 sectores DENTRO de cada país (rango 1 = el sector en que ese
-# país exporta menos) y contrasta si algún sector tiende a quedar arriba en
-# todos los países. Como compara dentro de cada país, el tamaño del país no
+# país exporta menos) y contrasta si los rangos difieren sistemáticamente
+# entre sectores. Como compara dentro de cada país, el tamaño del país no
 # influye. Necesita los 12 sectores de cada país, así que usa la base con
 # ceros (un cero es el rango más bajo de ese país).
 # Tamaño del efecto: W de Kendall = chi² / (países x (sectores - 1)), de 0
